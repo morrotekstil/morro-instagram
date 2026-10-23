@@ -36,12 +36,27 @@ def _etiketler(img):
     return up.argmax(dim=1)[0].numpy()
 
 
+def _temizle(maske):
+    """Kenarlarda kalan küçük ten parçalarını atar, delikleri kapatır."""
+    from scipy import ndimage
+    maske = ndimage.binary_opening(maske, iterations=2)
+    etiket, n = ndimage.label(maske)
+    if n == 0:
+        return maske
+    boyutlar = ndimage.sum(maske, etiket, range(1, n + 1))
+    en_buyuk = boyutlar.max()
+    tut = [i + 1 for i, b in enumerate(boyutlar) if b >= en_buyuk * 0.15]
+    maske = np.isin(etiket, tut)
+    maske = ndimage.binary_closing(maske, iterations=3)
+    return ndimage.binary_fill_holes(maske)
+
+
 def soyutla(img: Image.Image):
     """(soyut_görsel, kiyafet_orani) döndürür; kıyafet bulunamazsa (None, 0)."""
     img = img.convert("RGB")
     kucuk = ImageOps.contain(img, (768, 768))
     et = _etiketler(kucuk)
-    maske = np.isin(et, KIYAFET)
+    maske = _temizle(np.isin(et, KIYAFET))
     oran = float(maske.mean())
     if oran < 0.01:
         return None, 0.0
