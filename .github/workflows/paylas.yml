@@ -1,0 +1,68 @@
+name: Instagram paylaşımı
+
+on:
+  schedule:
+    # GitHub zamanlı işleri birkaç dakika geç başlatabildiği için biraz erken kuruldu
+    - cron: "20 9 * * *"    # 12:30 paylaşımı (Türkiye)
+    - cron: "20 15 * * *"   # 18:30 paylaşımı
+    - cron: "50 17 * * *"   # 21:00 paylaşımı
+  workflow_dispatch:
+    inputs:
+      simdi:
+        description: "Saati beklemeden sıradaki paylaşımı yap"
+        type: boolean
+        default: false
+      deneme:
+        description: "Deneme modu (Instagram'a göndermez)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: morro-depo
+  cancel-in-progress: false
+
+jobs:
+  paylas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Saat gelince bekle
+        if: github.event_name == 'schedule'
+        run: |
+          # Erken başladıysa paylaşım saatine kadar bekle (en fazla 15 dk)
+          python - <<'EOF'
+          import time, datetime as dt
+          from zoneinfo import ZoneInfo
+          import ayarlar as A
+          now = dt.datetime.now(ZoneInfo("Europe/Istanbul"))
+          for s in A.SAATLER:
+              t = dt.datetime.combine(now.date(), dt.time.fromisoformat(s), tzinfo=now.tzinfo)
+              wait = (t - now).total_seconds()
+              if 0 < wait <= 15 * 60:
+                  print(f"{s} için {int(wait)} sn bekleniyor"); time.sleep(wait); break
+          EOF
+      - name: Paylaş
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          TRENDYOL_SELLER_ID: ${{ secrets.TRENDYOL_SELLER_ID }}
+          TRENDYOL_API_KEY: ${{ secrets.TRENDYOL_API_KEY }}
+          TRENDYOL_API_SECRET: ${{ secrets.TRENDYOL_API_SECRET }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.deneme && '1' || '0' }}
+        run: python paylas.py ${{ inputs.simdi && '--simdi' || '' }}
+      - name: Kaydet
+        if: always()
+        run: |
+          git config user.name "morro-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A .
+          git diff --cached --quiet || git commit -m "Paylaşım $(TZ=Europe/Istanbul date '+%F %H:%M')"
+          git pull --rebase && git push
