@@ -71,3 +71,9 @@ def yenile(token):
     veri = _kontrol(requests.get("https://graph.instagram.com/refresh_access_token", params={
         "grant_type": "ig_refresh_token", "access_token": token}, timeout=30))
     return veri["access_token"], int(veri.get("expires_in", 0))
+
+
+def hesap(token):
+    """Token'ın hangi hesaba ait olduğunu döndürür (deneme için)."""
+    return _kontrol(requests.get(f"{A.IG_API}/me", params={
+        "fields": "user_id,username", "access_token": token}, timeout=30))

@@ -89,6 +89,10 @@ def main():
             raise SystemExit(f"Görsel adresine ulaşılamıyor: {url}")
 
     if A.DRY_RUN:
+        try:
+            print("[DENEME] Instagram token'ı geçerli, hesap:", instagram.hesap(D.token_al()).get("username"))
+        except Exception as e:
+            print("[DENEME] Instagram token'ı ÇALIŞMIYOR:", e)
         print(f"[DENEME] Paylaşılacaktı ({len(urls)} fotoğraf):", k["baslik"], urls)
         print(k["aciklama"])
         return
