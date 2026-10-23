@@ -52,9 +52,19 @@ def kucuk(m):
     return (m or "").replace("İ", "i").replace("I", "ı").lower()
 
 
+def ozel_gorseller(u):
+    """ozel/<kod>.jpg, ozel/<kod>-2.jpg ... dosyaları (varsa)."""
+    klasor = D.KOK / "ozel"
+    if not klasor.exists():
+        return []
+    ana = klasor / f"{u['id']}.jpg"
+    ekler = sorted(klasor.glob(f"{u['id']}-*.jpg"))
+    return ([ana] if ana.exists() else []) + ekler
+
+
 def ozel_gorsel(u):
-    yol = D.KOK / "ozel" / f"{u['id']}.jpg"
-    return yol if yol.exists() else None
+    o = ozel_gorseller(u)
+    return o[0] if o else None
 
 
 def uygun_mu(u):
@@ -122,16 +132,27 @@ def fiyat_degisiklikleri(urunler, gecmis):
 
 def kalem(u, saat, sira, tarih):
     etiket, yuzde = gorsel.etiket_metni(u["fiyat"], u["liste_fiyat"])
-    dosya = f"media/{tarih}-{sira}.jpg"
-    ozel = ozel_gorsel(u)
-    kaynak = gorsel.ac(ozel) if ozel else gorsel.indir(u["gorseller"][0])
-    gorsel.hazirla(kaynak, etiket, D.KOK / dosya)
+    ozel = ozel_gorseller(u)
+    kaynaklar = ozel if ozel else u["gorseller"]
+    dosyalar = []
+    for j, kaynak in enumerate(kaynaklar[:A.FOTO_SAYISI], start=1):
+        try:
+            img = gorsel.ac(kaynak) if ozel else gorsel.indir(kaynak)
+        except Exception:
+            if j == 1:
+                raise
+            continue
+        dosya = f"media/{tarih}-{sira}-{len(dosyalar) + 1}.jpg"
+        gorsel.hazirla(img, etiket if not dosyalar else None, D.KOK / dosya)
+        dosyalar.append(dosya)
+    dosya = dosyalar[0]
     return {
         "saat": saat, "durum": "bekliyor",
         "urun_id": u["id"], "baslik": u["baslik"], "kategori": u["kategori"],
         "fiyat": u["fiyat"], "liste_fiyat": u["liste_fiyat"], "stok": u["stok"],
         "etiket": etiket, "aciklama": aciklama(u, yuzde),
         "gorsel": dosya, "gorsel_url": f"{A.HAM_ADRES}/{dosya}",
+        "gorsel_urls": [f"{A.HAM_ADRES}/{d}" for d in dosyalar],
         "kaynak_gorsel": u["gorseller"][0], "link": u.get("link"),
     }
 
@@ -149,6 +170,12 @@ def main():
             notlar.append("Instagram token'ı yenilendi")
     except Exception as e:  # plan yine de çıksın
         notlar.append(f"Token yenilenemedi: {e}")
+
+    # 7 günden eski görselleri sil (depo şişmesin)
+    sinir = (D.simdi() - dt.timedelta(days=7)).date().isoformat()
+    for f in (D.KOK / "media").glob("*.jpg"):
+        if f.name[:10] < sinir:
+            f.unlink()
 
     urunler = trendyol.urunler()
     secim = sec(urunler, gecmis, len(A.SAATLER) + A.YEDEK_SAYISI)

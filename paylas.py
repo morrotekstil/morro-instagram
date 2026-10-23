@@ -83,15 +83,17 @@ def main():
         elif abs(u["fiyat"] - k["fiyat"]) >= 1:
             print(f"Uyarı: fiyat sabahtan beri değişti ({k['fiyat']} -> {u['fiyat']})")
 
-    if not gorsel_hazir_mi(k["gorsel_url"]):
-        raise SystemExit(f"Görsel adresine ulaşılamıyor: {k['gorsel_url']}")
+    urls = k.get("gorsel_urls") or [k["gorsel_url"]]
+    for url in urls:
+        if not gorsel_hazir_mi(url):
+            raise SystemExit(f"Görsel adresine ulaşılamıyor: {url}")
 
     if A.DRY_RUN:
-        print("[DENEME] Paylaşılacaktı:", k["baslik"], k["gorsel_url"])
+        print(f"[DENEME] Paylaşılacaktı ({len(urls)} fotoğraf):", k["baslik"], urls)
         print(k["aciklama"])
         return
 
-    mid, link = instagram.paylas(D.token_al(), k["gorsel_url"], k["aciklama"])
+    mid, link = instagram.paylas(D.token_al(), urls, k["aciklama"])
     k["durum"] = "paylaşıldı"
     k["paylasim_saati"] = D.simdi().isoformat(timespec="minutes")
     k["media_id"], k["permalink"] = mid, link
