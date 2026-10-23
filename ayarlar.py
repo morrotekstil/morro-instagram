@@ -39,7 +39,7 @@ MARKA_ETIKET = "MORRO"              # indirim yoksa yazılacak etiket (logo.png 
 # paylaşmak istersen ozel/<ürün kodu>.jpg adıyla kendi görselini yükle
 # (ör. cansız manken veya ürünün tek başına çekimi); o zaman o görsel kullanılır.
 # Hassas ürünler paylaşılırken manken yapay zekayla silinir (sadece ürün kalır).
-SOYUTLA = True
+SOYUTLA = False   # şimdilik kapalı: sütyen/takımlar sıralamaya alınmıyor
 GUNLUK_HASSAS = 1        # bir günde en fazla kaç hassas ürün paylaşılsın
 # Erkek ürünleri (başlıkta/kategoride "erkek" geçen) bu kurala hiç takılmaz.
 HASSAS_KELIMELER = [
