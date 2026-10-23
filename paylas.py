@@ -42,9 +42,16 @@ def main():
         print("Bugün için plan yok, çıkılıyor.")
         return
     simdi = D.simdi()
+    if not zorla:  # saatinin üzerinden 90 dk geçmiş paylaşımı artık yapma
+        for k in plan["paylasimlar"]:
+            if k["durum"] == "bekliyor" and saati_geldi(k["saat"], simdi, tolerans_dk=-90):
+                k["durum"] = "kaçırıldı (saati geçti)"
     sira = [k for k in plan["paylasimlar"] if k["durum"] == "bekliyor"
             and (zorla or saati_geldi(k["saat"], simdi))]
     if not sira:
+        if not A.DRY_RUN:
+            D.yaz(plan_yol, plan)
+            D.yaz(D.KOK / "plan" / "bugun.json", plan)
         print("Saati gelen paylaşım yok.")
         return
     k = sira[0]
