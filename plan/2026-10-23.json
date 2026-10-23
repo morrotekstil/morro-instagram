@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "12:30",
-      "durum": "bekliyor",
+      "durum": "kaçırıldı (saati geçti)",
       "urun_id": "MRR-100199",
       "baslik": "Full Likralı Kapri Tayt İnce bel Biye Lastikli Kadın Rahat Konforlu Tayt",
       "kategori": "Tayt",
@@ -27,7 +27,7 @@
     },
     {
       "saat": "18:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "urun_id": "321-1",
       "baslik": "Kadın Bordo Yüksek Geniş Paça Kumaş Palazzo Pantolon",
       "kategori": "Pantolon",
@@ -43,7 +43,10 @@
         "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-23-2-2.jpg"
       ],
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1987/prod/QC_PREP/20261022/18/f46d1d36-11b7-341d-ad06-0be0621e7d61/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/kadin-bordo-yu-ksek-genis-pac-a-kumas-palazzo-pantolon-p-1221421079?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/kadin-bordo-yu-ksek-genis-pac-a-kumas-palazzo-pantolon-p-1221421079?merchantId=1123267&filterOverPriceListings=false",
+      "paylasim_saati": "2026-10-23T18:51+03:00",
+      "media_id": "18585675247070124",
+      "permalink": "https://www.instagram.com/p/De16_m7EewY/"
     },
     {
       "saat": "21:00",
