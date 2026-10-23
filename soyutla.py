@@ -153,6 +153,7 @@ def manken(img: Image.Image, baslik=""):
         alan = ImageOps.contain(img, (CW, CH), Image.LANCZOS)
         son = Image.new("RGB", (CW, CH), (255, 255, 255))
         son.paste(alan, ((CW - alan.width) // 2, (CH - alan.height) // 2))
+        son.insansiz = True
         return son, oran
 
     # Silüet: arka plan dışındaki her şey, baş hariç
@@ -200,4 +201,5 @@ def manken(img: Image.Image, baslik=""):
     alan = ImageOps.contain(sonuc, (int(CW * 0.92), int(CH * 0.92)), Image.LANCZOS)
     son = Image.new("RGB", (CW, CH), ZEMIN2)
     son.paste(alan, ((CW - alan.width) // 2, (CH - alan.height) // 2))
+    son.insansiz = False
     return son, oran

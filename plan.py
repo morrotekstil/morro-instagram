@@ -149,19 +149,25 @@ def kalem(u, saat, sira, tarih):
     ozel = ozel_gorseller(u)
     soyut_mu = hassas_mi(u)
     kaynaklar = ozel if ozel else u["gorseller"]
-    dosyalar = []
-    for j, kaynak in enumerate(kaynaklar[:A.FOTO_SAYISI], start=1):
+    hazir = []  # (öncelik, görsel)
+    for j, kaynak in enumerate(kaynaklar[:A.FOTO_SAYISI + (3 if soyut_mu else 0)], start=1):
         try:
             img = gorsel.ac(kaynak) if ozel else gorsel.indir(kaynak)
-            if soyut_mu:
+            oncelik = 1
+            if soyut_mu:  # mankeni cansız mankene çevir, pantolon vb. çıkar
                 import soyutla
-                img, oran = soyutla.soyutla(img)
+                img, oran = soyutla.manken(img, u["baslik"])
                 if img is None or oran < 0.03:
                     continue
+                oncelik = 0 if getattr(img, "insansiz", False) else 1
+            hazir.append((oncelik, j, img))
         except Exception:
             if j == 1 and not soyut_mu:
                 raise
             continue
+    hazir.sort(key=lambda t: (t[0], t[1]))  # ürünün tek başına olduğu kareler önce
+    dosyalar = []
+    for _, _, img in hazir[:A.FOTO_SAYISI]:
         dosya = f"media/{tarih}-{sira}-{len(dosyalar) + 1}.jpg"
         gorsel.hazirla(img, etiket if not dosyalar else None, D.KOK / dosya)
         dosyalar.append(dosya)
