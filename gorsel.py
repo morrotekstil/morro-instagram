@@ -23,6 +23,25 @@ def indir(url):
     return img
 
 
+def ac(yol):
+    return ImageOps.exif_transpose(Image.open(yol)).convert("RGB")
+
+
+LOGO = Path(__file__).parent / "logo.png"
+
+
+def _logo_yapistir(arka):
+    """logo.png varsa sol üst köşeye beyaz zemin üzerinde logoyu koyar."""
+    logo = Image.open(LOGO).convert("RGBA")
+    logo = ImageOps.contain(logo, (300, 120), Image.LANCZOS)
+    px, py, x0, y0 = 28, 20, 48, 56
+    kutu = Image.new("RGBA", (logo.width + 2 * px, logo.height + 2 * py), (0, 0, 0, 0))
+    ImageDraw.Draw(kutu).rounded_rectangle((0, 0, kutu.width - 1, kutu.height - 1),
+                                           radius=26, fill=(255, 255, 255, 235))
+    kutu.paste(logo, (px, py), logo)
+    arka.paste(kutu, (x0, y0), kutu)
+
+
 def hazirla(kaynak: Image.Image, etiket: str, cikti: Path):
     W, H = A.GENISLIK, A.YUKSEKLIK
     # Arka plan: görselin bulanık ve açık hali (boşluklar beyaz şerit gibi durmasın)
@@ -31,6 +50,12 @@ def hazirla(kaynak: Image.Image, etiket: str, cikti: Path):
     # Ürün görseli: kesmeden sığdır
     on = ImageOps.contain(kaynak, (W, H), Image.LANCZOS)
     arka.paste(on, ((W - on.width) // 2, (H - on.height) // 2))
+
+    if etiket == A.MARKA_ETIKET and LOGO.exists():
+        _logo_yapistir(arka)
+        cikti.parent.mkdir(parents=True, exist_ok=True)
+        arka.save(cikti, "JPEG", quality=90, optimize=True)
+        return cikti
 
     d = ImageDraw.Draw(arka)
     f = _font(58 if len(etiket) <= 14 else 46)

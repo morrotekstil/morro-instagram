@@ -31,7 +31,17 @@ DRY_RUN = os.environ.get("DRY_RUN", "0") == "1"
 # Görsel
 GENISLIK, YUKSEKLIK = 1080, 1350   # Instagram 4:5 dikey
 ETIKET_RENK = (198, 40, 40)         # kırmızı
-MARKA_ETIKET = "MORRO İÇ GİYİM"     # indirim yoksa yazılacak etiket
+MARKA_ETIKET = "MORRO"              # indirim yoksa yazılacak etiket (logo.png varsa logo kullanılır)
+
+# Instagram'da PAYLAŞILMAYACAK ürünler: başlığında veya kategorisinde bu kelimeler
+# geçenler (mankenli iç çamaşırı fotoğrafları). Bu ürünlerden birini yine de
+# paylaşmak istersen ozel/<ürün kodu>.jpg adıyla kendi görselini yükle
+# (ör. cansız manken veya ürünün tek başına çekimi); o zaman o görsel kullanılır.
+HASSAS_KELIMELER = [
+    "sütyen", "bralet", "büstiyer", "külot", "string", "tanga", "slip", "boxer",
+    "body", "gecelik", "babydoll", "jartiyer", "korse", "fantezi", "mayo",
+    "bikini", "iç çamaşırı takım", "iç giyim takım", "dantel takım",
+]
 
 # Başlığa göre eklenen hashtag'ler
 ETIKETLER = {

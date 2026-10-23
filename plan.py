@@ -48,6 +48,22 @@ def aciklama(u, yuzde):
     return "\n".join(satirlar)
 
 
+def kucuk(m):
+    return (m or "").replace("İ", "i").replace("I", "ı").lower()
+
+
+def ozel_gorsel(u):
+    yol = D.KOK / "ozel" / f"{u['id']}.jpg"
+    return yol if yol.exists() else None
+
+
+def uygun_mu(u):
+    """Mankenli iç çamaşırı ürünleri, özel görseli yoksa paylaşılmaz."""
+    metin = kucuk(u["baslik"]) + " " + kucuk(str(u["kategori"]))
+    hassas = any(k in metin for k in A.HASSAS_KELIMELER)
+    return (not hassas) or ozel_gorsel(u) is not None
+
+
 def son_paylasilanlar(gecmis, gun):
     sinir = (D.simdi() - dt.timedelta(days=gun)).date().isoformat()
     return {p["urun_id"] for p in gecmis if p["tarih"] >= sinir}
@@ -55,6 +71,7 @@ def son_paylasilanlar(gecmis, gun):
 
 def sec(urunler, gecmis, adet):
     yakin = son_paylasilanlar(gecmis, A.TEKRAR_GUN)
+    urunler = [u for u in urunler if uygun_mu(u)]
     adaylar = [u for u in urunler
                if u["stok"] >= A.MIN_STOK and u["gorseller"] and u["id"] not in yakin]
     if len(adaylar) < adet:  # ürün azsa tekrar sınırını gevşet
@@ -106,7 +123,9 @@ def fiyat_degisiklikleri(urunler, gecmis):
 def kalem(u, saat, sira, tarih):
     etiket, yuzde = gorsel.etiket_metni(u["fiyat"], u["liste_fiyat"])
     dosya = f"media/{tarih}-{sira}.jpg"
-    gorsel.hazirla(gorsel.indir(u["gorseller"][0]), etiket, D.KOK / dosya)
+    ozel = ozel_gorsel(u)
+    kaynak = gorsel.ac(ozel) if ozel else gorsel.indir(u["gorseller"][0])
+    gorsel.hazirla(kaynak, etiket, D.KOK / dosya)
     return {
         "saat": saat, "durum": "bekliyor",
         "urun_id": u["id"], "baslik": u["baslik"], "kategori": u["kategori"],
