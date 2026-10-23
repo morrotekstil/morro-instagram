@@ -18,6 +18,7 @@ def main():
         f.unlink()
     adaylar = [u for u in trendyol.urunler() if u["stok"] >= 10 and u["gorseller"]
                and not plan.uygun_mu(u)]
+    adaylar.sort(key=lambda u: 0 if "sütyen" in plan.kucuk(u["baslik"]) else 1)
     print(f"{len(adaylar)} hassas ürün var, {ADET} tanesi deneniyor")
     for i, u in enumerate(adaylar[:ADET], start=1):
         for j, url in enumerate(u["gorseller"][:2], start=1):

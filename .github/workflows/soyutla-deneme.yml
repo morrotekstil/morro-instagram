@@ -27,7 +27,7 @@ jobs:
       - run: |
           pip install -r requirements.txt
           pip install torch --index-url https://download.pytorch.org/whl/cpu
-          pip install transformers==4.46.3 numpy
+          pip install transformers==4.46.3 numpy scipy
       - name: Soyutla
         env:
           TRENDYOL_SELLER_ID: ${{ secrets.TRENDYOL_SELLER_ID }}
