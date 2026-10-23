@@ -98,6 +98,14 @@ def main():
         return
 
     mid, link = instagram.paylas(D.token_al(), urls, k["aciklama"])
+    if k.get("hikaye_url") and A.HIKAYE:
+        try:
+            if gorsel_hazir_mi(k["hikaye_url"]):
+                k["hikaye_id"] = instagram.hikaye_paylas(D.token_al(), k["hikaye_url"])
+                print("Hikaye paylaşıldı")
+        except Exception as e:
+            k["hikaye_hata"] = str(e)[:200]
+            print("Hikaye paylaşılamadı:", e)
     k["durum"] = "paylaşıldı"
     k["paylasim_saati"] = D.simdi().isoformat(timespec="minutes")
     k["media_id"], k["permalink"] = mid, link

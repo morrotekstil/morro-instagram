@@ -77,3 +77,11 @@ def hesap(token):
     """Token'ın hangi hesaba ait olduğunu döndürür (deneme için)."""
     return _kontrol(requests.get(f"{A.IG_API}/me", params={
         "fields": "user_id,username", "access_token": token}, timeout=30))
+
+
+def hikaye_paylas(token, gorsel_url):
+    """Görseli hikaye olarak paylaşır, media_id döndürür."""
+    kap = _kapsayici(token, {"image_url": gorsel_url, "media_type": "STORIES"})
+    _bekle(token, kap)
+    return _kontrol(requests.post(f"{A.IG_API}/{A.IG_USER_ID}/media_publish", data={
+        "creation_id": kap, "access_token": token}, timeout=60))["id"]

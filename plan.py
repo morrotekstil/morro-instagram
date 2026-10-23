@@ -174,6 +174,13 @@ def kalem(u, saat, sira, tarih):
     if not dosyalar:
         raise RuntimeError("kullanılabilir görsel çıkmadı")
     dosya = dosyalar[0]
+    hikaye_dosya = None
+    if A.HIKAYE:
+        try:
+            hikaye_dosya = f"media/{tarih}-{sira}-hikaye.jpg"
+            gorsel.hikaye(hazir[0][2], u["baslik"], u["fiyat"], u["liste_fiyat"], D.KOK / hikaye_dosya)
+        except Exception:
+            hikaye_dosya = None
     return {
         "saat": saat, "durum": "bekliyor",
         "urun_id": u["id"], "baslik": u["baslik"], "kategori": u["kategori"],
@@ -182,6 +189,7 @@ def kalem(u, saat, sira, tarih):
         "gorsel": dosya, "gorsel_url": f"{A.HAM_ADRES}/{dosya}",
         "gorsel_urls": [f"{A.HAM_ADRES}/{d}" for d in dosyalar],
         "manken_silindi": soyut_mu,
+        "hikaye_url": f"{A.HAM_ADRES}/{hikaye_dosya}" if hikaye_dosya else None,
         "kaynak_gorsel": u["gorseller"][0], "link": u.get("link"),
     }
 

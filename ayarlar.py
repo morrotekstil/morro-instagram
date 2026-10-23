@@ -28,6 +28,9 @@ HAM_ADRES = f"https://raw.githubusercontent.com/{REPO}/{DAL}"
 # Sadece deneme: 1 ise Instagram'a hiçbir şey gönderilmez
 DRY_RUN = os.environ.get("DRY_RUN", "0") == "1"
 
+# Her gönderiyle birlikte aynı ürünün fiyatlı hikayesi de paylaşılsın mı
+HIKAYE = True
+
 # Görsel
 FOTO_SAYISI = 5   # her gönderideki en fazla fotoğraf (kaydırmalı gönderi, 2-10 arası)
 GENISLIK, YUKSEKLIK = 1080, 1350   # Instagram 4:5 dikey
