@@ -38,8 +38,9 @@ MARKA_ETIKET = "MORRO"              # indirim yoksa yazılacak etiket (logo.png 
 # geçenler (mankenli iç çamaşırı fotoğrafları). Bu ürünlerden birini yine de
 # paylaşmak istersen ozel/<ürün kodu>.jpg adıyla kendi görselini yükle
 # (ör. cansız manken veya ürünün tek başına çekimi); o zaman o görsel kullanılır.
+# Erkek ürünleri (başlıkta/kategoride "erkek" geçen) bu kurala hiç takılmaz.
 HASSAS_KELIMELER = [
-    "sütyen", "bralet", "büstiyer", "külot", "string", "tanga", "slip", "boxer",
+    "sütyen", "bralet", "büstiyer", "külot", "string", "tanga", "slip",
     "body", "gecelik", "babydoll", "jartiyer", "korse", "fantezi", "mayo",
     "bikini", "iç çamaşırı takım", "iç giyim takım", "dantel takım",
 ]

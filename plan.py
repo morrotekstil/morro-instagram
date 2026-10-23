@@ -70,6 +70,8 @@ def ozel_gorsel(u):
 def uygun_mu(u):
     """Mankenli iç çamaşırı ürünleri, özel görseli yoksa paylaşılmaz."""
     metin = kucuk(u["baslik"]) + " " + kucuk(str(u["kategori"]))
+    if "erkek" in metin:
+        return True
     hassas = any(k in metin for k in A.HASSAS_KELIMELER)
     return (not hassas) or ozel_gorsel(u) is not None
 
