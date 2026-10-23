@@ -24,7 +24,7 @@ def main():
         for j, url in enumerate(u["gorseller"][:2], start=1):
             try:
                 img = gorsel.indir(url)
-                soyut, oran = soyutla.soyutla(img)
+                soyut, oran = soyutla.manken(img, u['baslik'])
                 img.thumbnail((540, 675))
                 img.save(KLASOR / f"{i:02d}-{j}-once.jpg", quality=85)
                 if soyut:
