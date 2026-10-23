@@ -67,13 +67,16 @@ def ozel_gorsel(u):
     return o[0] if o else None
 
 
-def uygun_mu(u):
-    """Mankenli iç çamaşırı ürünleri, özel görseli yoksa paylaşılmaz."""
+def hassas_mi(u):
+    """Mankenli kadın iç çamaşırı ürünü mü (ve özel görseli yok mu)?"""
     metin = kucuk(u["baslik"]) + " " + kucuk(str(u["kategori"]))
-    if "erkek" in metin:
-        return True
-    hassas = any(k in metin for k in A.HASSAS_KELIMELER)
-    return (not hassas) or ozel_gorsel(u) is not None
+    if "erkek" in metin or ozel_gorsel(u) is not None:
+        return False
+    return any(k in metin for k in A.HASSAS_KELIMELER)
+
+
+def uygun_mu(u):
+    return not hassas_mi(u)
 
 
 def son_paylasilanlar(gecmis, gun):
@@ -83,7 +86,8 @@ def son_paylasilanlar(gecmis, gun):
 
 def sec(urunler, gecmis, adet):
     yakin = son_paylasilanlar(gecmis, A.TEKRAR_GUN)
-    urunler = [u for u in urunler if uygun_mu(u)]
+    if not A.SOYUTLA:
+        urunler = [u for u in urunler if uygun_mu(u)]
     adaylar = [u for u in urunler
                if u["stok"] >= A.MIN_STOK and u["gorseller"] and u["id"] not in yakin]
     if len(adaylar) < adet:  # ürün azsa tekrar sınırını gevşet
@@ -97,6 +101,14 @@ def sec(urunler, gecmis, adet):
         return indirim * 0.08 + math.log10(u["stok"] + 1) + rnd.random() * 2
 
     adaylar.sort(key=puan, reverse=True)
+    hassas_say, sinirli = 0, []
+    for u in adaylar:  # günlük hassas ürün sınırı
+        if hassas_mi(u):
+            if hassas_say >= A.GUNLUK_HASSAS:
+                continue
+            hassas_say += 1
+        sinirli.append(u)
+    adaylar = sinirli
     secilen, kategoriler = [], set()
     for u in adaylar:  # önce farklı kategorilerden
         if u["kategori"] not in kategoriler:
@@ -135,18 +147,26 @@ def fiyat_degisiklikleri(urunler, gecmis):
 def kalem(u, saat, sira, tarih):
     etiket, yuzde = gorsel.etiket_metni(u["fiyat"], u["liste_fiyat"])
     ozel = ozel_gorseller(u)
+    soyut_mu = hassas_mi(u)
     kaynaklar = ozel if ozel else u["gorseller"]
     dosyalar = []
     for j, kaynak in enumerate(kaynaklar[:A.FOTO_SAYISI], start=1):
         try:
             img = gorsel.ac(kaynak) if ozel else gorsel.indir(kaynak)
+            if soyut_mu:
+                import soyutla
+                img, oran = soyutla.soyutla(img)
+                if img is None or oran < 0.03:
+                    continue
         except Exception:
-            if j == 1:
+            if j == 1 and not soyut_mu:
                 raise
             continue
         dosya = f"media/{tarih}-{sira}-{len(dosyalar) + 1}.jpg"
         gorsel.hazirla(img, etiket if not dosyalar else None, D.KOK / dosya)
         dosyalar.append(dosya)
+    if not dosyalar:
+        raise RuntimeError("kullanılabilir görsel çıkmadı")
     dosya = dosyalar[0]
     return {
         "saat": saat, "durum": "bekliyor",
@@ -155,6 +175,7 @@ def kalem(u, saat, sira, tarih):
         "etiket": etiket, "aciklama": aciklama(u, yuzde),
         "gorsel": dosya, "gorsel_url": f"{A.HAM_ADRES}/{dosya}",
         "gorsel_urls": [f"{A.HAM_ADRES}/{d}" for d in dosyalar],
+        "manken_silindi": soyut_mu,
         "kaynak_gorsel": u["gorseller"][0], "link": u.get("link"),
     }
 
@@ -180,10 +201,13 @@ def main():
             f.unlink()
 
     urunler = trendyol.urunler()
-    secim = sec(urunler, gecmis, len(A.SAATLER) + A.YEDEK_SAYISI)
+    hedef = len(A.SAATLER) + A.YEDEK_SAYISI
+    secim = sec(urunler, gecmis, hedef + 4)  # görseli çıkmayanların yerine fazladan aday
     kalemler, yedekler = [], []
     sira = 1
     for u in secim:
+        if len(kalemler) + len(yedekler) >= hedef:
+            break
         try:
             saat = A.SAATLER[len(kalemler)] if len(kalemler) < len(A.SAATLER) else None
             k = kalem(u, saat, sira, tarih)
