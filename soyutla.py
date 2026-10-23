@@ -142,9 +142,18 @@ def manken(img: Image.Image, baslik=""):
         urun = _temizle(np.isin(et, [4, 5, 7]))
     else:
         urun = ust | alt
+    urun = ndimage.binary_fill_holes(ndimage.binary_closing(urun, iterations=6))
     oran = float(urun.mean())
     if oran < 0.01:
         return None, 0.0
+
+    # Fotoğrafta insan yoksa (ürün tek başına çekilmiş) olduğu gibi kullan
+    if float(np.isin(et, TEN).mean()) < 0.02:
+        CW, CH = A.GENISLIK, A.YUKSEKLIK
+        alan = ImageOps.contain(img, (CW, CH), Image.LANCZOS)
+        son = Image.new("RGB", (CW, CH), (255, 255, 255))
+        son.paste(alan, ((CW - alan.width) // 2, (CH - alan.height) // 2))
+        return son, oran
 
     # Silüet: arka plan dışındaki her şey, baş hariç
     bas = np.isin(et, [1, 2, 3, 11])
