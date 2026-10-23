@@ -20,11 +20,39 @@ def _kontrol(r):
     return veri
 
 
-def paylas(token, gorsel_url, aciklama):
-    """Tek görselli gönderi paylaşır, (media_id, permalink) döndürür."""
-    r = requests.post(f"{A.IG_API}/{A.IG_USER_ID}/media", data={
-        "image_url": gorsel_url, "caption": aciklama, "access_token": token}, timeout=60)
-    kap = _kontrol(r)["id"]
+def _kapsayici(token, veri):
+    veri = dict(veri, access_token=token)
+    return _kontrol(requests.post(f"{A.IG_API}/{A.IG_USER_ID}/media", data=veri, timeout=60))["id"]
+
+
+def paylas(token, gorsel_urls, aciklama):
+    """Gönderi paylaşır: 1 görsel ise tekli, fazlaysa kaydırmalı (carousel).
+    (media_id, permalink) döndürür."""
+    if isinstance(gorsel_urls, str):
+        gorsel_urls = [gorsel_urls]
+    gorsel_urls = gorsel_urls[:10]
+    if len(gorsel_urls) == 1:
+        kap = _kapsayici(token, {"image_url": gorsel_urls[0], "caption": aciklama})
+    else:
+        cocuklar = []
+        for u in gorsel_urls:
+            c = _kapsayici(token, {"image_url": u, "is_carousel_item": "true"})
+            _bekle(token, c)
+            cocuklar.append(c)
+        kap = _kapsayici(token, {"media_type": "CAROUSEL", "children": ",".join(cocuklar),
+                                  "caption": aciklama})
+    _bekle(token, kap)
+    mid = _kontrol(requests.post(f"{A.IG_API}/{A.IG_USER_ID}/media_publish", data={
+        "creation_id": kap, "access_token": token}, timeout=60))["id"]
+    try:
+        link = _kontrol(requests.get(f"{A.IG_API}/{mid}", params={
+            "fields": "permalink", "access_token": token}, timeout=30)).get("permalink")
+    except IGHata:
+        link = None
+    return mid, link
+
+
+def _bekle(token, kap):
     for _ in range(30):
         st = _kontrol(requests.get(f"{A.IG_API}/{kap}", params={
             "fields": "status_code,status", "access_token": token}, timeout=30))
@@ -36,14 +64,6 @@ def paylas(token, gorsel_url, aciklama):
         time.sleep(5)
     else:
         raise IGHata("Görsel işleme zaman aşımı")
-    mid = _kontrol(requests.post(f"{A.IG_API}/{A.IG_USER_ID}/media_publish", data={
-        "creation_id": kap, "access_token": token}, timeout=60))["id"]
-    try:
-        link = _kontrol(requests.get(f"{A.IG_API}/{mid}", params={
-            "fields": "permalink", "access_token": token}, timeout=30)).get("permalink")
-    except IGHata:
-        link = None
-    return mid, link
 
 
 def yenile(token):

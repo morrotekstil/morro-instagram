@@ -51,6 +51,11 @@ def hazirla(kaynak: Image.Image, etiket: str, cikti: Path):
     on = ImageOps.contain(kaynak, (W, H), Image.LANCZOS)
     arka.paste(on, ((W - on.width) // 2, (H - on.height) // 2))
 
+    if not etiket:  # 2. ve sonraki fotoğraflar etiketsiz
+        cikti.parent.mkdir(parents=True, exist_ok=True)
+        arka.save(cikti, "JPEG", quality=90, optimize=True)
+        return cikti
+
     if etiket == A.MARKA_ETIKET and LOGO.exists():
         _logo_yapistir(arka)
         cikti.parent.mkdir(parents=True, exist_ok=True)

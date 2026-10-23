@@ -29,6 +29,7 @@ HAM_ADRES = f"https://raw.githubusercontent.com/{REPO}/{DAL}"
 DRY_RUN = os.environ.get("DRY_RUN", "0") == "1"
 
 # Görsel
+FOTO_SAYISI = 5   # her gönderideki en fazla fotoğraf (kaydırmalı gönderi, 2-10 arası)
 GENISLIK, YUKSEKLIK = 1080, 1350   # Instagram 4:5 dikey
 ETIKET_RENK = (198, 40, 40)         # kırmızı
 MARKA_ETIKET = "MORRO"              # indirim yoksa yazılacak etiket (logo.png varsa logo kullanılır)
