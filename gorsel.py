@@ -30,7 +30,7 @@ def ac(yol):
 LOGO = Path(__file__).parent / "logo.png"
 
 
-def _logo_yapistir(arka):
+def _logo_yapistir(arka, ortala=False):
     """logo.png varsa sol üst köşeye beyaz zemin üzerinde logoyu koyar."""
     logo = Image.open(LOGO).convert("RGBA")
     logo = ImageOps.contain(logo, (300, 120), Image.LANCZOS)
@@ -39,6 +39,8 @@ def _logo_yapistir(arka):
     ImageDraw.Draw(kutu).rounded_rectangle((0, 0, kutu.width - 1, kutu.height - 1),
                                            radius=26, fill=(255, 255, 255, 235))
     kutu.paste(logo, (px, py), logo)
+    if ortala:
+        x0 = (arka.width - kutu.width) // 2
     arka.paste(kutu, (x0, y0), kutu)
 
 
@@ -111,7 +113,7 @@ def hikaye(kaynak: Image.Image, baslik, fiyat, liste_fiyat, cikti: Path):
 
     # üstte marka
     if LOGO.exists():
-        _logo_yapistir(arka)
+        _logo_yapistir(arka, ortala=True)
     else:
         f = _font(64)
         tb = d.textbbox((0, 0), A.MARKA_ETIKET, font=f)
