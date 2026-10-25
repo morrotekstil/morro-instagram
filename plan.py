@@ -31,15 +31,34 @@ def hashtagler(baslik):
     return " ".join(ek[:10] + A.SABIT_ETIKETLER.split())
 
 
-def aciklama(u, yuzde):
-    satirlar = [u["baslik"], ""]
-    if yuzde:
-        satirlar.append(f"💰 {fiyat_yaz(u['liste_fiyat'])} TL yerine {fiyat_yaz(u['fiyat'])} TL")
-    else:
-        satirlar.append(f"💰 {fiyat_yaz(u['fiyat'])} TL")
+def detaylar(u):
+    """Gönderi ve hikayede gösterilecek (etiket, değer) listesi. Fiyat yok."""
+    oz = u.get("ozellikler") or {}
+    out = []
+    if u.get("renkler"):
+        out.append(("🎨", "Renk", ", ".join(u["renkler"][:6])))
     if u.get("stoklu_beden"):
-        satirlar.append("📏 Bedenler: " + ", ".join(u["stoklu_beden"][:8]))
+        out.append(("📏", "Beden", ", ".join(u["stoklu_beden"][:10])))
+    icerik = oz.get("Materyal Bileşeni") or oz.get("Materyal")
+    if icerik:
+        out.append(("🧵", "Kumaş içeriği", icerik))
+    if oz.get("Kumaş Tipi"):
+        out.append(("🪡", "Kumaş tipi", oz["Kumaş Tipi"]))
+    if oz.get("Paket İçeriği") and oz["Paket İçeriği"].lower() != "tekli":
+        out.append(("📦", "Paket içeriği", oz["Paket İçeriği"]))
+    for ad, ik in (("Kalıp", "👕"), ("Bel", "📐"), ("Yaka Tipi", "👔"), ("Kol Boyu", "💪"),
+                   ("Paça Tipi", "👖"), ("Ek Özellik", "✅"), ("Ürün Detayı", "🔎")):
+        if oz.get(ad):
+            out.append((ik, ad, oz[ad]))
+    return out
+
+
+def aciklama(u, yuzde=0):
+    satirlar = [u["baslik"], "", "✨ Ürün özellikleri"]
+    for ik, ad, deger in detaylar(u):
+        satirlar.append(f"{ik} {ad}: {deger}")
     satirlar += [
+        "",
         "🚚 Stokta, hızlı kargo",
         "🛒 Trendyol'da Morro mağazamızda. Link profilde!",
         "",
@@ -178,7 +197,7 @@ def kalem(u, saat, sira, tarih):
     if A.HIKAYE:
         try:
             hikaye_dosya = f"media/{tarih}-{sira}-hikaye.jpg"
-            gorsel.hikaye(hazir[0][2], u["baslik"], u["fiyat"], u["liste_fiyat"], D.KOK / hikaye_dosya)
+            gorsel.hikaye(hazir[0][2], u["baslik"], detaylar(u), D.KOK / hikaye_dosya)
         except Exception:
             hikaye_dosya = None
     return {

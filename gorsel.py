@@ -94,8 +94,8 @@ def etiket_metni(fiyat, liste_fiyat):
     return A.MARKA_ETIKET, 0
 
 
-def hikaye(kaynak: Image.Image, baslik, fiyat, liste_fiyat, cikti: Path):
-    """1080x1920 Instagram hikayesi: ürün, fiyat ve mağaza yönlendirmesi."""
+def hikaye(kaynak: Image.Image, baslik, detaylar, cikti: Path):
+    """1080x1920 Instagram hikayesi: ürün, özellikleri ve mağaza yönlendirmesi (fiyat yok)."""
     W, H = 1080, 1920
     kaynak = kaynak.convert("RGB")
     arka = ImageOps.fit(kaynak, (W, H), Image.LANCZOS).filter(ImageFilter.GaussianBlur(45))
@@ -119,34 +119,27 @@ def hikaye(kaynak: Image.Image, baslik, fiyat, liste_fiyat, cikti: Path):
         tb = d.textbbox((0, 0), A.MARKA_ETIKET, font=f)
         d.text(((W - (tb[2] - tb[0])) // 2, 90), A.MARKA_ETIKET, font=f, fill=(40, 40, 40))
 
-    # altta fiyat kartı
-    def tl(v):
-        s = f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
-        return (s[:-3] if s.endswith(",00") else s) + " TL"
-
-    kart_y = y + on.height + 50
-    d.rounded_rectangle((60, kart_y, W - 60, min(kart_y + 330, H - 60)), radius=36, fill=(255, 255, 255))
-    ad = baslik if len(baslik) <= 42 else baslik[:40].rsplit(" ", 1)[0] + "…"
-    fa = _font(40, kalin=False)
+    # altta özellik kartı (fiyat yok)
+    satirlar = [f"{ad}: {deger}" for _, ad, deger in detaylar[:4]]
+    kart_y = y + on.height + 40
+    fa = _font(40)
+    fd = _font(34, kalin=False)
+    yuk = 90 + 52 * len(satirlar) + 70
+    d.rounded_rectangle((60, kart_y, W - 60, min(kart_y + yuk, H - 60)), radius=36, fill=(255, 255, 255))
+    ad = baslik if len(baslik) <= 40 else baslik[:38].rsplit(" ", 1)[0] + "…"
     tb = d.textbbox((0, 0), ad, font=fa)
-    d.text(((W - (tb[2] - tb[0])) // 2, kart_y + 30), ad, font=fa, fill=(60, 60, 60))
-    fp = _font(96)
-    fiyat_m = tl(fiyat)
-    tb = d.textbbox((0, 0), fiyat_m, font=fp)
-    px = (W - (tb[2] - tb[0])) // 2
-    d.text((px, kart_y + 90), fiyat_m, font=fp, fill=A.ETIKET_RENK)
-    if liste_fiyat and liste_fiyat > fiyat * 1.04:
-        fl = _font(44, kalin=False)
-        eski = tl(liste_fiyat)
-        tb2 = d.textbbox((0, 0), eski, font=fl)
-        ex = (W - (tb2[2] - tb2[0])) // 2
-        ey = kart_y + 215
-        d.text((ex, ey), eski, font=fl, fill=(140, 140, 140))
-        d.line((ex, ey + 28, ex + tb2[2] - tb2[0], ey + 28), fill=(140, 140, 140), width=4)
+    d.text(((W - (tb[2] - tb[0])) // 2, kart_y + 28), ad, font=fa, fill=A.ETIKET_RENK)
+    yy = kart_y + 95
+    for sat in satirlar:
+        if len(sat) > 46:
+            sat = sat[:45] + "…"
+        tb = d.textbbox((0, 0), sat, font=fd)
+        d.text(((W - (tb[2] - tb[0])) // 2, yy), sat, font=fd, fill=(60, 60, 60))
+        yy += 52
     alt = "Trendyol'da Morro mağazamızda · Link profilde"
-    fs = _font(34, kalin=False)
+    fs = _font(30, kalin=False)
     tb = d.textbbox((0, 0), alt, font=fs)
-    d.text(((W - (tb[2] - tb[0])) // 2, min(kart_y + 275, H - 100)), alt, font=fs, fill=(90, 90, 90))
+    d.text(((W - (tb[2] - tb[0])) // 2, min(yy + 12, H - 100)), alt, font=fs, fill=(120, 120, 120))
 
     cikti.parent.mkdir(parents=True, exist_ok=True)
     arka.save(cikti, "JPEG", quality=90, optimize=True)

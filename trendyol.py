@@ -53,6 +53,11 @@ def _link(v):
     return None
 
 
+# Gönderi açıklamasında gösterilecek ürün özellikleri (Trendyol özellik adları)
+OZELLIKLER = ["Materyal Bileşeni", "Materyal", "Kumaş Tipi", "Paket İçeriği", "Kalıp",
+              "Bel", "Yaka Tipi", "Kol Boyu", "Paça Tipi", "Desen", "Ek Özellik", "Ürün Detayı"]
+
+
 def urunler():
     """Varyantları ana ürüne (productMainId) göre birleştirir.
 
@@ -74,11 +79,21 @@ def urunler():
             "liste_fiyat": None,
             "stok": 0,
             "stoklu_beden": [],
+            "renkler": [],
+            "ozellikler": {},
             "gorseller": [],
             "link": None,
         })
         adet = int(v.get("quantity") or 0)
         g["stok"] += adet
+        oz = {str(a.get("attributeName", "")).strip(): str(a.get("attributeValue") or "").strip()
+              for a in v.get("attributes", []) or [] if a.get("attributeValue")}
+        for ad in OZELLIKLER:
+            if oz.get(ad) and ad not in g["ozellikler"]:
+                g["ozellikler"][ad] = oz[ad]
+        renk = (v.get("color") or oz.get("Renk") or "").strip()
+        if adet > 0 and renk and renk not in g["renkler"]:
+            g["renkler"].append(renk)
         satis = float(v.get("salePrice") or 0)
         liste = float(v.get("listPrice") or 0)
         if adet > 0 and satis > 0:
