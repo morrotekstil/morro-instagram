@@ -103,14 +103,18 @@ def son_paylasilanlar(gecmis, gun):
     return {p["urun_id"] for p in gecmis if p["tarih"] >= sinir}
 
 
-def sec(urunler, gecmis, adet):
-    yakin = son_paylasilanlar(gecmis, A.TEKRAR_GUN)
+def morro_mu(u):
+    return A.MORRO_MARKA in kucuk(u.get("marka"))
+
+
+def sec(urunler, gecmis, adet, tekrar_gun=None):
+    yakin = son_paylasilanlar(gecmis, tekrar_gun or A.TEKRAR_GUN)
     if not A.SOYUTLA:
         urunler = [u for u in urunler if uygun_mu(u)]
     adaylar = [u for u in urunler
                if u["stok"] >= A.MIN_STOK and u["gorseller"] and u["id"] not in yakin]
     if len(adaylar) < adet:  # ürün azsa tekrar sınırını gevşet
-        yakin7 = son_paylasilanlar(gecmis, 7)
+        yakin7 = son_paylasilanlar(gecmis, min(7, tekrar_gun or 7))
         adaylar = [u for u in urunler
                    if u["stok"] >= A.MIN_STOK and u["gorseller"] and u["id"] not in yakin7]
     rnd = random.Random(D.bugun())
@@ -163,13 +167,14 @@ def fiyat_degisiklikleri(urunler, gecmis):
     return sonuc
 
 
-def kalem(u, saat, sira, tarih):
+def kalem(u, saat, sira, tarih, tur="gonderi", grup="diger"):
     etiket, yuzde = gorsel.etiket_metni(u["fiyat"], u["liste_fiyat"])
     ozel = ozel_gorseller(u)
     soyut_mu = hassas_mi(u)
     kaynaklar = ozel if ozel else u["gorseller"]
+    foto = 1 if tur == "hikaye" else A.FOTO_SAYISI
     hazir = []  # (öncelik, görsel)
-    for j, kaynak in enumerate(kaynaklar[:A.FOTO_SAYISI + (3 if soyut_mu else 0)], start=1):
+    for j, kaynak in enumerate(kaynaklar[:foto + (3 if soyut_mu else 0)], start=1):
         try:
             img = gorsel.ac(kaynak) if ozel else gorsel.indir(kaynak)
             oncelik = 1
@@ -186,26 +191,29 @@ def kalem(u, saat, sira, tarih):
             continue
     hazir.sort(key=lambda t: (t[0], t[1]))  # ürünün tek başına olduğu kareler önce
     dosyalar = []
-    for _, _, img in hazir[:A.FOTO_SAYISI]:
+    for _, _, img in (hazir[:A.FOTO_SAYISI] if tur == "gonderi" else []):
         dosya = f"media/{tarih}-{sira}-{len(dosyalar) + 1}.jpg"
         gorsel.hazirla(img, etiket if not dosyalar else None, D.KOK / dosya)
         dosyalar.append(dosya)
-    if not dosyalar:
+    if not hazir:
         raise RuntimeError("kullanılabilir görsel çıkmadı")
-    dosya = dosyalar[0]
+    dosya = dosyalar[0] if dosyalar else None
     hikaye_dosya = None
-    if A.HIKAYE:
+    if A.HIKAYE or tur == "hikaye":
         try:
             hikaye_dosya = f"media/{tarih}-{sira}-hikaye.jpg"
             gorsel.hikaye(hazir[0][2], u["baslik"], detaylar(u), D.KOK / hikaye_dosya)
         except Exception:
+            if tur == "hikaye":
+                raise
             hikaye_dosya = None
     return {
-        "saat": saat, "durum": "bekliyor",
+        "saat": saat, "durum": "bekliyor", "tur": tur, "grup": grup,
+        "marka": u.get("marka"),
         "urun_id": u["id"], "baslik": u["baslik"], "kategori": u["kategori"],
         "fiyat": u["fiyat"], "liste_fiyat": u["liste_fiyat"], "stok": u["stok"],
         "etiket": etiket, "aciklama": aciklama(u, yuzde),
-        "gorsel": dosya, "gorsel_url": f"{A.HAM_ADRES}/{dosya}",
+        "gorsel": dosya, "gorsel_url": f"{A.HAM_ADRES}/{dosya}" if dosya else None,
         "gorsel_urls": [f"{A.HAM_ADRES}/{d}" for d in dosyalar],
         "manken_silindi": soyut_mu,
         "hikaye_url": f"{A.HAM_ADRES}/{hikaye_dosya}" if hikaye_dosya else None,
@@ -234,22 +242,36 @@ def main():
             f.unlink()
 
     urunler = trendyol.urunler()
-    hedef = len(A.SAATLER) + A.YEDEK_SAYISI
-    secim = sec(urunler, gecmis, hedef + 4)  # görseli çıkmayanların yerine fazladan aday
     kalemler, yedekler = [], []
     sira = 1
-    for u in secim:
-        if len(kalemler) + len(yedekler) >= hedef:
-            break
-        try:
-            saat = A.SAATLER[len(kalemler)] if len(kalemler) < len(A.SAATLER) else None
-            k = kalem(u, saat, sira, tarih)
-            sira += 1
-            (kalemler if saat else yedekler).append(k)
-        except Exception as e:
-            notlar.append(f"{u['baslik'][:40]}: görsel hazırlanamadı ({e})")
-    for y in yedekler:
-        y["durum"] = "yedek"
+    for grup in ("morro", "diger"):
+        slotlar = [p for p in A.PROGRAM if p[2] == grup]
+        if not slotlar:
+            continue
+        havuz = [u for u in urunler if morro_mu(u) == (grup == "morro")]
+        tekrar = A.MORRO_TEKRAR_GUN if grup == "morro" else A.TEKRAR_GUN
+        hedef = len(slotlar) + A.YEDEK_SAYISI
+        secim = sec(havuz, gecmis, hedef + 4, tekrar)  # görseli çıkmayanların yerine fazladan aday
+        dolu, yedek_say = 0, 0
+        for u in secim:
+            if dolu >= len(slotlar) and yedek_say >= A.YEDEK_SAYISI:
+                break
+            saat, tur, _ = slotlar[dolu] if dolu < len(slotlar) else (None, "gonderi", grup)
+            try:
+                k = kalem(u, saat, sira, tarih, tur, grup)
+                sira += 1
+                if saat:
+                    kalemler.append(k)
+                    dolu += 1
+                else:
+                    k["durum"] = "yedek"
+                    yedekler.append(k)
+                    yedek_say += 1
+            except Exception as e:
+                notlar.append(f"{u['baslik'][:40]}: görsel hazırlanamadı ({e})")
+        if dolu < len(slotlar):
+            notlar.append(f"{grup}: {len(slotlar) - dolu} saat için uygun ürün bulunamadı")
+    kalemler.sort(key=lambda k: k["saat"])
 
     plan = {
         "tarih": tarih,
@@ -265,7 +287,7 @@ def main():
     print(f"Plan hazır: {len(kalemler)} paylaşım, {len(yedekler)} yedek, "
           f"{len(plan['fiyat_degisiklikleri'])} fiyat değişikliği")
     for k in kalemler:
-        print(f"  {k['saat']}  {k['baslik'][:60]}  {k['fiyat']} TL  [{k['etiket']}]")
+        print(f"  {k['saat']}  {k['tur']:7} {k['grup']:5}  {k['baslik'][:60]}")
     for n in notlar:
         print("  not:", n)
 

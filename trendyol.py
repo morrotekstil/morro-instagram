@@ -53,6 +53,13 @@ def _link(v):
     return None
 
 
+def _marka(v):
+    b = v.get("brand") or v.get("brandName") or ""
+    if isinstance(b, dict):
+        b = b.get("name") or ""
+    return str(b).strip()
+
+
 # Gönderi açıklamasında gösterilecek ürün özellikleri (Trendyol özellik adları)
 OZELLIKLER = ["Materyal Bileşeni", "Materyal", "Kumaş Tipi", "Paket İçeriği", "Kalıp",
               "Bel", "Yaka Tipi", "Kol Boyu", "Paça Tipi", "Desen", "Ek Özellik", "Ürün Detayı"]
@@ -75,6 +82,7 @@ def urunler():
             "id": anahtar,
             "baslik": (v.get("title") or "").strip(),
             "kategori": v.get("categoryName") or v.get("pimCategoryId") or "",
+            "marka": _marka(v),
             "fiyat": None,
             "liste_fiyat": None,
             "stok": 0,

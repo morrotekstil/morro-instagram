@@ -65,8 +65,11 @@ def main():
     if guncel is not None:
         u = guncel.get(k["urun_id"])
         if not u or u["stok"] < 1:
-            yedek = next((y for y in plan.get("yedekler", []) if y["durum"] == "yedek"
-                          and guncel.get(y["urun_id"], {}).get("stok", 0) >= 1), None)
+            uygun = [y for y in plan.get("yedekler", []) if y["durum"] == "yedek"
+                     and guncel.get(y["urun_id"], {}).get("stok", 0) >= 1]
+            # önce aynı gruptan (Morro yerine Morro) yedek
+            yedek = next((y for y in uygun if y.get("grup") == k.get("grup")), None) or \
+                next(iter(uygun), None)
             if not yedek:
                 k["durum"] = "atlandı (stok yok, yedek yok)"
                 if not A.DRY_RUN:
@@ -78,13 +81,21 @@ def main():
             k["durum"] = "yerine yedek geçti (stok bitti)"
             yedek["durum"] = "bekliyor"
             yedek["saat"] = k["saat"]
+            yedek["tur"] = k.get("tur", "gonderi")
             plan["paylasimlar"].append(yedek)
             k = yedek
         elif abs(u["fiyat"] - k["fiyat"]) >= 1:
             print(f"Uyarı: fiyat sabahtan beri değişti ({k['fiyat']} -> {u['fiyat']})")
 
-    urls = k.get("gorsel_urls") or [k["gorsel_url"]]
-    for url in urls:
+    sadece_hikaye = k.get("tur") == "hikaye"
+    urls = [] if sadece_hikaye else (k.get("gorsel_urls") or [k["gorsel_url"]])
+    if sadece_hikaye:
+        if not k.get("hikaye_url"):
+            raise SystemExit("Hikaye görseli yok")
+        urls_kontrol = [k["hikaye_url"]]
+    else:
+        urls_kontrol = urls
+    for url in urls_kontrol:
         if not gorsel_hazir_mi(url):
             raise SystemExit(f"Görsel adresine ulaşılamıyor: {url}")
 
@@ -93,12 +104,21 @@ def main():
             print("[DENEME] Instagram token'ı geçerli, hesap:", instagram.hesap(D.token_al()).get("username"))
         except Exception as e:
             print("[DENEME] Instagram token'ı ÇALIŞMIYOR:", e)
-        print(f"[DENEME] Paylaşılacaktı ({len(urls)} fotoğraf):", k["baslik"], urls)
-        print(k["aciklama"])
+        if sadece_hikaye:
+            print("[DENEME] Sadece hikaye paylaşılacaktı:", k["baslik"], k["hikaye_url"])
+        else:
+            print(f"[DENEME] Paylaşılacaktı ({len(urls)} fotoğraf):", k["baslik"], urls)
+            print(k["aciklama"])
         return
 
-    mid, link = instagram.paylas(D.token_al(), urls, k["aciklama"])
-    if k.get("hikaye_url") and A.HIKAYE:
+    if sadece_hikaye:
+        mid = instagram.hikaye_paylas(D.token_al(), k["hikaye_url"])
+        link = None
+        k["hikaye_id"] = mid
+        print("Hikaye paylaşıldı")
+    else:
+        mid, link = instagram.paylas(D.token_al(), urls, k["aciklama"])
+    if not sadece_hikaye and k.get("hikaye_url") and A.HIKAYE:
         try:
             if gorsel_hazir_mi(k["hikaye_url"]):
                 k["hikaye_id"] = instagram.hikaye_paylas(D.token_al(), k["hikaye_url"])
@@ -112,6 +132,7 @@ def main():
     gecmis = D.oku(D.GECMIS, [])
     gecmis.append({
         "tarih": plan["tarih"], "saat": k["saat"], "urun_id": k["urun_id"],
+        "tur": k.get("tur", "gonderi"), "grup": k.get("grup"),
         "baslik": k["baslik"], "fiyat": k["fiyat"], "liste_fiyat": k["liste_fiyat"],
         "media_id": mid, "permalink": link,
     })

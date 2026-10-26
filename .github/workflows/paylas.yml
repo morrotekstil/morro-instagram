@@ -3,9 +3,15 @@ name: Instagram paylaşımı
 on:
   schedule:
     # GitHub zamanlı işleri birkaç dakika geç başlatabildiği için biraz erken kuruldu
-    - cron: "20 9 * * *"    # 12:30 paylaşımı (Türkiye)
-    - cron: "20 15 * * *"   # 18:30 paylaşımı
-    - cron: "50 17 * * *"   # 21:00 paylaşımı
+    - cron: "20 6 * * *"    # 09:30 hikaye (Türkiye)
+    - cron: "20 7 * * *"    # 10:30 gönderi
+    - cron: "50 8 * * *"    # 12:00 hikaye
+    - cron: "50 9 * * *"    # 13:00 gönderi (Morro)
+    - cron: "50 11 * * *"   # 15:00 hikaye
+    - cron: "20 13 * * *"   # 16:30 gönderi
+    - cron: "50 14 * * *"   # 18:00 hikaye
+    - cron: "20 16 * * *"   # 19:30 gönderi (Morro)
+    - cron: "20 18 * * *"   # 21:30 gönderi (Morro)
   workflow_dispatch:
     inputs:
       simdi:

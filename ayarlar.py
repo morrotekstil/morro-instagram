@@ -9,13 +9,29 @@ import os
 IG_USER_ID = os.environ.get("IG_USER_ID", "17841407152280652")
 IG_API = "https://graph.instagram.com/v23.0"
 
-# Paylaşım saatleri (Türkiye saati)
-SAATLER = ["12:30", "18:30", "21:00"]
+# Günlük paylaşım programı (Türkiye saati): (saat, tür, grup)
+#   tür:  "gonderi" = kaydırmalı gönderi + aynı ürünün hikayesi
+#         "hikaye"  = sadece hikaye
+#   grup: "morro"   = Morro markalı ürün, "diger" = diğer markalar
+PROGRAM = [
+    ("09:30", "hikaye", "diger"),
+    ("10:30", "gonderi", "diger"),
+    ("12:00", "hikaye", "diger"),
+    ("13:00", "gonderi", "morro"),
+    ("15:00", "hikaye", "diger"),
+    ("16:30", "gonderi", "diger"),
+    ("18:00", "hikaye", "diger"),
+    ("19:30", "gonderi", "morro"),
+    ("21:30", "gonderi", "morro"),
+]
+SAATLER = [p[0] for p in PROGRAM]
+MORRO_MARKA = "morro"     # Trendyol'daki marka adı (büyük/küçük harf fark etmez)
+MORRO_TEKRAR_GUN = 10     # Morro ürünü en erken kaç gün sonra tekrar paylaşılır
 
 # Ürün seçimi
 MIN_STOK = 10            # toplam stoğu bundan az olan ürün paylaşılmaz
 TEKRAR_GUN = 21          # bir ürün en erken kaç gün sonra tekrar paylaşılır
-YEDEK_SAYISI = 3         # stok biterse yerine geçecek yedek ürün sayısı
+YEDEK_SAYISI = 2         # her grup için stok biterse yerine geçecek yedek ürün sayısı
 FIYAT_TAKIP_GUN = 30     # fiyat değişikliği kaç günlük paylaşımlar için izlenir
 MIN_INDIRIM = 5          # bu yüzdenin altındaki indirimler etikete yazılmaz
 
