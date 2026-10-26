@@ -26,7 +26,8 @@ PROGRAM = [
 ]
 SAATLER = [p[0] for p in PROGRAM]
 MORRO_MARKA = "morro"     # Trendyol'daki marka adı (büyük/küçük harf fark etmez)
-MORRO_TEKRAR_GUN = 10     # Morro ürünü en erken kaç gün sonra tekrar paylaşılır
+MORRO_TEKRAR_GUN = 10     # Morro ürünü (aynı renk) en erken kaç gün sonra tekrar paylaşılır
+MODEL_ARA_GUN = 3         # aynı modelin başka rengi en erken kaç gün sonra paylaşılır
 
 # Ürün seçimi
 MIN_STOK = 10            # toplam stoğu bundan az olan ürün paylaşılmaz

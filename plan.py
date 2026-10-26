@@ -76,8 +76,13 @@ def ozel_gorseller(u):
     klasor = D.KOK / "ozel"
     if not klasor.exists():
         return []
-    ana = klasor / f"{u['id']}.jpg"
-    ekler = sorted(klasor.glob(f"{u['id']}-*.jpg"))
+    for kod in (u["id"], u.get("model")):
+        if not kod:
+            continue
+        ana = klasor / f"{kod}.jpg"
+        ekler = sorted(klasor.glob(f"{kod}-*.jpg"))
+        if ana.exists() or ekler:
+            break
     return ([ana] if ana.exists() else []) + ekler
 
 
@@ -103,6 +108,11 @@ def son_paylasilanlar(gecmis, gun):
     return {p["urun_id"] for p in gecmis if p["tarih"] >= sinir}
 
 
+def son_modeller(gecmis, gun):
+    sinir = (D.simdi() - dt.timedelta(days=gun)).date().isoformat()
+    return {p.get("model") or p["urun_id"].split("~")[0] for p in gecmis if p["tarih"] >= sinir}
+
+
 def morro_mu(u):
     return A.MORRO_MARKA in kucuk(u.get("marka"))
 
@@ -111,8 +121,10 @@ def sec(urunler, gecmis, adet, tekrar_gun=None):
     yakin = son_paylasilanlar(gecmis, tekrar_gun or A.TEKRAR_GUN)
     if not A.SOYUTLA:
         urunler = [u for u in urunler if uygun_mu(u)]
+    yakin_model = son_modeller(gecmis, A.MODEL_ARA_GUN)
     adaylar = [u for u in urunler
-               if u["stok"] >= A.MIN_STOK and u["gorseller"] and u["id"] not in yakin]
+               if u["stok"] >= A.MIN_STOK and u["gorseller"] and u["id"] not in yakin
+               and u.get("model", u["id"]) not in yakin_model]
     if len(adaylar) < adet:  # ürün azsa tekrar sınırını gevşet
         yakin7 = son_paylasilanlar(gecmis, min(7, tekrar_gun or 7))
         adaylar = [u for u in urunler
@@ -132,6 +144,13 @@ def sec(urunler, gecmis, adet, tekrar_gun=None):
             hassas_say += 1
         sinirli.append(u)
     adaylar = sinirli
+    gorulen, tekil = set(), []
+    for u in adaylar:  # aynı günde aynı modelin tek rengi
+        m = u.get("model", u["id"])
+        if m not in gorulen:
+            gorulen.add(m)
+            tekil.append(u)
+    adaylar = tekil
     secilen, kategoriler = [], set()
     for u in adaylar:  # önce farklı kategorilerden
         if u["kategori"] not in kategoriler:
@@ -210,7 +229,7 @@ def kalem(u, saat, sira, tarih, tur="gonderi", grup="diger"):
     return {
         "saat": saat, "durum": "bekliyor", "tur": tur, "grup": grup,
         "marka": u.get("marka"),
-        "urun_id": u["id"], "baslik": u["baslik"], "kategori": u["kategori"],
+        "urun_id": u["id"], "model": u.get("model"), "baslik": u["baslik"], "kategori": u["kategori"],
         "fiyat": u["fiyat"], "liste_fiyat": u["liste_fiyat"], "stok": u["stok"],
         "etiket": etiket, "aciklama": aciklama(u, yuzde),
         "gorsel": dosya, "gorsel_url": f"{A.HAM_ADRES}/{dosya}" if dosya else None,

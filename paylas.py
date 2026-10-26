@@ -132,7 +132,7 @@ def main():
     gecmis = D.oku(D.GECMIS, [])
     gecmis.append({
         "tarih": plan["tarih"], "saat": k["saat"], "urun_id": k["urun_id"],
-        "tur": k.get("tur", "gonderi"), "grup": k.get("grup"),
+        "tur": k.get("tur", "gonderi"), "grup": k.get("grup"), "model": k.get("model"),
         "baslik": k["baslik"], "fiyat": k["fiyat"], "liste_fiyat": k["liste_fiyat"],
         "media_id": mid, "permalink": link,
     })

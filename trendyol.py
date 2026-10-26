@@ -53,6 +53,16 @@ def _link(v):
     return None
 
 
+def _renk(v):
+    r = v.get("color") or ""
+    if not r:
+        for a in v.get("attributes", []) or []:
+            if str(a.get("attributeName", "")).strip().lower() == "renk" and a.get("attributeValue"):
+                r = a["attributeValue"]
+                break
+    return str(r).strip()
+
+
 def _marka(v):
     b = v.get("brand") or v.get("brandName") or ""
     if isinstance(b, dict):
@@ -77,9 +87,13 @@ def urunler():
             continue
         if v.get("onSale") is False:
             continue
-        anahtar = str(v.get("productMainId") or v.get("title") or v.get("barcode"))
+        model = str(v.get("productMainId") or v.get("title") or v.get("barcode"))
+        renk0 = _renk(v)
+        # Her renk ayrı ürün sayılır (Trendyol'da da her rengin ayrı sayfası ve fotoğrafları var)
+        anahtar = f"{model}~{renk0}" if renk0 else model
         g = gruplar.setdefault(anahtar, {
             "id": anahtar,
+            "model": model,
             "baslik": (v.get("title") or "").strip(),
             "kategori": v.get("categoryName") or v.get("pimCategoryId") or "",
             "marka": _marka(v),
