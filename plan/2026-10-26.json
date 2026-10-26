@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "12:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "urun_id": "74140-1",
       "baslik": "Erkek Dik Yaka Tam Fermuarlı Cepli Dalgıç Kumaş Eşofman Takımı",
       "kategori": "Eşofman Takımı",
@@ -25,7 +25,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-26-1-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1975/prod/QC_PREP/20261009/19/960e53f2-0f5a-30be-993b-6252aea4be1f/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/erkek-dik-yaka-tam-fermuarli-cepli-dalgic-kumas-es-ofman-takimi-p-1212984002?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/erkek-dik-yaka-tam-fermuarli-cepli-dalgic-kumas-es-ofman-takimi-p-1212984002?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18113429360156651",
+      "paylasim_saati": "2026-10-26T13:07+03:00",
+      "media_id": "18121836805974131",
+      "permalink": "https://www.instagram.com/p/De9B8hflQcN/"
     },
     {
       "saat": "18:30",
