@@ -30,13 +30,20 @@
 
 Paylaşım saatleri, minimum stok, tekrar aralığı ve hashtag'ler `ayarlar.py` dosyasındadır.
 
-## Buybox takibi (deneme: 3 ürün)
+## Buybox takibi (Trendyol, tüm ürünler)
 
-`buybox.py` her yarım saatte (08:07–23:37) Trendyol API'sinden buybox bilgisini okur ve
-`buybox/urunler.csv` dosyasındaki ürünlerin fiyatını rakibin %1 altına ayarlar:
-fiyat hiçbir zaman **taban**ın (kâr kuralı) altına inmez, **tavan**ın (DLAP fiyatı) üstüne çıkmaz.
-Rakip fiyat yükseltirse bizim fiyatımız da yükselir. Yapılan her değişiklik `buybox/kayit/` altına yazılır.
+`buybox.py` her yarım saatte (08:07–23:37) Trendyol API'sinden satıştaki tüm ürünleri ve buybox
+bilgisini okur, fiyatı rakibin %1 altına ayarlar. Fiyat hiçbir zaman **taban**ın (kâr kuralı) altına
+inmez, **tavan**ın (DLAP fiyatı) üstüne çıkmaz. Rakip fiyat yükseltirse bizim fiyatımız da yükselir.
 
-- Bir ürünü geçici olarak takipten çıkarmak (flaş teklif, kampanya): `aktif` sütununu `0` yap.
-- Kurallar: `normal` (%10 kâr), `kis300` (en az 300 TL kâr, U.S. Polo kışlık), `basabas` (zarar yok).
+| Kural | Hangi ürünler | Taban |
+|---|---|---|
+| 300 TL kâr | U.S. Polo kışlık (pijama, ev giyim, gecelik; kısa kollu ve boxer hariç) | en az 300 TL net kâr |
+| Başabaş | Pierre Cardin sütyen/sütyen takımları; U.S. Polo, Pierre Cardin, Pijapia kısa kollu/yazlık | zarar yok |
+| %10 kâr | diğer tüm ürünler | maliyet +%10 |
+
+- **Morro** ürünlerine dokunulmaz. Fiyatı zaten tabanın altında olan %10/başabaş ürünlere de dokunulmaz (eritiliyor sayılır).
+- Maliyet ve DLAP fiyatları `buybox/maliyetler.csv` dosyasındadır (stok kodu;maliyet;tavan). Maliyet değişince bu dosya güncellenmeli.
+- Bir ürünü geçici olarak takipten çıkarmak (flaş teklif, kampanya) veya kuralını değiştirmek: `buybox/istisnalar.csv` dosyasına `barkod,kural,aktif,not` satırı ekle (aktif `0` → dokunma).
+- Son durum `buybox/son_durum.md`, yapılan her değişiklik `buybox/kayit/` altında.
 - Elle çalıştırma: Actions → "Buybox takibi" → Run workflow (deneme işaretliyse fiyat değiştirmez).
