@@ -92,19 +92,18 @@ def _istek(s, yontem, url, **kw):
     return r
 
 
-def guncel_fiyatlar(s, sid, barkodlar):
-    """barkod -> {satis, liste, stok}"""
+def guncel_fiyatlar(barkodlar):
+    """barkod -> {satis, liste, stok, satista} (tüm onaylı ürünler tek seferde okunur)"""
+    from trendyol import tum_varyantlar
+    istenen = set(barkodlar)
     sonuc = {}
-    for b in barkodlar:
-        r = _istek(s, "GET", URUN_API.format(sid=sid), params={"barcode": b, "approved": "true"})
-        r.raise_for_status()
-        for v in r.json().get("content", []):
-            if v.get("barcode") == b:
-                sonuc[b] = {"satis": float(v.get("salePrice") or 0),
-                            "liste": float(v.get("listPrice") or 0),
-                            "stok": int(v.get("quantity") or 0),
-                            "satista": v.get("onSale") is not False}
-        time.sleep(0.2)
+    for v in tum_varyantlar():
+        b = v.get("barcode")
+        if b in istenen:
+            sonuc[b] = {"satis": float(v.get("salePrice") or 0),
+                        "liste": float(v.get("listPrice") or 0),
+                        "stok": int(v.get("quantity") or 0),
+                        "satista": v.get("onSale") is not False and not v.get("archived") and not v.get("locked")}
     return sonuc
 
 
@@ -130,12 +129,16 @@ def hedef_fiyat(u, fiyat, bb):
     coklu = bool(bb.get("hasMultipleSeller"))
 
     if not coklu:
-        hedef, neden = u["tavan"], "rakip yok → tavan"
+        if simdiki < u["taban"] - 0.01:
+            return u["taban"], "rakip yok, fiyat tabanın altındaydı → tabana"
+        return None, "rakip yok → dokunulmadı"
     elif sira == 1:
         if ikinci > 0:
             hedef, neden = ikinci * (1 - RAKIP_ALTI), f"buybox bizde, 2. satıcı {ikinci:.2f}"
         else:
-            hedef, neden = u["tavan"], "buybox bizde, 2. fiyat yok → tavan"
+            if simdiki < u["taban"] - 0.01:
+                return u["taban"], "buybox bizde, 2. fiyat yok, tabanın altındaydı → tabana"
+            return None, "buybox bizde, 2. fiyat yok → dokunulmadı"
     else:
         if simdiki <= bb_fiyat + 0.01:
             # Fiyat bizde ama buybox rakipte (puan/kargo hızı vb.) → ek indirim yok
@@ -175,64 +178,78 @@ def main():
         return 0
     s, sid = _oturum()
     barkodlar = [u["barkod"] for u in urunler]
-    fiyatlar = guncel_fiyatlar(s, sid, barkodlar)
+    fiyatlar = guncel_fiyatlar(barkodlar)
     bb = buybox_bilgisi(s, sid, barkodlar)
 
     degisecek, rapor, kayit = [], [], []
+    sayac = {"bizde": 0, "rakipte": 0, "rakip_yok": 0, "atlandi": 0}
     for u in urunler:
         f, b = fiyatlar.get(u["barkod"]), bb.get(u["barkod"])
-        if not f or not b:
-            rapor.append(f"- {u['ad'] or u['barkod']}: Trendyol'da bulunamadı/buybox bilgisi yok, atlandı")
+        if not f or not b or not f["satista"] or f["stok"] <= 0:
+            sayac["atlandi"] += 1
             continue
-        if not f["satista"] or f["stok"] <= 0:
-            rapor.append(f"- {u['ad'] or u['barkod']}: satışta değil/stok yok, atlandı")
-            continue
+        if not b.get("hasMultipleSeller"):
+            sayac["rakip_yok"] += 1
+        elif b.get("buyboxOrder") == 1:
+            sayac["bizde"] += 1
+        else:
+            sayac["rakipte"] += 1
         yeni, neden = hedef_fiyat(u, f, b)
-        satir = f"- {u['ad'] or u['barkod']}: {f['satis']:.2f} TL (taban {u['taban']:.2f}, tavan {u['tavan']:.2f}) · {neden}"
         if yeni is None:
-            rapor.append(satir)
             continue
-        rapor.append(satir + f" ⇒ {yeni:.2f} TL")
+        rapor.append(f"- {u['ad'] or u['barkod']}: {f['satis']:.2f} ⇒ {yeni:.2f} TL "
+                     f"(taban {u['taban']:.2f}, tavan {u['tavan']:.2f}) · {neden}")
         liste = min(max(f["liste"], yeni), max(u["tavan"], yeni))
         degisecek.append({"barcode": u["barkod"], "salePrice": yeni, "listPrice": round(liste, 2)})
         kayit.append([u["barkod"], u["ad"], f"{f['satis']:.2f}", f"{yeni:.2f}",
                       f"{u['taban']:.2f}", f"{u['tavan']:.2f}", neden])
 
-    print("\n".join(rapor))
+    simdi = datetime.now(TR).strftime("%d.%m.%Y %H:%M")
+    ozet = (f"# Buybox son durum{' (DENEME)' if deneme else ''}\n\n"
+            f"Son kontrol: {simdi} · takip edilen {len(urunler)} varyant\n\n"
+            f"- Buybox bizde: {sayac['bizde']}\n- Buybox rakipte (taban/indirim yok kuralı): {sayac['rakipte']}\n"
+            f"- Rakip yok: {sayac['rakip_yok']}\n- Satışta değil / stok yok / bulunamadı: {sayac['atlandi']}\n"
+            f"- Bu kontrolde fiyatı değişen: {len(degisecek)}\n\n"
+            + ("## Değişiklikler\n\n" + "\n".join(rapor) + "\n" if rapor else ""))
+    print(ozet)
     with open(os.path.join(os.path.dirname(__file__), "buybox", "son_durum.md"), "w", encoding="utf-8") as f:
-        f.write("# Buybox son durum" + (" (DENEME)" if deneme else "") + "\n\n" + "\n".join(rapor) + "\n")
+        f.write(ozet)
     ozet_dosya = os.environ.get("GITHUB_STEP_SUMMARY")
     if ozet_dosya:
         with open(ozet_dosya, "a", encoding="utf-8") as f:
-            f.write("### Buybox takibi" + (" (DENEME)" if deneme else "") + "\n\n" + "\n".join(rapor) + "\n")
+            f.write(ozet)
 
     if not degisecek:
-        print("Fiyat değişikliği yok.")
         return 0
     if deneme:
         print(f"DENEME: {len(degisecek)} fiyat değişecekti, gönderilmedi.")
         return 0
 
-    r = _istek(s, "POST", FIYAT_API.format(sid=sid), json={"items": degisecek})
-    print("Fiyat güncelleme:", r.status_code, r.text[:300])
-    sonuc = "gönderildi"
-    if r.ok:
-        bid = r.json().get("batchRequestId")
-        for _ in range(12):
-            time.sleep(10)
-            rr = _istek(s, "GET", BATCH_API.format(sid=sid, bid=bid))
-            if rr.ok:
-                v = rr.json()
-                if v.get("status") != "IN_PROGRESS":
-                    hatalar = [f"{i.get('requestItem', {}).get('barcode')}: {i.get('failureReasons')}"
-                               for i in v.get("items", []) if i.get("status") != "SUCCESS"]
-                    sonuc = "tamam" if not hatalar else "hata: " + "; ".join(hatalar)
+    hata_var = False
+    for k in range(0, len(degisecek), 500):
+        parca, kparca = degisecek[k:k + 500], kayit[k:k + 500]
+        r = _istek(s, "POST", FIYAT_API.format(sid=sid), json={"items": parca})
+        print("Fiyat güncelleme:", r.status_code, r.text[:200])
+        hatali = {}
+        sonuc = "gönderildi"
+        if r.ok:
+            bid = r.json().get("batchRequestId")
+            for _ in range(18):
+                time.sleep(10)
+                rr = _istek(s, "GET", BATCH_API.format(sid=sid, bid=bid))
+                if rr.ok and rr.json().get("status") != "IN_PROGRESS":
+                    for it in rr.json().get("items", []):
+                        if it.get("status") != "SUCCESS":
+                            hatali[(it.get("requestItem") or {}).get("barcode")] = str(it.get("failureReasons"))[:120]
+                    sonuc = "tamam"
                     break
-    else:
-        sonuc = f"hata {r.status_code}: {r.text[:150]}"
-    print("Sonuç:", sonuc)
-    kaydet([k + [sonuc] for k in kayit])
-    return 0 if not sonuc.startswith("hata") else 1
+        else:
+            sonuc = f"hata {r.status_code}: {r.text[:120]}"
+        if hatali or sonuc.startswith("hata"):
+            hata_var = True
+        kaydet([kk + ["hata: " + hatali[kk[0]] if kk[0] in hatali else sonuc] for kk in kparca])
+        time.sleep(1)
+    return 1 if hata_var else 0
 
 
 if __name__ == "__main__":
