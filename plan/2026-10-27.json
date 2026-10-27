@@ -179,7 +179,7 @@
     },
     {
       "saat": "18:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Pierre Cardin",
@@ -198,7 +198,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-27-11-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1987/prod/QC_PREP/20261022/11/3560623f-e670-3e69-9925-183dd5b0ca11/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/pierre-cardin/6112-u-c-i-pli-k-es-ofman-takim-26k-p-1220971756?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/pierre-cardin/6112-u-c-i-pli-k-es-ofman-takim-26k-p-1220971756?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18400420471204673",
+      "paylasim_saati": "2026-10-27T18:30+03:00",
+      "media_id": "18400420471204673",
+      "permalink": null
     },
     {
       "saat": "19:30",
