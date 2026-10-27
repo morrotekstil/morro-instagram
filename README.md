@@ -29,3 +29,14 @@
 ## Ayarlar
 
 Paylaşım saatleri, minimum stok, tekrar aralığı ve hashtag'ler `ayarlar.py` dosyasındadır.
+
+## Buybox takibi (deneme: 3 ürün)
+
+`buybox.py` her yarım saatte (08:07–23:37) Trendyol API'sinden buybox bilgisini okur ve
+`buybox/urunler.csv` dosyasındaki ürünlerin fiyatını rakibin %1 altına ayarlar:
+fiyat hiçbir zaman **taban**ın (kâr kuralı) altına inmez, **tavan**ın (DLAP fiyatı) üstüne çıkmaz.
+Rakip fiyat yükseltirse bizim fiyatımız da yükselir. Yapılan her değişiklik `buybox/kayit/` altına yazılır.
+
+- Bir ürünü geçici olarak takipten çıkarmak (flaş teklif, kampanya): `aktif` sütununu `0` yap.
+- Kurallar: `normal` (%10 kâr), `kis300` (en az 300 TL kâr, U.S. Polo kışlık), `basabas` (zarar yok).
+- Elle çalıştırma: Actions → "Buybox takibi" → Run workflow (deneme işaretliyse fiyat değiştirmez).

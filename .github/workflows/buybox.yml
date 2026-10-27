@@ -1,0 +1,45 @@
+name: Buybox takibi
+
+on:
+  schedule:
+    - cron: "7,37 5-20 * * *"   # 08:07–23:37 arası her yarım saatte (Türkiye)
+  workflow_dispatch:
+    inputs:
+      deneme:
+        description: "Deneme modu (fiyat değiştirmez, sadece raporlar)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: morro-buybox
+  cancel-in-progress: false
+
+jobs:
+  buybox:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests==2.32.3
+      - name: Fiyatları kontrol et
+        env:
+          TRENDYOL_SELLER_ID: ${{ secrets.TRENDYOL_SELLER_ID }}
+          TRENDYOL_API_KEY: ${{ secrets.TRENDYOL_API_KEY }}
+          TRENDYOL_API_SECRET: ${{ secrets.TRENDYOL_API_SECRET }}
+          DENEME: ${{ inputs.deneme && '1' || '0' }}
+        run: python buybox.py
+      - name: Kaydet
+        if: always()
+        run: |
+          git config user.name "morro-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add buybox/kayit || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Buybox $(TZ=Europe/Istanbul date '+%F %H:%M')"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
