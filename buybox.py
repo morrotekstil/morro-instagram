@@ -249,6 +249,9 @@ def main():
         urunler.append({"barkod": b, "ad": ad, "kural": kural, "taban": taban, "tavan": tavan,
                         "satis": simdiki, "liste": float(v.get("listPrice") or 0)})
 
+    with open(os.path.join(KLASOR, "takip_edilen.txt"), "w", encoding="utf-8") as f:
+        f.write("\n".join(sorted(u["barkod"] for u in urunler)) + "\n")
+
     bb = buybox_bilgisi(s, sid, [u["barkod"] for u in urunler])
 
     degisecek, kayit, rapor = [], [], []
