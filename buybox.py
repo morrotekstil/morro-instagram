@@ -199,6 +199,8 @@ def main():
                       f"{u['taban']:.2f}", f"{u['tavan']:.2f}", neden])
 
     print("\n".join(rapor))
+    with open(os.path.join(os.path.dirname(__file__), "buybox", "son_durum.md"), "w", encoding="utf-8") as f:
+        f.write("# Buybox son durum" + (" (DENEME)" if deneme else "") + "\n\n" + "\n".join(rapor) + "\n")
     ozet_dosya = os.environ.get("GITHUB_STEP_SUMMARY")
     if ozet_dosya:
         with open(ozet_dosya, "a", encoding="utf-8") as f:
