@@ -120,7 +120,7 @@
     },
     {
       "saat": "15:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Bolero",
@@ -139,7 +139,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-27-9-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1804/prod/QC_ENRICHMENT/20251225/15/bf625fc3-a4fd-3cf6-a199-13355565367f/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-premium-yu-n-bambu-soket-c-orap-fu-me-p-1039641321?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-premium-yu-n-bambu-soket-c-orap-fu-me-p-1039641321?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18099905423106710",
+      "paylasim_saati": "2026-10-27T15:21+03:00",
+      "media_id": "18099905423106710",
+      "permalink": null
     },
     {
       "saat": "16:30",
