@@ -163,19 +163,26 @@ def hedef_fiyat(u, simdiki, bb):
     if sira == 1:
         if ikinci <= 0:
             return (u["taban"], "buybox bizde, tabanın altındaydı → tabana") if alt else (None, "buybox bizde")
-        hedef, neden = ikinci * (1 - RAKIP_ALTI), f"buybox bizde, 2. satıcı {ikinci:.2f}"
+        # Buybox bizdeyken fiyat düşürülmez; 2. satıcı yükseldiyse onun %1 altına kadar yükseltilir.
+        hedef, neden = max(simdiki, ikinci * (1 - RAKIP_ALTI)), f"buybox bizde, 2. satıcı {ikinci:.2f}"
     else:
         if simdiki <= bb_fiyat + 0.01:
             if alt:
                 return u["taban"], f"buybox rakipte ({bb_fiyat:.2f}), tabanın altındaydı → tabana"
             return None, "fiyat bizde ama buybox rakipte"
+        if bb_fiyat * (1 - RAKIP_ALTI) < u["taban"]:
+            # Rakip tabanımızın altında: tabana inip yine kaybetmenin anlamı yok.
+            if alt:
+                return u["taban"], f"rakip tabanın altında ({bb_fiyat:.2f}), fiyat tabanın altındaydı → tabana"
+            return None, "rakip tabanın altında"
         hedef, neden = bb_fiyat * (1 - RAKIP_ALTI), f"buybox rakipte {bb_fiyat:.2f}"
 
     hedef = asagi(hedef)
     if hedef < u["taban"]:
         hedef, neden = u["taban"], neden + " → taban"
-    if hedef > u["tavan"]:
-        hedef, neden = u["tavan"], neden + " → tavan"
+    tavan = max(u["tavan"], simdiki)   # tavan yalnızca yükseltmeyi sınırlar, fiyat tavana indirilmez
+    if hedef > tavan:
+        hedef, neden = tavan, neden + " → tavan"
     if abs(hedef - simdiki) < MIN_DEGISIM:
         return None, neden
     return hedef, neden
