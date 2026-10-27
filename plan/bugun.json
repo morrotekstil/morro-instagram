@@ -60,7 +60,7 @@
     },
     {
       "saat": "12:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Rowar",
@@ -79,7 +79,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-27-8-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1988/prod/QC_ENRICHMENT/20261022/18/ba0761b4-6be1-3f07-9f3e-7de169516bac/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/rowar/erkek-likrali-bambu-boxer-6-li-ekonomik-paket-nefes-alan-dog-al-kumas-rahat-i-c-giyim-p-1019178414?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/rowar/erkek-likrali-bambu-boxer-6-li-ekonomik-paket-nefes-alan-dog-al-kumas-rahat-i-c-giyim-p-1019178414?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18285065038290364",
+      "paylasim_saati": "2026-10-27T12:23+03:00",
+      "media_id": "18285065038290364",
+      "permalink": null
     },
     {
       "saat": "13:00",
