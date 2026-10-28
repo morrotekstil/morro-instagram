@@ -182,7 +182,7 @@
     },
     {
       "saat": "18:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Bolero",
@@ -201,7 +201,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-28-11-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1930/prod/QC_PREP/20260811/13/4b3a7594-fe95-37b3-b77a-23579994da1c/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-premium-micromodal-boxer-lacivert-p-1120106184?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-premium-micromodal-boxer-lacivert-p-1120106184?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18045648314829921",
+      "paylasim_saati": "2026-10-28T18:34+03:00",
+      "media_id": "18045648314829921",
+      "permalink": null
     },
     {
       "saat": "19:30",
