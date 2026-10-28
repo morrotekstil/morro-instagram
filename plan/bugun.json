@@ -123,7 +123,7 @@
     },
     {
       "saat": "15:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "U.S. Polo Assn.",
@@ -142,7 +142,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-28-9-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1987/prod/QC_ENRICHMENT/20261022/17/ccd96c69-58ce-3799-9fa5-ad2752bc94e0/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/u-s-polo-assn/lisansli-yeni-sezon-kadin-v-yaka-pijama-takim-p-904980592?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/u-s-polo-assn/lisansli-yeni-sezon-kadin-v-yaka-pijama-takim-p-904980592?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "17951001840275965",
+      "paylasim_saati": "2026-10-28T15:24+03:00",
+      "media_id": "17951001840275965",
+      "permalink": null
     },
     {
       "saat": "16:30",
