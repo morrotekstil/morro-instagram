@@ -31,7 +31,7 @@
     },
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -56,7 +56,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-29-7-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1812/prod/QC_ENRICHMENT/20260119/09/8d4db3b2-4d5e-32a2-815f-4a285c2917e0/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/kadin-alpaka-yu-n-c-orap-gri-p-1042403784?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/kadin-alpaka-yu-n-c-orap-gri-p-1042403784?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18413738983086247",
+      "paylasim_saati": "2026-10-29T11:15+03:00",
+      "media_id": "18109458221627412",
+      "permalink": "https://www.instagram.com/p/DfEjfVElZ-C/"
     },
     {
       "saat": "12:00",
