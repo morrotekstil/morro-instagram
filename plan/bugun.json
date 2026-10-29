@@ -121,7 +121,7 @@
     },
     {
       "saat": "15:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Eros",
@@ -140,7 +140,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-29-9-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1804/prod/QC_ENRICHMENT/20251222/20/6f69d18d-b561-3aa7-8a5d-fa596820cec5/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/eros/1454-sifir-yaka-kisa-kol-termal-i-c-lik-tek-u-st-p-192052618?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/eros/1454-sifir-yaka-kisa-kol-termal-i-c-lik-tek-u-st-p-192052618?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "17884567338525179",
+      "paylasim_saati": "2026-10-29T15:24+03:00",
+      "media_id": "17884567338525179",
+      "permalink": null
     },
     {
       "saat": "16:30",
