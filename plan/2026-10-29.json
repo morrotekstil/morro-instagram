@@ -64,7 +64,7 @@
     },
     {
       "saat": "12:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "U.S. Polo Assn.",
@@ -83,7 +83,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-29-8-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1635/prod/QC/20250216/13/e8678fa4-13d5-39b2-b467-9bcce8bc0090/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/u-s-polo-assn/pamuklu-yakasi-du-g-meli-kisa-kollu-puantiyeli-kadin-pijama-takimi-p-899814776?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/u-s-polo-assn/pamuklu-yakasi-du-g-meli-kisa-kollu-puantiyeli-kadin-pijama-takimi-p-899814776?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18099932057532414",
+      "paylasim_saati": "2026-10-29T12:34+03:00",
+      "media_id": "18099932057532414",
+      "permalink": null
     },
     {
       "saat": "13:00",
