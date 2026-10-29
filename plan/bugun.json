@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "09:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Berrak",
@@ -23,7 +23,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-29-6-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1540/product/media/images/ty1540/prod/QC/20240913/09/dd6ad7c5-90e2-3f7c-9d14-d8d99fc3cc5c/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/berrak/erkek-beyaz-klasik-pamuk-askili-atlet-1004-6-li-p-246960658?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/berrak/erkek-beyaz-klasik-pamuk-askili-atlet-1004-6-li-p-246960658?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18115316528610830",
+      "paylasim_saati": "2026-10-29T10:30+03:00",
+      "media_id": "18115316528610830",
+      "permalink": null
     },
     {
       "saat": "10:30",
