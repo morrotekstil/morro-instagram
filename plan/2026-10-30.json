@@ -120,7 +120,7 @@
     },
     {
       "saat": "15:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Bolero",
@@ -139,7 +139,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-30-9-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1996/prod/QC_ENRICHMENT/20261028/17/ec0261a6-e25b-34cb-9a16-fb27dd20f5cf/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-havlu-du-g-meli-boxer-beyaz-p-1207309322?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-havlu-du-g-meli-boxer-beyaz-p-1207309322?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18486267673118732",
+      "paylasim_saati": "2026-10-30T15:24+03:00",
+      "media_id": "18486267673118732",
+      "permalink": null
     },
     {
       "saat": "16:30",
