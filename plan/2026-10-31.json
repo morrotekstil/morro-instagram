@@ -61,7 +61,7 @@
     },
     {
       "saat": "12:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Bolero",
@@ -80,7 +80,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-31-8-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/17/61b207d0-747d-3c22-9e1c-18f1d575de83/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/kadin-premium-lyocell-kalin-askili-atlet-beyaz-p-1154400438?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/kadin-premium-lyocell-kalin-askili-atlet-beyaz-p-1154400438?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18021894026944703",
+      "paylasim_saati": "2026-10-31T12:24+03:00",
+      "media_id": "18021894026944703",
+      "permalink": null
     },
     {
       "saat": "13:00",
