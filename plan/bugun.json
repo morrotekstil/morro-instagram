@@ -119,7 +119,7 @@
     },
     {
       "saat": "15:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Bolero",
@@ -138,7 +138,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-31-9-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1814/prod/QC_ENRICHMENT/20260119/09/f772caa7-d7bd-3880-90e9-33bee26be0dd/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/kadin-kis-lik-termal-c-orap-antrasit-p-853792668?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/kadin-kis-lik-termal-c-orap-antrasit-p-853792668?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "17914232577491228",
+      "paylasim_saati": "2026-10-31T15:20+03:00",
+      "media_id": "17914232577491228",
+      "permalink": null
     },
     {
       "saat": "16:30",
