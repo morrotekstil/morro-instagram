@@ -179,7 +179,7 @@
     },
     {
       "saat": "18:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Eros",
@@ -198,7 +198,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-10-31-11-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty76/product/media/images/20210225/12/66859728/10419242/1/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/eros/termal-tek-alt-p-1842093?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/eros/termal-tek-alt-p-1842093?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18081843428742244",
+      "paylasim_saati": "2026-10-31T18:16+03:00",
+      "media_id": "18081843428742244",
+      "permalink": null
     },
     {
       "saat": "19:30",
