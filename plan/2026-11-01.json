@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "09:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Pierre Cardin",
@@ -23,7 +23,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-01-6-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1825/prod/QC_PREP/20260213/15/b17196e6-b7db-3d11-98d7-10b3524641b8/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/pierre-cardin/s-ort-takim-lk-pc6136-p-1104979829?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/pierre-cardin/s-ort-takim-lk-pc6136-p-1104979829?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "17966851881216032",
+      "paylasim_saati": "2026-11-01T10:30+03:00",
+      "media_id": "17966851881216032",
+      "permalink": null
     },
     {
       "saat": "10:30",
