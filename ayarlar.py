@@ -85,3 +85,19 @@ ETIKETLER = {
     "çocuk": "#çocukiçgiyim",
 }
 SABIT_ETIKETLER = "#morro #morroicgiyim #içgiyim #trendyol"
+
+
+# --- Kampanya (Reels çerçevesi ve açıklama) ---------------------------------
+# Tarih aralığı dışında otomatik kapanır. Kapatmak için KAMPANYA = None yap.
+KAMPANYA = {
+    "baslangic": "2026-11-02",
+    "bitis": "2026-11-30",
+    "ust_kucuk": "KASIM'A ÖZEL",
+    "ust": "4 AL 3 ÖDE",
+    "alt": "Mağazamızda ve morro.com.tr'de",
+    "buyuk1": "4 AL",
+    "buyuk2": "3 ÖDE",
+    "alt_satir1": "Kasım boyunca tüm ürünlerde",
+    "alt_satir2": "Mağazamıza ve morro.com.tr'ye özel",
+    "aciklama": "🍂 KASIM'A ÖZEL: 4 AL 3 ÖDE! Kasım boyunca tüm ürünlerde, mağazamızda ve morro.com.tr'de geçerli.",
+}
