@@ -178,7 +178,7 @@
     },
     {
       "saat": "18:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Polo Republica & CO",
@@ -197,7 +197,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-01-11-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1694/prod/QC_PREP/20250614/18/6e7b8020-1c26-3c6d-8999-86d40588ed67/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/polo-republica-co/erkek-kirik-beyaz-bisiklet-yaka-regular-fit-basic-tis-o-rt-c1t0n2o2-p-944869689?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/polo-republica-co/erkek-kirik-beyaz-bisiklet-yaka-regular-fit-basic-tis-o-rt-c1t0n2o2-p-944869689?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "17906634729598577",
+      "paylasim_saati": "2026-11-01T18:17+03:00",
+      "media_id": "17906634729598577",
+      "permalink": null
     },
     {
       "saat": "19:30",
