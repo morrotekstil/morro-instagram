@@ -52,8 +52,8 @@ def paylas(token, gorsel_urls, aciklama):
     return mid, link
 
 
-def _bekle(token, kap):
-    for _ in range(30):
+def _bekle(token, kap, deneme=30):
+    for _ in range(deneme):
         st = _kontrol(requests.get(f"{A.IG_API}/{kap}", params={
             "fields": "status_code,status", "access_token": token}, timeout=30))
         kod = st.get("status_code")
@@ -85,3 +85,58 @@ def hikaye_paylas(token, gorsel_url):
     _bekle(token, kap)
     return _kontrol(requests.post(f"{A.IG_API}/{A.IG_USER_ID}/media_publish", data={
         "creation_id": kap, "access_token": token}, timeout=60))["id"]
+
+
+# --- Video (Reels ve video hikaye) -------------------------------------------
+
+def _yayinla(token, kap):
+    return _kontrol(requests.post(f"{A.IG_API}/{A.IG_USER_ID}/media_publish", data={
+        "creation_id": kap, "access_token": token}, timeout=120))["id"]
+
+
+def _video_kapsayici(token, veri, video_yol, video_url_al=None):
+    """Önce dosyayı doğrudan yükler (resumable); olmazsa herkese açık adres (video_url) dener.
+    İşlenmiş kapsayıcı id'sini döndürür."""
+    hatalar = []
+    try:
+        cevap = _kontrol(requests.post(f"{A.IG_API}/{A.IG_USER_ID}/media", data=dict(
+            veri, upload_type="resumable", access_token=token), timeout=60))
+        kap = cevap["id"]
+        surum = A.IG_API.rstrip("/").rsplit("/", 1)[-1]
+        adres = cevap.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{surum}/{kap}"
+        with open(video_yol, "rb") as f:
+            icerik = f.read()
+        _kontrol(requests.post(adres, data=icerik, timeout=300, headers={
+            "Authorization": f"OAuth {token}", "offset": "0", "file_size": str(len(icerik))}))
+        _bekle(token, kap, deneme=72)
+        return kap
+    except Exception as e:
+        hatalar.append(f"doğrudan yükleme: {e}")
+    if video_url_al:
+        try:
+            url = video_url_al()
+            kap = _kapsayici(token, dict(veri, video_url=url))
+            _bekle(token, kap, deneme=72)
+            return kap
+        except Exception as e:
+            hatalar.append(f"adresle yükleme: {e}")
+    raise IGHata(" | ".join(hatalar)[:600])
+
+
+def reels_paylas(token, video_yol, aciklama, video_url_al=None, kapak_ms=3000):
+    """Videoyu Reels olarak paylaşır (profil akışında da görünür). (media_id, permalink)."""
+    kap = _video_kapsayici(token, {"media_type": "REELS", "caption": aciklama, "share_to_feed": "true",
+                                   "thumb_offset": str(kapak_ms)}, video_yol, video_url_al)
+    mid = _yayinla(token, kap)
+    try:
+        link = _kontrol(requests.get(f"{A.IG_API}/{mid}", params={
+            "fields": "permalink", "access_token": token}, timeout=30)).get("permalink")
+    except IGHata:
+        link = None
+    return mid, link
+
+
+def hikaye_video_paylas(token, video_yol, video_url_al=None):
+    """Videoyu hikaye olarak paylaşır, media_id döndürür."""
+    kap = _video_kapsayici(token, {"media_type": "STORIES"}, video_yol, video_url_al)
+    return _yayinla(token, kap)

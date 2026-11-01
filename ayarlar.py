@@ -87,6 +87,12 @@ ETIKETLER = {
 SABIT_ETIKETLER = "#morro #morroicgiyim #içgiyim #trendyol"
 
 
+# --- Reels -------------------------------------------------------------------
+REELS = True                 # gönderiler Reels videosu olarak paylaşılır (olmazsa kaydırmalı gönderi)
+HIKAYE_REELS = True          # gönderinin hikayesinde ayrı görsel yerine aynı Reels videosu paylaşılır
+HIKAYE_REELS_TEKRAR = True   # sadece-hikaye saatlerinde önceki günlerin Reels'leri tekrar paylaşılır
+
+
 # --- Kampanya (Reels çerçevesi ve açıklama) ---------------------------------
 # Tarih aralığı dışında otomatik kapanır. Kapatmak için KAMPANYA = None yap.
 KAMPANYA = {

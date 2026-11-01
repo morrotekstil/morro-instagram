@@ -5,7 +5,7 @@ Akış (dikey 1080x1920, 30 fps, ~12-16 sn):
   2. Ürün fotoğrafları: yavaş yakınlaşma/kayma, yumuşak geçiş
   3. Bilgi kartı: renk, beden, kumaş içeriği (fiyat yok)
   4. Kapanış: "Trendyol'da Morro · Link profilde"
-Fon müziği programın kendi ürettiği sade bir melodidir (telif sorunu yok).
+Fon müziği muzik.py ile her videoda farklı tarzda üretilir (sakin, telifsiz).
 """
 import math
 import subprocess
@@ -17,6 +17,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
 import ayarlar as A
 import gorsel
+import muzik
 
 W, H, FPS = 1080, 1920, 30
 MOR = A.ETIKET_RENK
@@ -416,65 +417,6 @@ def sahne_kampanya(k, sure):
     return kare
 
 
-# --- müzik -----------------------------------------------------------------
-
-def muzik(sure, yol, bpm=104, sr=44100):
-    """Hafif, neşeli bir fon müziği üretir (akor + arpej + yumuşak ritim)."""
-    n = int(sure * sr)
-    t = np.arange(n) / sr
-    vurus = 60 / bpm
-    olcu = vurus * 4
-    hz = lambda m: 440 * 2 ** ((m - 69) / 12)
-    # Cmaj7 - Am7 - Fmaj7 - G
-    akorlar = [[48, 60, 64, 67, 71], [45, 57, 60, 64, 67], [41, 57, 60, 65, 69], [43, 55, 59, 62, 67]]
-    ses = np.zeros(n)
-    for i in range(int(sure / olcu) + 1):
-        ak = akorlar[i % 4]
-        b, s = int(i * olcu * sr), int(min((i + 1) * olcu, sure) * sr)
-        if b >= n:
-            break
-        tt = t[b:s] - i * olcu
-        zarf = np.minimum(tt / 0.25, 1) * np.exp(-tt * 0.35)
-        bas = 0.20 * np.sin(2 * np.pi * hz(ak[0]) * tt) * np.exp(-tt * 1.2)
-        ped = sum(0.045 * (np.sin(2 * np.pi * hz(m) * tt) + 0.3 * np.sin(2 * np.pi * hz(m) * 1.003 * tt))
-                  for m in ak[1:])
-        ses[b:s] += bas + ped * zarf
-        # sekizlik arpej (çan benzeri)
-        sira = [ak[1] + 12, ak[2] + 12, ak[3] + 12, ak[4] + 12, ak[3] + 12, ak[2] + 12, ak[4] + 12, ak[2] + 24]
-        for j, m in enumerate(sira):
-            nb = b + int(j * vurus / 2 * sr)
-            ne = min(nb + int(0.6 * sr), n)
-            if nb >= n:
-                break
-            tn = t[nb:ne] - t[nb]
-            ses[nb:ne] += 0.07 * (np.sin(2 * np.pi * hz(m) * tn) + 0.25 * np.sin(4 * np.pi * hz(m) * tn)) \
-                * np.exp(-tn * 6)
-    # yumuşak davul: her vuruşta kick, ara vuruşlarda hafif hi-hat
-    rng = np.random.default_rng(7)
-    for i in range(int(sure / vurus) + 1):
-        b = int(i * vurus * sr)
-        if b >= n:
-            break
-        e = min(b + int(0.25 * sr), n)
-        tk = t[b:e] - t[b]
-        ses[b:e] += 0.32 * np.sin(2 * np.pi * (50 * tk + 45 * (1 - np.exp(-tk * 25)))) * np.exp(-tk * 14)
-        hb = b + int(vurus / 2 * sr)
-        he = min(hb + int(0.05 * sr), n)
-        if hb < n:
-            ses[hb:he] += 0.035 * rng.standard_normal(he - hb) * np.exp(-np.arange(he - hb) / sr * 70)
-    # giriş/çıkış ve ses seviyesi
-    ses *= np.minimum(t / 0.6, 1) * np.minimum((sure - t) / 1.8, 1)
-    ses = np.tanh(ses * 1.3) * 0.75
-    stereo = np.stack([ses, np.roll(ses, 180)], axis=1)
-    veri = (stereo * 32767).astype(np.int16)
-    with wave.open(str(yol), "wb") as w:
-        w.setnchannels(2)
-        w.setsampwidth(2)
-        w.setframerate(sr)
-        w.writeframes(veri.tobytes())
-    return yol
-
-
 # --- birleştirme -----------------------------------------------------------
 
 def _ffmpeg():
@@ -499,7 +441,7 @@ def beden_sirala(metin):
     return sorted(bedenler, key=anahtar)
 
 
-def uret(fotolar, baslik, detaylar, cikti, muzikli=True, tarih=None):
+def uret(fotolar, baslik, detaylar, cikti, muzikli=True, tarih=None, tohum=None):
     """fotolar: yerel dosya yolları. detaylar: [(ad, değer), ...]. Video yolunu döndürür."""
     global PAY_UST, PAY_ALT, PAY_YAN
     kamp = kampanya_aktif(tarih)
@@ -544,7 +486,7 @@ def uret(fotolar, baslik, detaylar, cikti, muzikli=True, tarih=None):
     cikti.parent.mkdir(parents=True, exist_ok=True)
     ses_yol = cikti.with_suffix(".wav")
     if muzikli:
-        muzik(toplam + 0.1, ses_yol)
+        uret.son_tarz = muzik.uret(toplam + 0.1, ses_yol, tohum if tohum is not None else str(cikti))
 
     komut = [_ffmpeg(), "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
              "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-"]

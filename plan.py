@@ -10,6 +10,7 @@ import random
 import sys
 import traceback
 
+import aciklama as AC
 import ayarlar as A
 import durum as D
 import gorsel
@@ -54,6 +55,17 @@ def detaylar(u):
 
 
 def aciklama(u, yuzde=0):
+    """Ürün türüne göre geniş açıklama (aciklama.py). Fiyat yok, en fazla 5 hashtag."""
+    kamp = None
+    try:
+        import reels
+        kamp = reels.kampanya_aktif()
+    except Exception:
+        pass
+    return AC.olustur(u, detaylar(u), tohum=f"{D.bugun()}-{u['id']}", morro=morro_mu(u), kampanya=kamp)
+
+
+def aciklama_eski(u, yuzde=0):
     satirlar = [u["baslik"], "", "✨ Ürün özellikleri"]
     for ik, ad, deger in detaylar(u):
         satirlar.append(f"{ik} {ad}: {deger}")
@@ -232,12 +244,41 @@ def kalem(u, saat, sira, tarih, tur="gonderi", grup="diger"):
         "urun_id": u["id"], "model": u.get("model"), "baslik": u["baslik"], "kategori": u["kategori"],
         "fiyat": u["fiyat"], "liste_fiyat": u["liste_fiyat"], "stok": u["stok"],
         "etiket": etiket, "aciklama": aciklama(u, yuzde),
+        "detaylar": [[ad, deger] for _, ad, deger in detaylar(u)],
         "gorsel": dosya, "gorsel_url": f"{A.HAM_ADRES}/{dosya}" if dosya else None,
         "gorsel_urls": [f"{A.HAM_ADRES}/{d}" for d in dosyalar],
         "manken_silindi": soyut_mu,
         "hikaye_url": f"{A.HAM_ADRES}/{hikaye_dosya}" if hikaye_dosya else None,
         "kaynak_gorsel": u["gorseller"][0], "link": u.get("link"),
     }
+
+
+def tekrar_adaylari(tarih, gun=6):
+    """Önceki günlerde paylaşılmış gönderiler (Reels'i hikayede tekrar paylaşmak için).
+    Fotoğrafları depoda hâlâ duran (son 7 gün), daha önce hikayede tekrarlanmamış olanlar."""
+    bugun = dt.date.fromisoformat(tarih)
+    kullanilan, adaylar = set(), []
+    for i in range(1, gun + 1):
+        p = D.oku(D.plan_yolu((bugun - dt.timedelta(days=i)).isoformat()), None)
+        if not p:
+            continue
+        for k in p.get("paylasimlar", []):
+            if k.get("kaynak_ref"):
+                kullanilan.add(k["kaynak_ref"])
+            if k.get("tur") == "gonderi" and k.get("durum") == "paylaşıldı" and k.get("gorsel_urls"):
+                yerel = [D.KOK / ("media/" + u.rsplit("/media/", 1)[1]) for u in k["gorsel_urls"]]
+                if all(y.exists() for y in yerel):
+                    adaylar.append(dict(k, kaynak_ref=f"{p['tarih']}#{k['saat']}"))
+    return [k for k in adaylar if k["kaynak_ref"] not in kullanilan]
+
+
+def tekrar_kalemi(kaynak, saat):
+    k = {x: kaynak.get(x) for x in ("grup", "marka", "urun_id", "model", "baslik", "kategori", "fiyat",
+                                    "liste_fiyat", "stok", "etiket", "gorsel", "gorsel_url", "gorsel_urls",
+                                    "detaylar", "aciklama", "link", "permalink", "kaynak_ref")}
+    k.update(saat=saat, durum="bekliyor", tur="hikaye", kaynak="reels_tekrar",
+             hikaye_url=kaynak.get("gorsel_url"))
+    return k
 
 
 def main():
@@ -263,8 +304,28 @@ def main():
     urunler = trendyol.urunler()
     kalemler, yedekler = [], []
     sira = 1
+
+    # Sadece-hikaye saatleri: ayrı görsel hazırlamak yerine önceki günlerin Reels'leri
+    # hikayede tekrar paylaşılır (Morro ve stokta olanlar önce).
+    dolu_hikaye = set()
+    if getattr(A, "HIKAYE_REELS_TEKRAR", False):
+        stok = {u["id"]: u["stok"] for u in urunler}
+        adaylar = [k for k in tekrar_adaylari(tarih) if stok.get(k["urun_id"], 0) >= 1]
+        morro = [k for k in adaylar if k.get("grup") == "morro"]   # en yeni gün önce
+        diger = [k for k in adaylar if k.get("grup") != "morro"]
+        sirali = []
+        while morro or diger:  # Morro ve diğerlerini dönüşümlü sırala, en yeniler önce
+            if morro:
+                sirali.append(morro.pop(0))
+            if diger:
+                sirali.append(diger.pop(0))
+        for saat, tur, _ in A.PROGRAM:
+            if tur == "hikaye" and sirali:
+                kalemler.append(tekrar_kalemi(sirali.pop(0), saat))
+                dolu_hikaye.add(saat)
+
     for grup in ("morro", "diger"):
-        slotlar = [p for p in A.PROGRAM if p[2] == grup]
+        slotlar = [p for p in A.PROGRAM if p[2] == grup and p[0] not in dolu_hikaye]
         if not slotlar:
             continue
         havuz = [u for u in urunler if morro_mu(u) == (grup == "morro")]

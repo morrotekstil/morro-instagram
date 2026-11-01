@@ -33,7 +33,7 @@ concurrency:
 jobs:
   paylas:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -64,6 +64,13 @@ jobs:
           TRENDYOL_API_SECRET: ${{ secrets.TRENDYOL_API_SECRET }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.deneme && '1' || '0' }}
         run: python paylas.py ${{ inputs.simdi && '--simdi' || '' }}
+      - name: Deneme videosunu sakla
+        if: github.event_name == 'workflow_dispatch' && inputs.deneme
+        uses: actions/upload-artifact@v4
+        with:
+          name: reels-deneme
+          path: reels/*.mp4
+          if-no-files-found: ignore
       - name: Kaydet
         if: always()
         run: |
