@@ -60,7 +60,7 @@
     },
     {
       "saat": "12:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "hikaye",
       "grup": "diger",
       "marka": "Bolero",
@@ -79,7 +79,11 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-01-8-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/17/9ec8628d-57b9-34fa-8c71-be99dc3616f4/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/kadin-premium-lazer-kesim-babet-c-orap-siyah-p-941926285?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/kadin-premium-lazer-kesim-babet-c-orap-siyah-p-941926285?merchantId=1123267&filterOverPriceListings=false",
+      "hikaye_id": "18225543226338921",
+      "paylasim_saati": "2026-11-01T12:27+03:00",
+      "media_id": "18225543226338921",
+      "permalink": null
     },
     {
       "saat": "13:00",
