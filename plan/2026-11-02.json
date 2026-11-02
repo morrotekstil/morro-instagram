@@ -347,7 +347,7 @@
     },
     {
       "saat": "19:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -397,7 +397,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-02-2-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1952/prod/QC_PREP/20260831/00/6ec20d49-d657-3973-886a-f4bb33a4e925/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/kadin-koyu-gri-yu-ksek-bel-o-n-dikis-li-c-imali-kumas-pantolon-p-1193782666?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/kadin-koyu-gri-yu-ksek-bel-o-n-dikis-li-c-imali-kumas-pantolon-p-1193782666?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "17925821121440524",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-02T20:22+03:00",
+      "media_id": "18080554355400905",
+      "permalink": "https://www.instagram.com/reel/DfP1HiToUrq/"
     },
     {
       "saat": "21:30",
