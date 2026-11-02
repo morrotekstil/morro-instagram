@@ -244,7 +244,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -302,7 +302,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-02-7-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1914/prod/QC_PREP/20260811/13/a83a1029-166f-3f63-a002-d2aacfbb79cf/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-bambu-boxer-fu-me-p-991184992?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-bambu-boxer-fu-me-p-991184992?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18114201926149099",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-02T17:31+03:00",
+      "media_id": "18117145829133698",
+      "permalink": "https://www.instagram.com/reel/DfPhpGtFbvS/"
     },
     {
       "grup": "diger",
