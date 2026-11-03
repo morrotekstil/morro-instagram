@@ -206,7 +206,7 @@
     },
     {
       "saat": "13:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -265,7 +265,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-03-1-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1969/prod/QC_PREP/20261002/23/066b39e5-8d8c-3700-a47c-b10cf04b9f99/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/kadin-bu-yu-k-beden-beli-lastikli-bag-cikli-bol-pac-a-rahat-kesim-pijama-alti-p-1208550613?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/kadin-bu-yu-k-beden-beli-lastikli-bag-cikli-bol-pac-a-rahat-kesim-pijama-alti-p-1208550613?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18640162948044820",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-03T13:40+03:00",
+      "media_id": "18101617130399656",
+      "permalink": "https://www.instagram.com/reel/DfRr8DREXNt/"
     },
     {
       "grup": "morro",
