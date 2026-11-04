@@ -213,7 +213,7 @@
     },
     {
       "saat": "13:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -266,7 +266,12 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-04-1-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1780/prod/QC_PREP/20251029/05/10fee8f5-b4cf-33d1-a0b7-634a40b90827/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/i-nce-bel-biye-lastikli-full-li-krali-tayti-kadin-tayt-p-1042754551?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/i-nce-bel-biye-lastikli-full-li-krali-tayti-kadin-tayt-p-1042754551?merchantId=1123267&filterOverPriceListings=false",
+      "reels_hata": "Reels: doğrudan yükleme: 400: {'error': {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'AodwLAWdcN4u18UDw0vbJ-I'}} | adresle yükleme: Command '",
+      "hikaye_id": "18118376930092508",
+      "paylasim_saati": "2026-11-04T13:51+03:00",
+      "media_id": "18120188582051113",
+      "permalink": "https://www.instagram.com/p/DfUSJuele_7/"
     },
     {
       "grup": "morro",
