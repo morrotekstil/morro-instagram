@@ -334,7 +334,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -385,7 +385,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-04-7-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/17/1e25f12b-9739-3021-9a5a-b9db0cc85b19/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-premium-dikis-siz-12-li-modal-c-orap-mix-asorti-go-lgeli-kare-desen-p-991921144?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-premium-dikis-siz-12-li-modal-c-orap-mix-asorti-go-lgeli-kare-desen-p-991921144?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18379826176210030",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-04T17:32+03:00",
+      "media_id": "18168910108486672",
+      "permalink": "https://www.instagram.com/reel/DfUrQLokTN0/"
     },
     {
       "grup": "diger",
