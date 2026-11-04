@@ -72,7 +72,7 @@
     },
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "ALİN",
@@ -139,7 +139,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-04-6-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1590/prod/QC/20241024/11/e5829981-a770-339d-bb41-3afa26312107/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/ali-n/alin-322-yumus-ak-doku-uzun-kol-kadin-pijama-takimi-gri-p-869527835?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/ali-n/alin-322-yumus-ak-doku-uzun-kol-kadin-pijama-takimi-gri-p-869527835?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18126249997900037",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-04T11:28+03:00",
+      "media_id": "18017589488753109",
+      "permalink": "https://www.instagram.com/reel/DfUBohFE6XP/"
     },
     {
       "grup": "diger",
