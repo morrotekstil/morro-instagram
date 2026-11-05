@@ -327,7 +327,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -390,7 +390,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-05-7-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/17/405fe36b-450b-3c2a-915b-b870203ef652/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-3-lu-pamuk-boxer-gri-antrasit-siyah-p-1120105720?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-3-lu-pamuk-boxer-gri-antrasit-siyah-p-1120105720?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "17918477505499137",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-05T17:31+03:00",
+      "media_id": "18115847363035329",
+      "permalink": "https://www.instagram.com/reel/DfXQDItksvI/"
     },
     {
       "grup": "diger",
