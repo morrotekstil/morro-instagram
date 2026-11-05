@@ -531,7 +531,7 @@
     },
     {
       "saat": "21:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -586,7 +586,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-05-3-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty2009/prod/QC_PREP/20261104/22/7f82bfb5-5d43-3651-8df9-e91b5456e02d/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/erkek-100-pamuk-6-li-paket-kesik-atlet-p-1231018894?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/erkek-100-pamuk-6-li-paket-kesik-atlet-p-1231018894?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18130849201868903",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-05T22:14+03:00",
+      "media_id": "17989855617001139",
+      "permalink": "https://www.instagram.com/reel/DfXwWkAgL_7/"
     }
   ],
   "yedekler": [
