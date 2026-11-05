@@ -207,7 +207,7 @@
     },
     {
       "saat": "13:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -253,7 +253,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-05-1-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1994/prod/QC_ENRICHMENT/20261028/02/473575f1-d4d9-3354-9f41-ab15a49af30b/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/kadin-yu-ksek-bel-pileli-genis-pac-a-krep-kumas-pantolon-p-1193781183?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/kadin-yu-ksek-bel-pileli-genis-pac-a-krep-kumas-pantolon-p-1193781183?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18132273184867119",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-05T13:45+03:00",
+      "media_id": "18121802366058026",
+      "permalink": "https://www.instagram.com/reel/DfW2I4HijhL/"
     },
     {
       "grup": "morro",
