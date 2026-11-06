@@ -445,7 +445,7 @@
     },
     {
       "saat": "19:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -490,7 +490,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-06-2-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1893/prod/QC_PREP/20260717/21/108e4093-3130-352b-a257-da7363955610/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/kadin-pamuklu-dokuma-pijama-alti-beli-lastikli-bag-lamali-genis-pac-a-rahat-kesim-tek-alt-p-1172707377?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/kadin-pamuklu-dokuma-pijama-alti-beli-lastikli-bag-lamali-genis-pac-a-rahat-kesim-tek-alt-p-1172707377?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18119920420785217",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-06T20:16+03:00",
+      "media_id": "18648975328054100",
+      "permalink": "https://www.instagram.com/reel/DfaHvStDcXV/"
     },
     {
       "saat": "21:30",
