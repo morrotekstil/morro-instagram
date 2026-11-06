@@ -318,7 +318,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -363,7 +363,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-06-7-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1962/prod/QC_ENRICHMENT/20260924/17/c0b42b2b-8e18-347d-b4b7-e99622945171/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-yu-n-havlu-kis-lik-soket-c-orap-siyah-p-1039390766?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-yu-n-havlu-kis-lik-soket-c-orap-siyah-p-1039390766?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18500220331101477",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-06T17:30+03:00",
+      "media_id": "18271919143306996",
+      "permalink": "https://www.instagram.com/reel/DfZ0rLxlUmO/"
     },
     {
       "grup": "diger",
