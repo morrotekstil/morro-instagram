@@ -188,7 +188,7 @@
     },
     {
       "saat": "13:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -238,7 +238,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-06-1-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1950/prod/QC_PREP/20260831/00/5bb779b3-d1eb-3b0d-ba78-1e5da0b4717f/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/kadin-bej-klasik-yu-ksek-bel-rahat-kesim-ofis-ve-gu-nlu-k-pantolon-p-1193782240?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/kadin-bej-klasik-yu-ksek-bel-rahat-kesim-ofis-ve-gu-nlu-k-pantolon-p-1193782240?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18100334729400417",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-06T13:44+03:00",
+      "media_id": "17957165370276403",
+      "permalink": "https://www.instagram.com/reel/DfZa21JD86F/"
     },
     {
       "grup": "morro",
