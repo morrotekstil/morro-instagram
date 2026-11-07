@@ -200,7 +200,7 @@
     },
     {
       "saat": "13:00",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -264,7 +264,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-07-1-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1987/prod/QC_ENRICHMENT/20261022/17/a9cb9f3c-305e-38ff-9bd6-aa2957e26164/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/kadin-genis-askili-atlet-6-li-paket-modal-pamuklu-esnek-i-c-giyim-p-1208552878?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/kadin-genis-askili-atlet-6-li-paket-modal-pamuklu-esnek-i-c-giyim-p-1208552878?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18155671687533197",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-07T13:25+03:00",
+      "media_id": "18145996612718365",
+      "permalink": "https://www.instagram.com/reel/Dfb9eLQgMNN/"
     },
     {
       "grup": "morro",
