@@ -328,7 +328,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -375,7 +375,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-07-7-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1812/prod/QC_ENRICHMENT/20260119/10/04cb7d3e-614f-33de-95ce-dee150e35bf2/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-premium-yu-n-bambu-soket-c-orap-lacivert-p-1039640156?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-premium-yu-n-bambu-soket-c-orap-lacivert-p-1039640156?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "17963889254999251",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-07T17:07+03:00",
+      "media_id": "18186734044420766",
+      "permalink": "https://www.instagram.com/reel/DfcW08KDcFK/"
     },
     {
       "grup": "diger",
