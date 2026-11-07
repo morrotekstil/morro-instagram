@@ -63,7 +63,7 @@
     },
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Arnetta",
@@ -126,7 +126,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-07-6-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1924/prod/QC_PREP/20260702/10/88bab0cf-e5d6-37ff-8f3a-847333b348eb/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/arnetta/holidays-party-anne-kiz-bordo-uzun-kol-pijama-takim-ar3732-a-v1-p-1163602842?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/arnetta/holidays-party-anne-kiz-bordo-uzun-kol-pijama-takim-ar3732-a-v1-p-1163602842?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18107453558527789",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-07T11:15+03:00",
+      "media_id": "18418744549085821",
+      "permalink": "https://www.instagram.com/reel/DfbumhaGhso/"
     },
     {
       "grup": "diger",
