@@ -107,3 +107,6 @@ KAMPANYA = {
     "alt_satir2": "Mağazamıza ve morro.com.tr'ye özel",
     "aciklama": "🍂 KASIM'A ÖZEL: 4 AL 3 ÖDE! Kasım boyunca tüm ürünlerde, mağazamızda ve morro.com.tr'de geçerli.",
 }
+
+# 4 al 3 öde kampanyası kaldırıldı (Adem, 8 Kasım 2026): Reels bandı, kampanya sahnesi ve açıklama satırı kapalı.
+KAMPANYA = None
