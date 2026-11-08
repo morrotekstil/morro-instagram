@@ -99,6 +99,15 @@ def main():
         return
     k = sira[0]
 
+    # Hikayeler duraklatıldıysa sadece-hikaye kalemlerini atla (ayarlar.HIKAYE_DURAKLAT)
+    if k.get("tur") == "hikaye" and not A.hikaye_acik(plan["tarih"]):
+        k["durum"] = "atlandı (hikayeler duraklatıldı)"
+        if not A.DRY_RUN:
+            D.yaz(plan_yol, plan)
+            D.yaz(D.KOK / "plan" / "bugun.json", plan)
+        print("Hikayeler duraklatıldı, bu hikaye atlandı.")
+        return
+
     # Son stok kontrolü
     try:
         guncel = {u["id"]: u for u in trendyol.urunler()}
@@ -201,7 +210,7 @@ def main():
                 if not gorsel_hazir_mi(url):
                     raise SystemExit(f"Görsel adresine ulaşılamıyor: {url}")
             mid, link = instagram.paylas(token, urls, k["aciklama"])
-        if A.HIKAYE:
+        if A.HIKAYE and A.hikaye_acik(plan["tarih"]):
             # Gönderinin hikayesi: aynı Reels videosu (olmazsa hazır hikaye görseli)
             try:
                 if video and k.get("reels") and getattr(A, "HIKAYE_REELS", False):

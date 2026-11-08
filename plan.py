@@ -230,7 +230,7 @@ def kalem(u, saat, sira, tarih, tur="gonderi", grup="diger"):
         raise RuntimeError("kullanılabilir görsel çıkmadı")
     dosya = dosyalar[0] if dosyalar else None
     hikaye_dosya = None
-    if A.HIKAYE or tur == "hikaye":
+    if (A.HIKAYE and A.hikaye_acik(tarih)) or tur == "hikaye":
         try:
             hikaye_dosya = f"media/{tarih}-{sira}-hikaye.jpg"
             gorsel.hikaye(hazir[0][2], u["baslik"], detaylar(u), D.KOK / hikaye_dosya)
@@ -305,6 +305,12 @@ def main():
     kalemler, yedekler = [], []
     sira = 1
 
+    # Hikayeler duraklatıldıysa (ayarlar.HIKAYE_DURAKLAT) sadece gönderi saatleri planlanır
+    program = A.PROGRAM
+    if not A.hikaye_acik(tarih):
+        program = [p for p in A.PROGRAM if p[1] != "hikaye"]
+        notlar.append("Hikayeler duraklatıldı (" + " – ".join(A.HIKAYE_DURAKLAT) + "), sadece gönderiler paylaşılıyor")
+
     # Sadece-hikaye saatleri: ayrı görsel hazırlamak yerine önceki günlerin Reels'leri
     # hikayede tekrar paylaşılır (Morro ve stokta olanlar önce).
     dolu_hikaye = set()
@@ -319,13 +325,13 @@ def main():
                 sirali.append(morro.pop(0))
             if diger:
                 sirali.append(diger.pop(0))
-        for saat, tur, _ in A.PROGRAM:
+        for saat, tur, _ in program:
             if tur == "hikaye" and sirali:
                 kalemler.append(tekrar_kalemi(sirali.pop(0), saat))
                 dolu_hikaye.add(saat)
 
     for grup in ("morro", "diger"):
-        slotlar = [p for p in A.PROGRAM if p[2] == grup and p[0] not in dolu_hikaye]
+        slotlar = [p for p in program if p[2] == grup and p[0] not in dolu_hikaye]
         if not slotlar:
             continue
         havuz = [u for u in urunler if morro_mu(u) == (grup == "morro")]

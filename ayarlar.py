@@ -48,6 +48,24 @@ DRY_RUN = os.environ.get("DRY_RUN", "0") == "1"
 # Her gönderiyle birlikte aynı ürünün fiyatlı hikayesi de paylaşılsın mı
 HIKAYE = True
 
+# Hikayeleri belli bir tarih aralığında durdur (gönderiler/Reels devam eder).
+# Bu aralıkta ne sadece-hikaye saatleri ne de gönderinin yanındaki hikaye paylaşılır;
+# bitiş tarihinden sonra hikayeler kendiliğinden geri açılır. Kapatmak için None yap.
+# Adem, 8 Kasım 2026: "hikayeler Kasım ayı boyunca dursun".
+HIKAYE_DURAKLAT = ("2026-11-01", "2026-11-30")
+
+
+def hikaye_acik(tarih=None):
+    """Verilen gün (YYYY-AA-GG, varsayılan bugün, Türkiye saati) hikaye paylaşılır mı."""
+    if not HIKAYE_DURAKLAT:
+        return True
+    if tarih is None:
+        import datetime as _dt
+        from zoneinfo import ZoneInfo
+        tarih = _dt.datetime.now(ZoneInfo("Europe/Istanbul")).date().isoformat()
+    bas, bit = HIKAYE_DURAKLAT
+    return not (bas <= tarih <= bit)
+
 # Görsel
 FOTO_SAYISI = 5   # her gönderideki en fazla fotoğraf (kaydırmalı gönderi, 2-10 arası)
 GENISLIK, YUKSEKLIK = 1080, 1350   # Instagram 4:5 dikey
