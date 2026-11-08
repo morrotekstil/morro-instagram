@@ -4,7 +4,7 @@ Akış (dikey 1080x1920, 30 fps, ~12-16 sn):
   1. Açılış: Morro logosu + ürün adı
   2. Ürün fotoğrafları: yavaş yakınlaşma/kayma, yumuşak geçiş
   3. Bilgi kartı: renk, beden, kumaş içeriği (fiyat yok)
-  4. Kapanış: "Trendyol'da Morro · Link profilde"
+  4. Kapanış: "Trendyol'da ve morro.com.tr'de · Link profilde"
 Fon müziği muzik.py ile her videoda farklı tarzda üretilir (sakin, telifsiz).
 """
 import math
@@ -236,14 +236,18 @@ def sahne_kapanis(sure, site=False):
         k.paste(lg, (kx + 50, ky + 40), lg)
         g2 = _yumusak((t - 0.4) / 0.6)
         y = ky + lg.height + 160 + int(30 * (1 - g2))
-        metinler = [("Trendyol'da Morro", f1, (255, 255, 255))]
-        metinler.append(("morro.com.tr", f1, (255, 255, 255)))
+        metinler = [("Trendyol'da ve", f1, (255, 255, 255)), ("morro.com.tr'de", f1, (255, 255, 255))]
         metinler.append(("Link profilde", f2, (235, 215, 230)))
         for metin, font, renk in metinler:
             tw = dk.textlength(metin, font=font)
             dk.text(((W - tw) / 2, y), metin, font=font, fill=(*renk, int(255 * g2)))
             y += 96
         im.paste(k, (0, 0), k)
+        if g2 > 0:  # tıklanabilir site etiketi (büyük)
+            et = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            gorsel.site_etiketi(et, alt=H - y - 150, boyut=56)
+            et.putalpha(et.getchannel("A").point(lambda a: int(a * g2)))
+            im.paste(et, (0, 0), et)
         return im
     return kare
 

@@ -47,19 +47,58 @@ def _logo_yapistir(arka, ortala=False):
 SITE = "morro.com.tr"
 
 
+def _dunya_ikon(cap, renk):
+    """Web sitesi simgesi (küre). Yumuşak kenar için 4 kat büyük çizilip küçültülür."""
+    K = 4
+    c = cap * K
+    im = Image.new("RGBA", (c, c), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    w = max(2, int(c * 0.075))
+    d.ellipse((w // 2, w // 2, c - w // 2 - 1, c - w // 2 - 1), outline=renk, width=w)
+    d.ellipse((c * 0.27, w // 2, c * 0.73, c - w // 2 - 1), outline=renk, width=w)   # boylam
+    d.line((c / 2, w, c / 2, c - w), fill=renk, width=w)
+    d.line((w, c / 2, c - w, c / 2), fill=renk, width=w)                              # ekvator
+    for y in (0.27, 0.73):                                                            # enlemler
+        x = c * 0.5 - (c * 0.5 - w) * (1 - (2 * y - 1) ** 2) ** 0.5 * 0.97
+        d.line((x, c * y, c - x, c * y), fill=renk, width=w)
+    return im.resize((cap, cap), Image.LANCZOS)
+
+
+def _imlec_ikon(boy, renk=(30, 30, 30)):
+    """Tıklama imleci (ok). Beyaz kenarlı, hafif gölgeli."""
+    K = 4
+    h = boy * K
+    noktalar = [(0, 0), (0, 0.78), (0.2, 0.6), (0.34, 0.92), (0.47, 0.86), (0.33, 0.55), (0.58, 0.55)]
+    pay = int(h * 0.12)
+    im = Image.new("RGBA", (int(h * 0.62) + 2 * pay, h + 2 * pay), (0, 0, 0, 0))
+    p = [(pay + x * h, pay + y * h) for x, y in noktalar]
+    golge = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    ImageDraw.Draw(golge).polygon([(x + h * 0.05, y + h * 0.06) for x, y in p], fill=(0, 0, 0, 90))
+    im = Image.alpha_composite(im, golge.filter(ImageFilter.GaussianBlur(h * 0.03)))
+    d = ImageDraw.Draw(im)
+    d.polygon(p, fill=renk, outline=(255, 255, 255), width=int(h * 0.06))
+    return im.resize((im.width // K, im.height // K), Image.LANCZOS)
+
+
 def site_etiketi(img, alt=70, boyut=38):
-    """Görselin alt ortasına beyaz zemin üzerine mor 'morro.com.tr' yazar."""
+    """Görselin alt ortasına beyaz zemin üzerine 🌐 morro.com.tr yazar; sağına tıklama imleci koyar."""
     katman = Image.new("RGBA", img.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(katman)
     f = _font(boyut)
     tb = d.textbbox((0, 0), SITE, font=f)
     tw, th = tb[2] - tb[0], tb[3] - tb[1]
-    px, py = 34, 18
-    x = (img.width - tw - 2 * px) // 2
-    y = img.height - alt - th - 2 * py
-    d.rounded_rectangle((x, y, x + tw + 2 * px, y + th + 2 * py), radius=(th + 2 * py) // 2,
-                        fill=(255, 255, 255, 230))
-    d.text((x + px - tb[0], y + py - tb[1]), SITE, font=f, fill=(*A.ETIKET_RENK, 255))
+    ikon = _dunya_ikon(int(th * 1.15), (*A.ETIKET_RENK, 255))
+    ara = int(boyut * 0.35)
+    px, py = 30, 18
+    gen = ikon.width + ara + tw + 2 * px
+    yuk = th + 2 * py
+    x = (img.width - gen) // 2
+    y = img.height - alt - yuk
+    d.rounded_rectangle((x, y, x + gen, y + yuk), radius=yuk // 2, fill=(255, 255, 255, 235))
+    katman.paste(ikon, (x + px, y + (yuk - ikon.height) // 2), ikon)
+    d.text((x + px + ikon.width + ara - tb[0], y + py - tb[1]), SITE, font=f, fill=(*A.ETIKET_RENK, 255))
+    imlec = _imlec_ikon(int(yuk * 0.95))
+    katman.paste(imlec, (x + gen - int(imlec.width * 0.55), y + int(yuk * 0.45)), imlec)
     img.paste(katman, (0, 0), katman)
     return img
 
@@ -156,7 +195,7 @@ def hikaye(kaynak: Image.Image, baslik, detaylar, cikti: Path):
         tb = d.textbbox((0, 0), sat, font=fd)
         d.text(((W - (tb[2] - tb[0])) // 2, yy), sat, font=fd, fill=(60, 60, 60))
         yy += 52
-    alt = "Trendyol'da Morro mağazamızda · morro.com.tr"
+    alt = "Trendyol'da ve morro.com.tr'de · Link profilde"
     fs = _font(30, kalin=False)
     tb = d.textbbox((0, 0), alt, font=fs)
     d.text(((W - (tb[2] - tb[0])) // 2, min(yy + 12, H - 100)), alt, font=fs, fill=(120, 120, 120))
