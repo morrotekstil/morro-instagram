@@ -44,6 +44,26 @@ def _logo_yapistir(arka, ortala=False):
     arka.paste(kutu, (x0, y0), kutu)
 
 
+SITE = "morro.com.tr"
+
+
+def site_etiketi(img, alt=70, boyut=38):
+    """Görselin alt ortasına beyaz zemin üzerine mor 'morro.com.tr' yazar."""
+    katman = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(katman)
+    f = _font(boyut)
+    tb = d.textbbox((0, 0), SITE, font=f)
+    tw, th = tb[2] - tb[0], tb[3] - tb[1]
+    px, py = 34, 18
+    x = (img.width - tw - 2 * px) // 2
+    y = img.height - alt - th - 2 * py
+    d.rounded_rectangle((x, y, x + tw + 2 * px, y + th + 2 * py), radius=(th + 2 * py) // 2,
+                        fill=(255, 255, 255, 230))
+    d.text((x + px - tb[0], y + py - tb[1]), SITE, font=f, fill=(*A.ETIKET_RENK, 255))
+    img.paste(katman, (0, 0), katman)
+    return img
+
+
 def hazirla(kaynak: Image.Image, etiket: str, cikti: Path):
     W, H = A.GENISLIK, A.YUKSEKLIK
     # Arka plan: görselin bulanık ve açık hali (boşluklar beyaz şerit gibi durmasın)
@@ -136,7 +156,7 @@ def hikaye(kaynak: Image.Image, baslik, detaylar, cikti: Path):
         tb = d.textbbox((0, 0), sat, font=fd)
         d.text(((W - (tb[2] - tb[0])) // 2, yy), sat, font=fd, fill=(60, 60, 60))
         yy += 52
-    alt = "Trendyol'da Morro mağazamızda · Link profilde"
+    alt = "Trendyol'da Morro mağazamızda · morro.com.tr"
     fs = _font(30, kalin=False)
     tb = d.textbbox((0, 0), alt, font=fs)
     d.text(((W - (tb[2] - tb[0])) // 2, min(yy + 12, H - 100)), alt, font=fs, fill=(120, 120, 120))

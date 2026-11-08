@@ -160,6 +160,7 @@ def sahne_foto(img, sure, yon, alt_yazi=None):
                                  fill=(*MOR, int(225 * g)))
             dy.text((bx + 36, by + 14), alt_yazi, font=f, fill=(255, 255, 255, int(255 * g)))
             kare_img.paste(yaz, (0, 0), yaz)
+        gorsel.site_etiketi(kare_img, alt=max(48, PAY_ALT + 30))
         return kare_img
     return kare
 
@@ -204,6 +205,7 @@ def sahne_bilgi(img, baslik, detaylar, sure):
                 y += 54
             y += 4
         im.paste(k, (0, 0), k)
+        gorsel.site_etiketi(im, alt=max(48, PAY_ALT + 30))
         return im
     return kare
 
@@ -235,8 +237,7 @@ def sahne_kapanis(sure, site=False):
         g2 = _yumusak((t - 0.4) / 0.6)
         y = ky + lg.height + 160 + int(30 * (1 - g2))
         metinler = [("Trendyol'da Morro", f1, (255, 255, 255))]
-        if site:
-            metinler.append(("morro.com.tr", f1, (255, 255, 255)))
+        metinler.append(("morro.com.tr", f1, (255, 255, 255)))
         metinler.append(("Link profilde", f2, (235, 215, 230)))
         for metin, font, renk in metinler:
             tw = dk.textlength(metin, font=font)
