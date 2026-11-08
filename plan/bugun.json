@@ -77,7 +77,7 @@
     },
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -115,7 +115,13 @@
       "manken_silindi": false,
       "hikaye_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-08-6-hikaye.jpg",
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1964/prod/QC_ENRICHMENT/20260924/17/fde008a0-fb1c-39ca-b87f-5d1fbe52cdec/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-penye-fanila-pamuk-t-shirt-beyaz-p-1153275192?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-penye-fanila-pamuk-t-shirt-beyaz-p-1153275192?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "hikaye_id": "18124900775286198",
+      "hikaye_video": true,
+      "paylasim_saati": "2026-11-08T11:16+03:00",
+      "media_id": "18221812711355416",
+      "permalink": "https://www.instagram.com/reel/DfeTc_ckzSA/"
     },
     {
       "grup": "diger",
