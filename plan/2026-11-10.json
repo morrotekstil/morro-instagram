@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Arnetta",
@@ -67,7 +67,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1907/prod/QC_PREP/20260702/10/8287bb09-ed78-3520-975a-457ab8f4bf61/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/arnetta/the-cool-king-baba-og-ul-lacivert-uzun-kol-pijama-takim-ar3821-a-v1-p-1163603035?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/arnetta/the-cool-king-baba-og-ul-lacivert-uzun-kol-pijama-takim-ar3821-a-v1-p-1163603035?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-10T10:39+03:00",
+      "media_id": "18491072917129336",
+      "permalink": "https://www.instagram.com/reel/DfjY27ImXdr/"
     },
     {
       "saat": "13:00",
