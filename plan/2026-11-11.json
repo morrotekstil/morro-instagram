@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -59,7 +59,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1996/prod/QC_ENRICHMENT/20261028/17/e2a81e70-450b-334c-8095-49cdf3b4fdf1/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-bambu-atlet-siyah-p-1208124974?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-bambu-atlet-siyah-p-1208124974?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-11T10:42+03:00",
+      "media_id": "18117394895010531",
+      "permalink": "https://www.instagram.com/reel/Dfl-F5PjmFc/"
     },
     {
       "saat": "13:00",
