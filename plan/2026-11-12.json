@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -53,7 +53,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1829/prod/QC_ENRICHMENT/20260223/10/18d5bb0b-3c52-3245-84af-9a9797a7d79e/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-yu-n-havlu-kis-lik-soket-c-orap-fu-me-p-1039587139?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-yu-n-havlu-kis-lik-soket-c-orap-fu-me-p-1039587139?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-12T10:44+03:00",
+      "media_id": "18032782085689128",
+      "permalink": "https://www.instagram.com/reel/DfojDhPmbdL/"
     },
     {
       "saat": "13:00",
