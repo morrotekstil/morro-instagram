@@ -124,7 +124,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -183,7 +183,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/17/12e8047d-f9d1-36af-b459-180c8a1eb7c1/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-havlu-bel-du-g-meli-boxer-siyah-p-1127884105?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-havlu-bel-du-g-meli-boxer-siyah-p-1127884105?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-12T17:29+03:00",
+      "media_id": "17946166032390312",
+      "permalink": "https://www.instagram.com/reel/DfpRZMeju9_/"
     },
     {
       "saat": "19:30",
