@@ -121,7 +121,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Arnetta",
@@ -184,7 +184,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1958/prod/QC_PREP/20260911/20/03f42cd2-8371-3817-ae56-1e9b454cf990/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/arnetta/baba-og-ul-100-pamuk-bordo-yes-il-holiday-party-uzun-kollu-pijama-takimi-takimlar-ayri-ayri-fi-yatlandirilaccaktir-p-1198641773?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/arnetta/baba-og-ul-100-pamuk-bordo-yes-il-holiday-party-uzun-kollu-pijama-takimi-takimlar-ayri-ayri-fi-yatlandirilaccaktir-p-1198641773?merchantId=1123267&filterOverPriceListings=false",
+      "reels_hata": "Reels: doğrudan yükleme: 400: {'error': {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'AKGt1fjWFEDOFQHlxzQSWmF'}} | adresle yükleme: Görsel iş",
+      "paylasim_saati": "2026-11-13T17:28+03:00",
+      "media_id": "18112260959352735",
+      "permalink": "https://www.instagram.com/p/Dfr2KOem62v/"
     },
     {
       "saat": "19:30",
