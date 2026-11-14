@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -67,7 +67,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/17/405fe36b-450b-3c2a-915b-b870203ef652/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-3-lu-pamuk-boxer-gri-antrasit-siyah-p-1120105720?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-3-lu-pamuk-boxer-gri-antrasit-siyah-p-1120105720?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-14T10:32+03:00",
+      "media_id": "18126279050314904",
+      "permalink": "https://www.instagram.com/reel/DftrRPSnB88/"
     },
     {
       "saat": "13:00",
