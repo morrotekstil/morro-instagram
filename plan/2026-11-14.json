@@ -133,7 +133,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -184,7 +184,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1962/prod/QC_ENRICHMENT/20260924/17/6c608749-2284-3e7c-aac4-b17def1db55a/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/kadin-premium-lazer-kesim-babet-c-orap-beyaz-p-938429882?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/kadin-premium-lazer-kesim-babet-c-orap-beyaz-p-938429882?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-14T17:08+03:00",
+      "media_id": "18103053533073061",
+      "permalink": "https://www.instagram.com/reel/DfuYl7NEXNc/"
     },
     {
       "saat": "19:30",
