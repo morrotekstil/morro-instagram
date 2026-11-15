@@ -79,7 +79,7 @@ MARKA_ETIKET = "MORRO"              # indirim yoksa yazılacak etiket (logo.png 
 # Hassas ürünler (sütyen, külot, takım...) paylaşılırken yapay zeka ürünü bulur;
 # ürün net kalır, kadının yüzü/teni/saçı güçlü bulanıklaştırılır (çıplaklık görünmez).
 # Adem, 15 Kasım 2026: "bu ürünleri bu şekilde ekleyelim".
-SOYUTLA = False  # bulanıklaştırma Actions denemesiyle doğrulanınca True yapılacak
+SOYUTLA = True    # Actions denemesi (4 sütyen, 8 kare): yüz/saç/ten bulanık, ürün net
 HASSAS_YONTEM = "bulanik"   # "bulanik" = kadın bulanık, ürün net; "manken" = cansız mankene çevir
 GUNLUK_HASSAS = 1        # bir günde en fazla kaç hassas ürün paylaşılsın
 # Erkek ürünleri (başlıkta/kategoride "erkek" geçen) bu kurala hiç takılmaz.
