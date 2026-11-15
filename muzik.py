@@ -91,7 +91,98 @@ def _firca(rng, sure=0.12):
     return gurultu * np.exp(-np.arange(n) / SR * 35)
 
 
+# --- Gerçek telifsiz şarkılar (Adem, 15 Kasım 2026: "tüm Reels videolarına ses ekleyelim") ---
+# Pixabay Music: ticari kullanım serbest, kaynak belirtme zorunlu değil. Dosyalar depoya
+# konmaz; her çalışmada Pixabay'den indirilir (muzik_onbellek/, .gitignore'da).
+# İndirilemezse eski sentez müziğe düşülür, video yine sessiz kalmaz.
+PARCALAR = [
+    "https://cdn.pixabay.com/download/audio/2025/03/03/audio_9f26c4267d.mp3?filename=kulakovka-tiktok-308512.mp3",
+    "https://cdn.pixabay.com/download/audio/2025/02/09/audio_7b658ca359.mp3?filename=kulakovka-tiktok-298925.mp3",
+    "https://cdn.pixabay.com/download/audio/2026/09/28/audio_ab051cb923.mp3?filename=kulakovka-dance-upbeat-pop-611603.mp3",
+    "https://cdn.pixabay.com/download/audio/2025/03/03/audio_b3198678c6.mp3?filename=kulakovka-energy-vlog-308511.mp3",
+    "https://cdn.pixabay.com/download/audio/2025/12/18/audio_11a3f0c6c5.mp3?filename=the_mountain-tiktok-453510.mp3",
+    "https://cdn.pixabay.com/download/audio/2025/09/25/audio_3e56bd1c2a.mp3?filename=nastelbom-tik-tok-410675.mp3",
+    "https://cdn.pixabay.com/download/audio/2025/02/24/audio_2377962568.mp3?filename=jonasblakewood-upbeat-pop-upbeat-pop-music-305509.mp3",
+    "https://cdn.pixabay.com/download/audio/2026/07/01/audio_e13a6d2c8f.mp3?filename=jonasblakewood-pop-upbeat-pop-upbeat-music-557611.mp3",
+    "https://cdn.pixabay.com/download/audio/2026/07/29/audio_2c107f7055.mp3?filename=the_mountain-pop-upbeat-upbeat-pop-576584.mp3",
+    "https://cdn.pixabay.com/download/audio/2025/10/24/audio_404fbe9e71.mp3?filename=tatamusic-pop-upbeat-pop-425328.mp3",
+    "https://cdn.pixabay.com/download/audio/2025/02/27/audio_5dd9c15c2c.mp3?filename=hitslab-pop-upbeat-pop-music-307007.mp3",
+    "https://cdn.pixabay.com/download/audio/2025/06/13/audio_191619f86b.mp3?filename=tunetank-energetic-dance-pop-349538.mp3",
+    "https://cdn.pixabay.com/download/audio/2026/07/29/audio_7c68415810.mp3?filename=the_mountain-pop-pop-music-576583.mp3",
+    "https://cdn.pixabay.com/download/audio/2026/08/27/audio_e2cb13868e.mp3?filename=atlasaudio-pop-593056.mp3",
+    "https://cdn.pixabay.com/download/audio/2026/10/27/audio_a2af4a48fc.mp3?filename=gr0za-pop-pop-music-627566.mp3",
+    "https://cdn.pixabay.com/download/audio/2026/03/10/audio_0efed2f5de.mp3?filename=bombinsound-trending-instagram-reels-music-499599.mp3",
+    "https://cdn.pixabay.com/download/audio/2025/11/15/audio_8619cc37bf.mp3?filename=nastelbom-instagram-reel-437298.mp3",
+]
+
+
+def _ffmpeg():
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        return "ffmpeg"
+
+
+def _indir(url):
+    import pathlib
+    import urllib.request
+    klasor = pathlib.Path(__file__).parent / "muzik_onbellek"
+    klasor.mkdir(exist_ok=True)
+    yol = klasor / url.split("filename=")[1]
+    if not yol.exists() or yol.stat().st_size < 50_000:
+        istek = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(istek, timeout=60) as r:
+            veri = r.read()
+        if len(veri) < 50_000:
+            raise RuntimeError("şarkı indirilemedi")
+        yol.write_bytes(veri)
+    return yol
+
+
+def _hareketli_yer(mp3, atla=3.0):
+    """Şarkıda ses seviyesinin (1 sn pencere) ilk kez tepenin %85'ine ulaştığı saniye."""
+    import subprocess
+    ham = subprocess.run([_ffmpeg(), "-hide_banner", "-loglevel", "error", "-i", str(mp3), "-ac", "1",
+                          "-ar", "8000", "-f", "s16le", "-"], capture_output=True, check=True).stdout
+    a = np.frombuffer(ham, dtype=np.int16).astype(float)
+    pen = 8000
+    rms = [float(np.sqrt(np.mean(a[i:i + pen] ** 2))) for i in range(0, len(a) - pen, pen // 2)]
+    if not rms:
+        return 0.0
+    tepe = max(rms)
+    for i, r in enumerate(rms):
+        if i * 0.5 >= atla and r >= 0.85 * tepe:
+            return i * 0.5
+    return atla
+
+
+def gercek(sure, yol, tohum=None):
+    """Telifsiz şarkıdan sure saniyelik, Instagram seviyesinde (-14 LUFS) WAV; şarkı adını döndürür."""
+    import subprocess
+    url = random.Random(f"sarki-{tohum}").choice(PARCALAR)
+    mp3 = _indir(url)
+    bas = _hareketli_yer(mp3)
+    subprocess.run([_ffmpeg(), "-hide_banner", "-loglevel", "error", "-y",
+                    "-stream_loop", "-1", "-ss", f"{bas:.2f}", "-i", str(mp3),
+                    "-af", f"atrim=0:{sure:.2f},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.3,"
+                           f"afade=t=out:st={max(0, sure - 1.0):.2f}:d=1.0,loudnorm=I=-14:TP=-1.5:LRA=11",
+                    "-ar", str(SR), "-ac", "2", "-t", f"{sure:.2f}", str(yol)], check=True)
+    return "şarkı: " + url.split("filename=")[1].rsplit(".", 1)[0]
+
+
 def uret(sure, yol, tohum=None):
+    """Önce gerçek telifsiz şarkı; olmazsa sentez müzik. Seçilen müziği döndürür."""
+    import ayarlar as A
+    if getattr(A, "GERCEK_MUZIK", True):
+        try:
+            return gercek(sure, yol, tohum)
+        except Exception as e:
+            print("Şarkı eklenemedi, sentez müziğe geçiliyor:", e)
+    return sentez(sure, yol, tohum)
+
+
+def sentez(sure, yol, tohum=None):
     """sure saniyelik stereo WAV üretir; seçilen tarzı döndürür."""
     rnd = random.Random(tohum)
     tarz = rnd.choice(TARZLAR)

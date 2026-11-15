@@ -108,6 +108,8 @@ def hassas_mi(u):
     metin = kucuk(u["baslik"]) + " " + kucuk(str(u["kategori"]))
     if "erkek" in metin or ozel_gorsel(u) is not None:
         return False
+    if any(k in metin for k in getattr(A, "HASSAS_DEGIL", [])):
+        return False
     return any(k in metin for k in A.HASSAS_KELIMELER)
 
 
@@ -209,12 +211,14 @@ def kalem(u, saat, sira, tarih, tur="gonderi", grup="diger"):
         try:
             img = gorsel.ac(kaynak) if ozel else gorsel.indir(kaynak)
             oncelik = 1
-            if soyut_mu:  # mankeni cansız mankene çevir, pantolon vb. çıkar
+            if soyut_mu:  # kadını bulanıklaştır (ya da cansız mankene çevir), ürün net kalır
                 import soyutla
-                img, oran = soyutla.manken(img, u["baslik"])
+                yontem = soyutla.bulanik if getattr(A, "HASSAS_YONTEM", "bulanik") == "bulanik" else soyutla.manken
+                img, oran = yontem(img, u["baslik"])
                 if img is None or oran < 0.03:
                     continue
-                oncelik = 0 if getattr(img, "insansiz", False) else 1
+                if yontem is soyutla.manken:  # cansız mankende ürünün tek başına olduğu kare önce
+                    oncelik = 0 if getattr(img, "insansiz", False) else 1
             hazir.append((oncelik, j, img))
         except Exception:
             if j == 1 and not soyut_mu:

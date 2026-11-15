@@ -123,6 +123,52 @@ def _kucuk_alt(alt, yukseklik):
     return tut
 
 
+def _urun_maskesi(et, baslik):
+    """Etiket haritasından sadece ürünün (sütyen / külot / takım) maskesi; ten hariç."""
+    from scipy import ndimage
+    H = et.shape[0]
+    tur = urun_turu(baslik)
+    ust = _temizle(et == 4)
+    alt = _kucuk_alt(np.isin(et, [5, 6]), H)
+    if tur == "ust":
+        urun = ust
+    elif tur == "alt":
+        urun = alt
+    elif tur == "tam":
+        urun = _temizle(np.isin(et, [4, 5, 7]))
+    else:
+        urun = ust | alt
+    urun = ndimage.binary_fill_holes(ndimage.binary_closing(urun, iterations=6))
+    return urun & ~np.isin(et, TEN)
+
+
+# --- Bulanık manken (Adem, 15 Kasım 2026) ----------------------------------
+# Fotoğraf olduğu gibi kalır; ürün (sütyen / külot / takım) net, kadının yüzü,
+# saçı, teni ve geri kalan her şey güçlü bulanıklaştırılır (çıplaklık görünmez).
+BULANIK_YARICAP = 0.032   # bulanıklık yarıçapı, görsel genişliğine oranla (~38 px / 1200 px)
+
+
+def bulanik(img: Image.Image, baslik=""):
+    """(bulanik_gorsel, urun_orani) döndürür; ürün bulunamazsa (None, 0)."""
+    img = img.convert("RGB")
+    kucuk = ImageOps.contain(img, (900, 900))
+    et = _etiketler(kucuk)
+    if float(np.isin(et, TEN).mean()) < 0.02:  # insan yok: ürün tek başına çekilmiş
+        son = img.copy()
+        son.insansiz = True
+        return son, float((et != 0).mean())
+    urun = _urun_maskesi(et, baslik)
+    oran = float(urun.mean())
+    if oran < 0.01:
+        return None, 0.0
+    m = Image.fromarray((urun * 255).astype("uint8")).resize(img.size, Image.LANCZOS)
+    m = m.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(2))
+    bulut = img.filter(ImageFilter.GaussianBlur(max(20, int(img.width * BULANIK_YARICAP))))
+    son = Image.composite(img, bulut, m)
+    son.insansiz = False
+    return son, oran
+
+
 def manken(img: Image.Image, baslik=""):
     """(manken_gorsel, urun_orani) döndürür; ürün bulunamazsa (None, 0)."""
     from scipy import ndimage

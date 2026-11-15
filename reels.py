@@ -5,7 +5,8 @@ Akış (dikey 1080x1920, 30 fps, ~12-16 sn):
   2. Ürün fotoğrafları: yavaş yakınlaşma/kayma, yumuşak geçiş
   3. Bilgi kartı: renk, beden, kumaş içeriği (fiyat yok)
   4. Kapanış: "Trendyol'da ve morro.com.tr'de · Link profilde"
-Fon müziği muzik.py ile her videoda farklı tarzda üretilir (sakin, telifsiz).
+Fon müziği muzik.py ile eklenir: her videoda farklı telifsiz gerçek şarkı (Pixabay),
+indirilemezse sakin sentez müzik.
 """
 import math
 import subprocess

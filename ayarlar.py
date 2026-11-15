@@ -76,8 +76,11 @@ MARKA_ETIKET = "MORRO"              # indirim yoksa yazılacak etiket (logo.png 
 # geçenler (mankenli iç çamaşırı fotoğrafları). Bu ürünlerden birini yine de
 # paylaşmak istersen ozel/<ürün kodu>.jpg adıyla kendi görselini yükle
 # (ör. cansız manken veya ürünün tek başına çekimi); o zaman o görsel kullanılır.
-# Hassas ürünler paylaşılırken manken yapay zekayla silinir (sadece ürün kalır).
-SOYUTLA = False   # şimdilik kapalı: sütyen/takımlar sıralamaya alınmıyor
+# Hassas ürünler (sütyen, külot, takım...) paylaşılırken yapay zeka ürünü bulur;
+# ürün net kalır, kadının yüzü/teni/saçı güçlü bulanıklaştırılır (çıplaklık görünmez).
+# Adem, 15 Kasım 2026: "bu ürünleri bu şekilde ekleyelim".
+SOYUTLA = False  # bulanıklaştırma Actions denemesiyle doğrulanınca True yapılacak
+HASSAS_YONTEM = "bulanik"   # "bulanik" = kadın bulanık, ürün net; "manken" = cansız mankene çevir
 GUNLUK_HASSAS = 1        # bir günde en fazla kaç hassas ürün paylaşılsın
 # Erkek ürünleri (başlıkta/kategoride "erkek" geçen) bu kurala hiç takılmaz.
 HASSAS_KELIMELER = [
@@ -85,6 +88,9 @@ HASSAS_KELIMELER = [
     "body", "gecelik", "babydoll", "jartiyer", "korse", "fantezi", "mayo",
     "bikini", "iç çamaşırı takım", "iç giyim takım", "dantel takım",
 ]
+# Yukarıdaki kelimeler geçse de hassas SAYILMAYANLAR (bulanıklaştırılmaz, normal paylaşılır):
+# toparlayıcı taytlar ("Korse Etkili"), Kaşkorse Atlet, KOTA bluzlar (kategori "Body"), tesettür mayo.
+HASSAS_DEGIL = ["tayt", "kaşkorse", "bluz", "tesettür"]
 
 # Başlığa göre eklenen hashtag'ler
 ETIKETLER = {
@@ -109,6 +115,7 @@ SABIT_ETIKETLER = "#morro #morroicgiyim #içgiyim #trendyol"
 REELS = True                 # gönderiler Reels videosu olarak paylaşılır (olmazsa kaydırmalı gönderi)
 HIKAYE_REELS = True          # gönderinin hikayesinde ayrı görsel yerine aynı Reels videosu paylaşılır
 HIKAYE_REELS_TEKRAR = True   # sadece-hikaye saatlerinde önceki günlerin Reels'leri tekrar paylaşılır
+GERCEK_MUZIK = True          # Reels'e telifsiz gerçek şarkı (muzik.py PARCALAR); indirilemezse sentez müzik
 
 
 # --- Kampanya (Reels çerçevesi ve açıklama) ---------------------------------
