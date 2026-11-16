@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "kaçırıldı (saati geçti)",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
