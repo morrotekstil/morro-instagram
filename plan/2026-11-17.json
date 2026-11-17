@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -63,7 +63,11 @@
       "manken_silindi": true,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1964/prod/QC_ENRICHMENT/20260924/17/4078769e-fa2b-3bc7-9e3c-2fa2d574ebca/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/lazer-kesim-dikis-siz-c-itc-itli-hayalet-su-tyen-ten-p-1163768884?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/lazer-kesim-dikis-siz-c-itc-itli-hayalet-su-tyen-ten-p-1163768884?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-17T10:45+03:00",
+      "media_id": "18120945866081653",
+      "permalink": "https://www.instagram.com/reel/Df1bKldER3w/"
     },
     {
       "saat": "13:00",
