@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -61,7 +61,11 @@
       "manken_silindi": true,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1969/prod/QC_ENRICHMENT/20261005/08/beee720f-4182-3886-93f9-07eaf5bfac52/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/kadin-dikis-siz-pima-pamuk-s-ort-ten-p-951235822?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/kadin-dikis-siz-pima-pamuk-s-ort-ten-p-951235822?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-18T10:44+03:00",
+      "media_id": "18128599087914872",
+      "permalink": "https://www.instagram.com/reel/Df3_0n8DYhi/"
     },
     {
       "saat": "13:00",
