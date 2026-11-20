@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -51,7 +51,11 @@
       "manken_silindi": true,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1936/prod/QC_PREP/20260806/17/46a1cd58-574a-3e9e-ae17-b6e1a59a4bf2/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/lazer-kesim-dikis-siz-fitilli-hayalet-su-tyen-beyaz-p-1180885715?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/lazer-kesim-dikis-siz-fitilli-hayalet-su-tyen-beyaz-p-1180885715?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-20T10:45+03:00",
+      "media_id": "18136510822771804",
+      "permalink": "https://www.instagram.com/reel/Df9Je3dpasv/"
     },
     {
       "saat": "13:00",
