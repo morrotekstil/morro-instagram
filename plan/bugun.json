@@ -130,7 +130,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -179,7 +179,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1964/prod/QC_ENRICHMENT/20260924/17/10da6bab-7cfb-3154-a000-496ca15a2f6e/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/erkek-yu-n-havlu-lambswool-c-orap-lacivert-p-1039587551?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/erkek-yu-n-havlu-lambswool-c-orap-lacivert-p-1039587551?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-21T17:16+03:00",
+      "media_id": "17955740301339828",
+      "permalink": "https://www.instagram.com/reel/DgAbCxyD4am/"
     },
     {
       "saat": "19:30",
