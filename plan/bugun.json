@@ -1,34 +1,42 @@
 {
-  "tarih": "2026-11-20",
-  "olusturma": "2026-11-20T07:58+03:00",
+  "tarih": "2026-11-21",
+  "olusturma": "2026-11-21T07:54+03:00",
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "paylaşıldı",
+      "durum": "bekliyor",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
-      "urun_id": "BLR-M53-5~Beyaz",
-      "model": "BLR-M53-5",
-      "baslik": "Lazer Kesim Dikişsiz Fitilli Hayalet Sütyen Beyaz",
+      "urun_id": "BLR-M51~Çok Renkli",
+      "model": "BLR-M51",
+      "baslik": "Lazer Kesim Dikişsiz Çıtçıtlı Destekleyici Sütyen Siyah",
       "kategori": "Sütyen",
-      "fiyat": 872.28,
+      "fiyat": 703.89,
       "liste_fiyat": 1299.0,
-      "stok": 60,
-      "etiket": "%33 İNDİRİM",
-      "aciklama": "Lazer Kesim Dikişsiz Fitilli Hayalet Sütyen Beyaz\n\nHer gün giymek isteyeceğin bir parça.\n\nKaliteli kumaşı ve özenli dikişleriyle uzun süre ilk günkü gibi kalır.\n\n✨ Ürün özellikleri\n🎨 Renk: Çok Renkli\n📏 Beden: M, L, XL\n👔 Yaka Tipi: Dik Yaka\n💪 Kol Boyu: Askılı\n\n💡 Hediye fikri: Sevdiklerine pratik ve işe yarar bir hediye.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nHangi rengi tercih ederdin? 👇\n\n#içgiyim #evgiyim #rahatgiyim #morroicgiyim #trendyol",
+      "stok": 84,
+      "etiket": "%46 İNDİRİM",
+      "aciklama": "Lazer Kesim Dikişsiz Çıtçıtlı Destekleyici Sütyen Siyah\n\nRahatlık ve kalite bir arada.\n\nKaliteli kumaşı ve özenli dikişleriyle uzun süre ilk günkü gibi kalır.\n\n✨ Ürün özellikleri\n🎨 Renk: Siyah\n📏 Beden: S, XL, M, L\n🧵 Kumaş içeriği: 77% Poliamid, 23% Elastan\n👕 Kalıp: Bralet\n👔 Yaka Tipi: Dik Yaka\n💪 Kol Boyu: Askılı\n✅ Ek Özellik: Seamless\n\n💡 Hediye fikri: Sevdiklerine pratik ve işe yarar bir hediye.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nBu ürünü kime hediye ederdin? Etiketle 👇\n\n#içgiyim #evgiyim #rahatgiyim #morroicgiyim #trendyol",
       "detaylar": [
         [
           "Renk",
-          "Çok Renkli"
+          "Siyah"
         ],
         [
           "Beden",
-          "M, L, XL"
+          "S, XL, M, L"
+        ],
+        [
+          "Kumaş içeriği",
+          "77% Poliamid, 23% Elastan"
         ],
         [
           "Kumaş tipi",
           "Belirtilmemiş"
+        ],
+        [
+          "Kalıp",
+          "Bralet"
         ],
         [
           "Yaka Tipi",
@@ -37,235 +45,53 @@
         [
           "Kol Boyu",
           "Askılı"
-        ]
-      ],
-      "gorsel": "media/2026-11-20-6-1.jpg",
-      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-6-1.jpg",
-      "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-6-1.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-6-2.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-6-3.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-6-4.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-6-5.jpg"
-      ],
-      "manken_silindi": true,
-      "hikaye_url": null,
-      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1936/prod/QC_PREP/20260806/17/46a1cd58-574a-3e9e-ae17-b6e1a59a4bf2/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/lazer-kesim-dikis-siz-fitilli-hayalet-su-tyen-beyaz-p-1180885715?merchantId=1123267&filterOverPriceListings=false",
-      "reels": true,
-      "paylasim_saati": "2026-11-20T10:45+03:00",
-      "media_id": "18136510822771804",
-      "permalink": "https://www.instagram.com/reel/Df9Je3dpasv/"
-    },
-    {
-      "saat": "13:00",
-      "durum": "paylaşıldı",
-      "tur": "gonderi",
-      "grup": "morro",
-      "marka": "MORRO",
-      "urun_id": "5348-6~Çok Renkli",
-      "model": "5348-6",
-      "baslik": "Kadın zümrüt yeşili Yüksek Bel Ön Dikişli Çimalı Kumaş Pantolon",
-      "kategori": "Pantolon",
-      "fiyat": 1500.0,
-      "liste_fiyat": 1500.0,
-      "stok": 786,
-      "etiket": "MORRO",
-      "aciklama": "Kadın zümrüt yeşili Yüksek Bel Ön Dikişli Çimalı Kumaş Pantolon\n\nRahatlığından ödün vermeden şık görünmek isteyenler için ✨\n\nAkışkan kumaşı vücuda yapışmadan düşer, boyu uzun ve ince gösterir. Gün boyu kırışmadan formunu korur.\n\n✨ Ürün özellikleri\n🎨 Renk: Zümrüt yeşili\n📏 Beden: XL, M, L, S\n👕 Kalıp: Yüksek Bel\n📐 Bel: Yüksek Bel\n👖 Paça Tipi: Düz Paça\n\n💡 Kombin önerisi: Düz renk bir triko ve loafer ile ofis şıklığı; crop bir üst ve sneaker ile günlük stil.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nBu pantolonu hangi ayakkabıyla kombinlerdin? 👇\n\n#kadınpantolon #pantolon #kombin #kadıngiyim #morro",
-      "detaylar": [
-        [
-          "Renk",
-          "Zümrüt yeşili"
-        ],
-        [
-          "Beden",
-          "XL, M, L, S"
-        ],
-        [
-          "Kumaş tipi",
-          "Belirtilmemiş"
-        ],
-        [
-          "Kalıp",
-          "Yüksek Bel"
-        ],
-        [
-          "Bel",
-          "Yüksek Bel"
-        ],
-        [
-          "Paça Tipi",
-          "Düz Paça"
-        ]
-      ],
-      "gorsel": "media/2026-11-20-1-1.jpg",
-      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-1-1.jpg",
-      "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-1-1.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-1-2.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-1-3.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-1-4.jpg"
-      ],
-      "manken_silindi": false,
-      "hikaye_url": null,
-      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1952/prod/QC_PREP/20260831/00/56d41d2d-96a7-36cb-a522-1377287a926d/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/kadin-zu-mru-t-yes-ili-yu-ksek-bel-o-n-dikis-li-c-imali-kumas-pantolon-p-1193783066?merchantId=1123267&filterOverPriceListings=false",
-      "reels": true,
-      "paylasim_saati": "2026-11-20T13:42+03:00",
-      "media_id": "18090230477304167",
-      "permalink": "https://www.instagram.com/reel/Df9d0OhD2wn/"
-    },
-    {
-      "saat": "16:30",
-      "durum": "paylaşıldı",
-      "tur": "gonderi",
-      "grup": "diger",
-      "marka": "Sevim",
-      "urun_id": "15664~Pembe",
-      "model": "15664",
-      "baslik": "15664  BASKILI PİJAMA TAKIM",
-      "kategori": "Pijama Takımı",
-      "fiyat": 1021.44,
-      "liste_fiyat": 1450.0,
-      "stok": 14,
-      "etiket": "%30 İNDİRİM",
-      "aciklama": "15664  BASKILI PİJAMA TAKIM\n\nGüzel bir uykunun sırrı doğru pijamada.\n\nYıkadıkça yumuşayan kumaşı ve dayanıklı dikişleriyle uzun süre ilk günkü gibi kalır.\n\n✨ Ürün özellikleri\n🎨 Renk: PUDRA\n📏 Beden: M, S, L, XL\n🧵 Kumaş içeriği: 100% Pamuk\n🪡 Kumaş tipi: Dokuma\n👕 Kalıp: Regular\n📐 Bel: Normal Bel\n👔 Yaka Tipi: Bisiklet Yaka\n💪 Kol Boyu: Kısa\n👖 Paça Tipi: Düz Paça\n✅ Ek Özellik: Ek Özellik Mevcut Değil\n🔎 Ürün Detayı: Cep Detaylı\n\n💡 Bedenini seçerken rahat bir kullanım istiyorsan bir beden büyüğünü de değerlendirebilirsin.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nBu takımı kime hediye ederdin? Etiketle 👇\n\n#pijama #pijamatakımı #evgiyim #morroicgiyim #trendyol",
-      "detaylar": [
-        [
-          "Renk",
-          "PUDRA"
-        ],
-        [
-          "Beden",
-          "M, S, L, XL"
-        ],
-        [
-          "Kumaş içeriği",
-          "100% Pamuk"
-        ],
-        [
-          "Kumaş tipi",
-          "Dokuma"
-        ],
-        [
-          "Kalıp",
-          "Regular"
-        ],
-        [
-          "Bel",
-          "Normal Bel"
-        ],
-        [
-          "Yaka Tipi",
-          "Bisiklet Yaka"
-        ],
-        [
-          "Kol Boyu",
-          "Kısa"
-        ],
-        [
-          "Paça Tipi",
-          "Düz Paça"
         ],
         [
           "Ek Özellik",
-          "Ek Özellik Mevcut Değil"
-        ],
-        [
-          "Ürün Detayı",
-          "Cep Detaylı"
+          "Seamless"
         ]
       ],
-      "gorsel": "media/2026-11-20-7-1.jpg",
-      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-7-1.jpg",
+      "gorsel": "media/2026-11-21-6-1.jpg",
+      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-6-1.jpg",
       "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-7-1.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-7-2.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-7-3.jpg"
-      ],
-      "manken_silindi": false,
-      "hikaye_url": null,
-      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1987/prod/QC_ENRICHMENT/20261022/18/35b2dc4f-ce76-327d-9fd5-4307c07e7289/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/sevim/15664-baskili-pi-jama-takim-p-836319140?merchantId=1123267&filterOverPriceListings=false",
-      "reels": true,
-      "paylasim_saati": "2026-11-20T17:28+03:00",
-      "media_id": "17958986100293261",
-      "permalink": "https://www.instagram.com/reel/Df93qo6lJh_/"
-    },
-    {
-      "saat": "19:30",
-      "durum": "paylaşıldı",
-      "tur": "gonderi",
-      "grup": "morro",
-      "marka": "MORRO",
-      "urun_id": "7878-1~Ekru",
-      "model": "7878-1",
-      "baslik": "Kadın Fitilli Pamuklu Günlük Rahat Külot - Esnek ve İz Yapmayan İç Çamaşırı",
-      "kategori": "Külot",
-      "fiyat": 281.78,
-      "liste_fiyat": 281.78,
-      "stok": 600,
-      "etiket": "MORRO",
-      "aciklama": "Kadın Fitilli Pamuklu Günlük Rahat Külot - Esnek ve İz Yapmayan İç Çamaşırı\n\nRahatlık en içten başlar.\n\nYumuşak lastikleri iz bırakmaz, kıyafet altında belli olmaz.\n\n✨ Ürün özellikleri\n🎨 Renk: Çok Renkli\n📏 Beden: L, 2XL, XL\n\n💡 Çoklu paketlerle haftanın her günü için hazırsın.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nİç giyimde senin önceliğin ne: kumaş mı, kalıp mı? 👇\n\n#külot #pamukluiçgiyim #içgiyim #kadıngiyim #morro",
-      "detaylar": [
-        [
-          "Renk",
-          "Çok Renkli"
-        ],
-        [
-          "Beden",
-          "L, 2XL, XL"
-        ],
-        [
-          "Kumaş tipi",
-          "Belirtilmemiş"
-        ]
-      ],
-      "gorsel": "media/2026-11-20-2-1.jpg",
-      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-2-1.jpg",
-      "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-2-1.jpg"
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-6-1.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-6-2.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-6-3.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-6-4.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-6-5.jpg"
       ],
       "manken_silindi": true,
       "hikaye_url": null,
-      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1987/prod/QC_PREP/20261022/18/6b9049e3-a12b-3a01-a276-c57e190e5e16/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/kadin-fitilli-pamuklu-gu-nlu-k-rahat-ku-lot-esnek-ve-i-z-yapmayan-i-c-c-amas-iri-p-1221428450?merchantId=1123267&filterOverPriceListings=false",
-      "reels": true,
-      "paylasim_saati": "2026-11-20T20:19+03:00",
-      "media_id": "18003251868030209",
-      "permalink": "https://www.instagram.com/reel/Df-LRDOn_LV/"
+      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1966/prod/QC_ENRICHMENT/20260929/09/3b57d5be-9622-3672-9a7c-b43da65151ca/1_org_zoom.jpg",
+      "link": "https://www.trendyol.com/bolero/lazer-kesim-dikis-siz-c-itc-itli-destekleyici-su-tyen-siyah-p-1163768877?merchantId=1123267&filterOverPriceListings=false"
     },
     {
-      "saat": "21:30",
-      "durum": "paylaşıldı",
+      "saat": "13:00",
+      "durum": "bekliyor",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
-      "urun_id": "MRR-100217~BEYAZ",
-      "model": "MRR-100217",
-      "baslik": "Esnek Viskon Tayt | Yüksek Bel, Rahat ve Şık Kadın Günlük Tayt",
+      "urun_id": "MRR-100199~Çok Renkli",
+      "model": "MRR-100199",
+      "baslik": "Full Likralı Kapri Tayt İnce bel Biye Lastikli Kadın Rahat Konforlu Tayt",
       "kategori": "Tayt",
-      "fiyat": 500.0,
-      "liste_fiyat": 500.0,
-      "stok": 1399,
+      "fiyat": 470.0,
+      "liste_fiyat": 470.0,
+      "stok": 4970,
       "etiket": "MORRO",
-      "aciklama": "Esnek Viskon Tayt | Yüksek Bel, Rahat ve Şık Kadın Günlük Tayt\n\nGün boyu rahat, her harekete uyum sağlayan bir tayt arıyorsan doğru yerdesin.\n\nEsnek kumaşı sayesinde vücudu sıkmadan sarar; eğilirken, otururken ya da antrenmanda formunu korur. Yüksek ve rahat bel yapısı gün boyu yerinde durur.\n\n✨ Ürün özellikleri\n🎨 Renk: Çok Renkli\n📏 Beden: M, S, XL, L, 2XL\n🧵 Kumaş içeriği: Viskon\n🪡 Kumaş tipi: Dokuma\n👕 Kalıp: Tayt\n📐 Bel: Lastikli\n👖 Paça Tipi: Dar Paça\n\n💡 Kısa taytları elbise ve etek altına giyerek hem rahat edebilir hem de sürtünmeyi önleyebilirsin.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nTaytını en çok nerede giyiyorsun: sporda mı, evde mi, sokakta mı? Yorumlara yaz 👇\n\n#tayt #kadıntayt #sportayt #kadıngiyim #morro",
+      "aciklama": "Full Likralı Kapri Tayt İnce bel Biye Lastikli Kadın Rahat Konforlu Tayt\n\nGün boyu rahat, her harekete uyum sağlayan bir tayt arıyorsan doğru yerdesin.\n\nHafif dokusu sayesinde hem spor salonunda hem evde hem de elbise altında rahatlıkla kullanılır.\n\n✨ Ürün özellikleri\n🎨 Renk: BEYAZ, GRİ, SİYAH\n📏 Beden: L, M, XL, 2XL\n🪡 Kumaş tipi: Örme\n👕 Kalıp: Tayt\n📐 Bel: Normal Bel\n👖 Paça Tipi: Dar Paça\n\n💡 Kısa taytları elbise ve etek altına giyerek hem rahat edebilir hem de sürtünmeyi önleyebilirsin.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nTayt giyerken senin için en önemli şey ne: esneklik mi, toparlayıcılık mı? 👇\n\n#tayt #kadıntayt #sportayt #kadıngiyim #morro",
       "detaylar": [
         [
           "Renk",
-          "Çok Renkli"
+          "BEYAZ, GRİ, SİYAH"
         ],
         [
           "Beden",
-          "M, S, XL, L, 2XL"
-        ],
-        [
-          "Kumaş içeriği",
-          "Viskon"
+          "L, M, XL, 2XL"
         ],
         [
           "Kumaş tipi",
-          "Dokuma"
+          "Örme"
         ],
         [
           "Kalıp",
@@ -273,34 +99,83 @@
         ],
         [
           "Bel",
-          "Lastikli"
+          "Normal Bel"
         ],
         [
           "Paça Tipi",
           "Dar Paça"
         ]
       ],
-      "gorsel": "media/2026-11-20-3-1.jpg",
-      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-3-1.jpg",
+      "gorsel": "media/2026-11-21-1-1.jpg",
+      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-1-1.jpg",
       "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-3-1.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-3-2.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-3-3.jpg"
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-1-1.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-1-2.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-1-3.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-1-4.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-1-5.jpg"
       ],
       "manken_silindi": false,
       "hikaye_url": null,
-      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1789/prod/QC_PREP/20251115/01/035ced3b-29dc-3191-824e-b46759224b2b/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/esnek-viskon-tayt-yu-ksek-bel-rahat-ve-s-ik-kadin-gu-nlu-k-tayt-p-1051502204?merchantId=1123267&filterOverPriceListings=false",
-      "reels": true,
-      "paylasim_saati": "2026-11-20T22:18+03:00",
-      "media_id": "18141126598731983",
-      "permalink": "https://www.instagram.com/reel/Df-Y25QANgH/"
-    }
-  ],
-  "yedekler": [
+      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1779/prod/QC_PREP/20251029/06/257f5890-11c1-3814-b943-36d2df84edb6/1_org_zoom.jpg",
+      "link": "https://www.trendyol.com/morro/full-likrali-kapri-tayt-i-nce-bel-biye-lastikli-kadin-rahat-konforlu-tayt-p-1042793035?merchantId=1123267&filterOverPriceListings=false"
+    },
     {
-      "saat": null,
-      "durum": "yedek",
+      "saat": "16:30",
+      "durum": "bekliyor",
+      "tur": "gonderi",
+      "grup": "diger",
+      "marka": "Bolero",
+      "urun_id": "BLR-E99~Lacivert",
+      "model": "BLR-E99",
+      "baslik": "Erkek Yün Havlu Lambswool Çorap Lacivert",
+      "kategori": "Çorap",
+      "fiyat": 199.99,
+      "liste_fiyat": 310.0,
+      "stok": 56,
+      "etiket": "%35 İNDİRİM",
+      "aciklama": "Erkek Yün Havlu Lambswool Çorap Lacivert\n\nÇorap çekmecesini yenileme zamanı! 🧦\n\nEsnek yapısı ayağı sıkmaz, iz bırakmaz; ayakkabı içinde kaymaz.\n\n✨ Ürün özellikleri\n🎨 Renk: Lacivert\n📏 Beden: 41-45\n🧵 Kumaş içeriği: 50% Yün, 20% Polyester, 15% Viskon, 13% Polyamid, 2% Elastan\n🪡 Kumaş tipi: Örme\n✅ Ek Özellik: Esnek\n🔎 Ürün Detayı: Mevcut Değil\n\n💡 İpucu: Babet çoraplar spor ayakkabı ve loafer içinde görünmeden konfor sağlar.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nDesenli mi, düz mü? Çorap tercihin hangisi? 👇\n\n#çorap #çoraptasarım #babetçorap #erkekgiyim #morroicgiyim",
+      "detaylar": [
+        [
+          "Renk",
+          "Lacivert"
+        ],
+        [
+          "Beden",
+          "41-45"
+        ],
+        [
+          "Kumaş içeriği",
+          "50% Yün, 20% Polyester, 15% Viskon, 13% Polyamid, 2% Elastan"
+        ],
+        [
+          "Kumaş tipi",
+          "Örme"
+        ],
+        [
+          "Ek Özellik",
+          "Esnek"
+        ],
+        [
+          "Ürün Detayı",
+          "Mevcut Değil"
+        ]
+      ],
+      "gorsel": "media/2026-11-21-7-1.jpg",
+      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-7-1.jpg",
+      "gorsel_urls": [
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-7-1.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-7-2.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-7-3.jpg"
+      ],
+      "manken_silindi": false,
+      "hikaye_url": null,
+      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1964/prod/QC_ENRICHMENT/20260924/17/10da6bab-7cfb-3154-a000-496ca15a2f6e/1_org_zoom.jpg",
+      "link": "https://www.trendyol.com/bolero/erkek-yu-n-havlu-lambswool-c-orap-lacivert-p-1039587551?merchantId=1123267&filterOverPriceListings=false"
+    },
+    {
+      "saat": "19:30",
+      "durum": "bekliyor",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -312,7 +187,7 @@
       "liste_fiyat": 1850.0,
       "stok": 1600,
       "etiket": "MORRO",
-      "aciklama": "Kadın Geniş Askılı Atlet 6'lı Paket - Modal Pamuklu Esnek İç Giyim\n\nGömleğin altında da tek başına da rahat.\n\nÇok yıkamaya dayanıklı yapısıyla uzun süre beyazlığını ve formunu korur.\n\n✨ Ürün özellikleri\n🎨 Renk: Çok Renkli\n📏 Beden: XL, M, 48, S, 2XL, 50, 52, L\n🧵 Kumaş içeriği: Modal-Pamuk\n🪡 Kumaş tipi: Örme\n📦 Paket içeriği: 6'lı\n👕 Kalıp: Slim\n👔 Yaka Tipi: Askılı Yaka\n💪 Kol Boyu: Askılı\n✅ Ek Özellik: Yıkamalı\n🔎 Ürün Detayı: Biyeli\n\n💡 İpucu: Gömlek altında ter izini önlemek için ince bir atlet en pratik çözüm.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nSen de basic parçaları stoklayanlardan mısın? 👇\n\n#atlet #fanila #basic #kadıngiyim #morro",
+      "aciklama": "Kadın Geniş Askılı Atlet 6'lı Paket - Modal Pamuklu Esnek İç Giyim\n\nGömleğin altında da tek başına da rahat.\n\nÇok yıkamaya dayanıklı yapısıyla uzun süre beyazlığını ve formunu korur.\n\n✨ Ürün özellikleri\n🎨 Renk: Çok Renkli\n📏 Beden: XL, M, 48, S, 2XL, 50, L, 52\n🧵 Kumaş içeriği: Modal-Pamuk\n🪡 Kumaş tipi: Örme\n📦 Paket içeriği: 6'lı\n👕 Kalıp: Slim\n👔 Yaka Tipi: Askılı Yaka\n💪 Kol Boyu: Askılı\n✅ Ek Özellik: Yıkamalı\n🔎 Ürün Detayı: Biyeli\n\n💡 İpucu: Gömlek altında ter izini önlemek için ince bir atlet en pratik çözüm.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nSen de basic parçaları stoklayanlardan mısın? 👇\n\n#atlet #fanila #basic #kadıngiyim #morro",
       "detaylar": [
         [
           "Renk",
@@ -320,7 +195,7 @@
         ],
         [
           "Beden",
-          "XL, M, 48, S, 2XL, 50, 52, L"
+          "XL, M, 48, S, 2XL, 50, L, 52"
         ],
         [
           "Kumaş içeriği",
@@ -355,11 +230,11 @@
           "Biyeli"
         ]
       ],
-      "gorsel": "media/2026-11-20-4-1.jpg",
-      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-4-1.jpg",
+      "gorsel": "media/2026-11-21-2-1.jpg",
+      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-2-1.jpg",
       "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-4-1.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-4-2.jpg"
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-2-1.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-2-2.jpg"
       ],
       "manken_silindi": false,
       "hikaye_url": null,
@@ -367,20 +242,20 @@
       "link": "https://www.trendyol.com/morro/kadin-genis-askili-atlet-6-li-paket-modal-pamuklu-esnek-i-c-giyim-p-1208552878?merchantId=1123267&filterOverPriceListings=false"
     },
     {
-      "saat": null,
-      "durum": "yedek",
+      "saat": "21:30",
+      "durum": "bekliyor",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
-      "urun_id": "5623-1~Açık yeşil",
-      "model": "5623-1",
-      "baslik": "Yumuşak Dokulu Kadife Pantolon Büyük Beden",
-      "kategori": "Büyük Beden Pijama Altı",
-      "fiyat": 743.09,
-      "liste_fiyat": 743.09,
-      "stok": 100,
+      "urun_id": "8651-1~Fuşya",
+      "model": "8651-1",
+      "baslik": "Kadın Pamuklu Slip Külot - Nefes Alabilen Esnek Ve Rahat Günlük İç Giyim",
+      "kategori": "Külot",
+      "fiyat": 281.78,
+      "liste_fiyat": 281.78,
+      "stok": 400,
       "etiket": "MORRO",
-      "aciklama": "Yumuşak Dokulu Kadife Pantolon Büyük Beden\n\nGüzel bir uykunun sırrı doğru pijamada.\n\nNefes alan pamuklu kumaşı terletmez, cildi tahriş etmez; gece boyu rahat bir uyku sağlar.\n\n✨ Ürün özellikleri\n🎨 Renk: Çok Renkli\n📏 Beden: 5, 3, 4, 6, 2\n🧵 Kumaş içeriği: Polyester\n🪡 Kumaş tipi: Dokuma\n👕 Kalıp: Jogger\n📐 Bel: Lastikli\n👖 Paça Tipi: Lastikli Paça\n\n💡 Hediye fikri: Sevdiklerine rahatlık hediye etmek istersen pijama takımı her zaman doğru tercih.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nBu takımı kime hediye ederdin? Etiketle 👇\n\n#pijama #pijamatakımı #evgiyim #morro #morroicgiyim",
+      "aciklama": "Kadın Pamuklu Slip Külot - Nefes Alabilen Esnek Ve Rahat Günlük İç Giyim\n\nHer gün için konforlu bir seçim.\n\nPamuklu, nefes alan kumaşı cildi rahatlatır, gün boyu ferah hissettirir.\n\n✨ Ürün özellikleri\n🎨 Renk: Çok Renkli\n📏 Beden: 2XL, XL\n\n💡 Çoklu paketlerle haftanın her günü için hazırsın.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nÇoklu paket mi, tekli mi tercih edersin? 👇\n\n#külot #pamukluiçgiyim #içgiyim #kadıngiyim #morro",
       "detaylar": [
         [
           "Renk",
@@ -388,7 +263,102 @@
         ],
         [
           "Beden",
-          "5, 3, 4, 6, 2"
+          "2XL, XL"
+        ],
+        [
+          "Kumaş tipi",
+          "Belirtilmemiş"
+        ]
+      ],
+      "gorsel": "media/2026-11-21-3-1.jpg",
+      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-3-1.jpg",
+      "gorsel_urls": [
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-3-1.jpg"
+      ],
+      "manken_silindi": true,
+      "hikaye_url": null,
+      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1986/prod/QC_PREP/20261022/18/4bae1761-8ff7-39b7-a16e-551eff84ba6e/1_org_zoom.jpg",
+      "link": "https://www.trendyol.com/morro/kadin-pamuklu-slip-ku-lot-nefes-alabilen-esnek-ve-rahat-gu-nlu-k-i-c-giyim-p-1221425744?merchantId=1123267&filterOverPriceListings=false"
+    }
+  ],
+  "yedekler": [
+    {
+      "saat": null,
+      "durum": "yedek",
+      "tur": "gonderi",
+      "grup": "morro",
+      "marka": "MORRO",
+      "urun_id": "7894-1~Çok Renkli",
+      "model": "7894-1",
+      "baslik": "Kadın siyah Klasik Yüksek Bel Rahat Kesim Ofis ve Günlük Pantolon",
+      "kategori": "Pantolon",
+      "fiyat": 1500.0,
+      "liste_fiyat": 1500.0,
+      "stok": 792,
+      "etiket": "MORRO",
+      "aciklama": "Kadın siyah Klasik Yüksek Bel Rahat Kesim Ofis ve Günlük Pantolon\n\nRahatlığından ödün vermeden şık görünmek isteyenler için ✨\n\nRahat bel yapısı ve kalıbıyla uzun saatler boyunca konforlu kullanım sunar; hem günlük hem şık kombinlere uyum sağlar.\n\n✨ Ürün özellikleri\n🎨 Renk: Siyah\n📏 Beden: L, S, XL, M\n🪡 Kumaş tipi: Örme\n👕 Kalıp: Yüksek Bel\n📐 Bel: Yüksek Bel\n👖 Paça Tipi: Düz Paça\n\n💡 Bakım: Ütüye fazla ihtiyaç duymaz; düşük ısıda yıkayıp asarak kurutmak yeterli.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nOfiste mi, günlükte mi? Sen nerede giyerdin? 👇\n\n#kadınpantolon #pantolon #kombin #kadıngiyim #morro",
+      "detaylar": [
+        [
+          "Renk",
+          "Siyah"
+        ],
+        [
+          "Beden",
+          "L, S, XL, M"
+        ],
+        [
+          "Kumaş tipi",
+          "Örme"
+        ],
+        [
+          "Kalıp",
+          "Yüksek Bel"
+        ],
+        [
+          "Bel",
+          "Yüksek Bel"
+        ],
+        [
+          "Paça Tipi",
+          "Düz Paça"
+        ]
+      ],
+      "gorsel": "media/2026-11-21-4-1.jpg",
+      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-4-1.jpg",
+      "gorsel_urls": [
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-4-1.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-4-2.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-4-3.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-4-4.jpg"
+      ],
+      "manken_silindi": false,
+      "hikaye_url": null,
+      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1950/prod/QC_PREP/20260831/00/8d6aff64-c0a5-39c7-a146-3a42ebe67488/1_org_zoom.jpg",
+      "link": "https://www.trendyol.com/morro/kadin-siyah-klasik-yu-ksek-bel-rahat-kesim-ofis-ve-gu-nlu-k-pantolon-p-1193781909?merchantId=1123267&filterOverPriceListings=false"
+    },
+    {
+      "saat": null,
+      "durum": "yedek",
+      "tur": "gonderi",
+      "grup": "morro",
+      "marka": "MORRO",
+      "urun_id": "5623-1~Kahverengi",
+      "model": "5623-1",
+      "baslik": "Yumuşak Dokulu Kadife Pantolon Büyük Beden",
+      "kategori": "Büyük Beden Pijama Altı",
+      "fiyat": 743.09,
+      "liste_fiyat": 743.09,
+      "stok": 97,
+      "etiket": "MORRO",
+      "aciklama": "Yumuşak Dokulu Kadife Pantolon Büyük Beden\n\nSoğuk akşamlarda içini ısıtacak bir pijama takımı arayanlara 🌙\n\nNefes alan pamuklu kumaşı terletmez, cildi tahriş etmez; gece boyu rahat bir uyku sağlar.\n\n✨ Ürün özellikleri\n🎨 Renk: Çok Renkli\n📏 Beden: 5XL, 6XL, 4XL, 3XL, 2XL\n🧵 Kumaş içeriği: Polyester\n🪡 Kumaş tipi: Dokuma\n👕 Kalıp: Jogger\n📐 Bel: Lastikli\n👖 Paça Tipi: Lastikli Paça\n\n💡 Bakım: 30 derecede, benzer renklerle yıkayıp asarak kurutursan kumaşı uzun ömürlü olur.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nPijama seçerken desen mi, düz renk mi tercih edersin? 👇\n\n#pijama #pijamatakımı #evgiyim #morro #morroicgiyim",
+      "detaylar": [
+        [
+          "Renk",
+          "Çok Renkli"
+        ],
+        [
+          "Beden",
+          "5XL, 6XL, 4XL, 3XL, 2XL"
         ],
         [
           "Kumaş içeriği",
@@ -411,77 +381,19 @@
           "Lastikli Paça"
         ]
       ],
-      "gorsel": "media/2026-11-20-5-1.jpg",
-      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-5-1.jpg",
+      "gorsel": "media/2026-11-21-5-1.jpg",
+      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-5-1.jpg",
       "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-5-1.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-5-2.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-5-3.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-5-4.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-5-5.jpg"
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-5-1.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-5-2.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-5-3.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-5-4.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-5-5.jpg"
       ],
       "manken_silindi": false,
       "hikaye_url": null,
-      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1992/prod/QC_ENRICHMENT/20261028/01/dddefce8-cce0-3d8b-8d49-bb7926f52a2e/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/yumus-ak-dokulu-kadife-pantolon-bu-yu-k-beden-p-1218653478?merchantId=1123267&filterOverPriceListings=false"
-    },
-    {
-      "saat": null,
-      "durum": "yedek",
-      "tur": "gonderi",
-      "grup": "diger",
-      "marka": "Bolero",
-      "urun_id": "BLR-B82-8~Siyah",
-      "model": "BLR-B82-8",
-      "baslik": "Kadın 3'lü Premium Lazer Kesim Babet Çorap Siyah",
-      "kategori": "Çorap",
-      "fiyat": 434.54,
-      "liste_fiyat": 550.0,
-      "stok": 50,
-      "etiket": "%21 İNDİRİM",
-      "aciklama": "Kadın 3'lü Premium Lazer Kesim Babet Çorap Siyah\n\nAyaklarını sıcak ve rahat tutmanın en kolay yolu.\n\nDayanıklı topuk ve burun yapısıyla uzun süre kullanılır.\n\n✨ Ürün özellikleri\n🎨 Renk: Çok Renkli\n📏 Beden: 36 - 40\n🧵 Kumaş içeriği: 50% Poliamid, 50% Pamuk\n🪡 Kumaş tipi: Örme\n📦 Paket içeriği: 3'lü\n✅ Ek Özellik: Esnek\n🔎 Ürün Detayı: Mevcut Değil\n\n💡 Bakım: Ters çevirerek yıkarsan tüylenme olmaz.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nDesenli mi, düz mü? Çorap tercihin hangisi? 👇\n\n#çorap #çoraptasarım #babetçorap #kadıngiyim #morroicgiyim",
-      "detaylar": [
-        [
-          "Renk",
-          "Çok Renkli"
-        ],
-        [
-          "Beden",
-          "36 - 40"
-        ],
-        [
-          "Kumaş içeriği",
-          "50% Poliamid, 50% Pamuk"
-        ],
-        [
-          "Kumaş tipi",
-          "Örme"
-        ],
-        [
-          "Paket içeriği",
-          "3'lü"
-        ],
-        [
-          "Ek Özellik",
-          "Esnek"
-        ],
-        [
-          "Ürün Detayı",
-          "Mevcut Değil"
-        ]
-      ],
-      "gorsel": "media/2026-11-20-8-1.jpg",
-      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-8-1.jpg",
-      "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-8-1.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-8-2.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-8-3.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-8-4.jpg"
-      ],
-      "manken_silindi": false,
-      "hikaye_url": null,
-      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1915/prod/QC_PREP/20260731/17/b1caa340-96d2-325b-9c9f-503a6a2643b3/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/kadin-3-lu-premium-lazer-kesim-babet-c-orap-siyah-p-1178228083?merchantId=1123267&filterOverPriceListings=false"
+      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1993/prod/QC_ENRICHMENT/20261028/01/e545a99a-f6b9-38d3-88f1-551b8e69376f/1_org_zoom.jpg",
+      "link": "https://www.trendyol.com/morro/yumus-ak-dokulu-kadife-pantolon-bu-yu-k-beden-p-1218653313?merchantId=1123267&filterOverPriceListings=false"
     },
     {
       "saat": null,
@@ -497,7 +409,7 @@
       "liste_fiyat": 1399.0,
       "stok": 71,
       "etiket": "%27 İNDİRİM",
-      "aciklama": "Erkek Termal Merino Yün İçlik Siyah Üst\n\nKışın üşümeden, kat kat giyinmeden sıcak kalmanın en kolay yolu.\n\nİnce yapısı sayesinde kıyafetin altında hiç belli olmaz, gün boyu rahat hareket edersin.\n\n✨ Ürün özellikleri\n🎨 Renk: Siyah\n📏 Beden: 2XL, L, XL, M, S\n🧵 Kumaş içeriği: 50% Polyester, 50% Merino Yün\n🪡 Kumaş tipi: Örme\n\n💡 Bakım: Düşük ısıda yıkamak kumaşın ısı tutma özelliğini korur.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nİçlik giymeden kışı geçirebilenler var mı? 👇\n\n#termaliçlik #içlik #kışgiyim #erkekgiyim #morroicgiyim",
+      "aciklama": "Erkek Termal Merino Yün İçlik Siyah Üst\n\nKalın montlara gerek kalmadan sıcak kalmak mümkün.\n\nDışarıda çalışanlar, kış sporu yapanlar ve üşümeyi sevmeyenler için ideal bir ilk katman.\n\n✨ Ürün özellikleri\n🎨 Renk: Siyah\n📏 Beden: 2XL, L, XL, M, S\n🧵 Kumaş içeriği: 50% Polyester, 50% Merino Yün\n🪡 Kumaş tipi: Örme\n\n💡 İpucu: İçliği tene temas eden ilk katman olarak giy; üzerine bir kat yeterli olur.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nEn soğuk günde kaç kat giyiniyorsun? 👇\n\n#termaliçlik #içlik #kışgiyim #erkekgiyim #morroicgiyim",
       "detaylar": [
         [
           "Renk",
@@ -516,18 +428,85 @@
           "Örme"
         ]
       ],
-      "gorsel": "media/2026-11-20-9-1.jpg",
-      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-9-1.jpg",
+      "gorsel": "media/2026-11-21-8-1.jpg",
+      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-8-1.jpg",
       "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-9-1.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-9-2.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-9-3.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-20-9-4.jpg"
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-8-1.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-8-2.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-8-3.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-8-4.jpg"
       ],
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1898/prod/QC_ENRICHMENT/20260730/17/217d750f-924d-3312-9c90-9ad2fa55f6ee/1_org_zoom.jpg",
       "link": "https://www.trendyol.com/bolero/erkek-termal-merino-yu-n-i-c-lik-siyah-u-st-p-1088514949?merchantId=1123267&filterOverPriceListings=false"
+    },
+    {
+      "saat": null,
+      "durum": "yedek",
+      "tur": "gonderi",
+      "grup": "diger",
+      "marka": "PİJAPİA",
+      "urun_id": "PJ29KISAKOLBUYUKBEDEN~KAHVE",
+      "model": "PJ29KISAKOLBUYUKBEDEN",
+      "baslik": "Kadın Kısa Kollu Likralı Büyük Beden Pijama Takımı Kahve",
+      "kategori": "Büyük Beden Pijama Takımı",
+      "fiyat": 1410.65,
+      "liste_fiyat": 1950.0,
+      "stok": 12,
+      "etiket": "%28 İNDİRİM",
+      "aciklama": "Kadın Kısa Kollu Likralı Büyük Beden Pijama Takımı Kahve\n\nEvde geçen saatler en rahat haliyle geçmeli.\n\nYumuşak dokusu ve rahat kalıbıyla hem uyurken hem de evde vakit geçirirken üzerinde olduğunu unutursun.\n\n✨ Ürün özellikleri\n🎨 Renk: Kahverengi\n📏 Beden: 3XL, 2XL, 4XL, 5XL\n🧵 Kumaş içeriği: Pamuklu\n🪡 Kumaş tipi: Örme\n👕 Kalıp: Relax Fit\n📐 Bel: Normal Bel\n👔 Yaka Tipi: Bisiklet Yaka\n💪 Kol Boyu: Kısa\n👖 Paça Tipi: Düz Paça\n\n💡 Hediye fikri: Sevdiklerine rahatlık hediye etmek istersen pijama takımı her zaman doğru tercih.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nPijama seçerken desen mi, düz renk mi tercih edersin? 👇\n\n#pijama #pijamatakımı #evgiyim #kadıngiyim #morroicgiyim",
+      "detaylar": [
+        [
+          "Renk",
+          "Kahverengi"
+        ],
+        [
+          "Beden",
+          "3XL, 2XL, 4XL, 5XL"
+        ],
+        [
+          "Kumaş içeriği",
+          "Pamuklu"
+        ],
+        [
+          "Kumaş tipi",
+          "Örme"
+        ],
+        [
+          "Kalıp",
+          "Relax Fit"
+        ],
+        [
+          "Bel",
+          "Normal Bel"
+        ],
+        [
+          "Yaka Tipi",
+          "Bisiklet Yaka"
+        ],
+        [
+          "Kol Boyu",
+          "Kısa"
+        ],
+        [
+          "Paça Tipi",
+          "Düz Paça"
+        ]
+      ],
+      "gorsel": "media/2026-11-21-9-1.jpg",
+      "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-9-1.jpg",
+      "gorsel_urls": [
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-9-1.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-9-2.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-9-3.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-9-4.jpg",
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-21-9-5.jpg"
+      ],
+      "manken_silindi": false,
+      "hikaye_url": null,
+      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1832/prod/QC_PREP/20260301/03/3854670f-e408-39ba-9592-77335da89f37/1_org_zoom.jpg",
+      "link": "https://www.trendyol.com/pi-japi-a/kadin-kisa-kollu-likrali-bu-yu-k-beden-pijama-takimi-kahve-p-1112203285?merchantId=1123267&filterOverPriceListings=false"
     }
   ],
   "fiyat_degisiklikleri": [
@@ -563,7 +542,7 @@
       "baslik": "Baba - Oğul , %100 Pamuk, Bordo - Yeşil, Holiday Party, Uzun Kollu Pijama Takımı (TAKIMLAR AYRI AYRI FİYATLANDIRILACCAKTIR.)",
       "paylasim_tarihi": "2026-11-13",
       "paylasilan_fiyat": 939.11,
-      "guncel_fiyat": 1009.8,
+      "guncel_fiyat": 820.46,
       "instagram": "https://www.instagram.com/p/Dfr2KOem62v/"
     },
     {
@@ -598,7 +577,7 @@
       "baslik": "Kadın Kısa Kollu Likralı Pijama Takımı Pudra",
       "paylasim_tarihi": "2026-11-08",
       "paylasilan_fiyat": 1328.85,
-      "guncel_fiyat": 1484.9,
+      "guncel_fiyat": 1410.65,
       "instagram": "https://www.instagram.com/reel/Dfe7haZEdqe/"
     },
     {
@@ -814,7 +793,6 @@
   ],
   "stoktaki_urun_sayisi": 390,
   "notlar": [
-    "Instagram token'ı yenilendi",
     "Hikayeler duraklatıldı (2026-11-01 – 2026-11-30), sadece gönderiler paylaşılıyor"
   ]
 }
