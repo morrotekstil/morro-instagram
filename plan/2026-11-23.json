@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "ALFASA",
@@ -63,7 +63,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1806/prod/QC_ENRICHMENT/20251229/18/74a1a46f-90c1-36ee-915b-0be48707e4c6/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/alfasa/neon-biye-detayli-spor-tesettu-r-mayo-p-814616705?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/alfasa/neon-biye-detayli-spor-tesettu-r-mayo-p-814616705?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-23T11:01+03:00",
+      "media_id": "18113417051350654",
+      "permalink": "https://www.instagram.com/reel/DgE5tjigrC8/"
     },
     {
       "saat": "13:00",
