@@ -126,7 +126,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -182,7 +182,11 @@
       "manken_silindi": true,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1962/prod/QC_ENRICHMENT/20260924/17/59303eaa-4f88-3ccb-b7a4-7ec37c99806e/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/bolero/kadin-dikis-siz-pima-pamuk-yu-ksek-bel-ku-lot-ten-p-989031901?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/bolero/kadin-dikis-siz-pima-pamuk-yu-ksek-bel-ku-lot-ten-p-989031901?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-23T17:37+03:00",
+      "media_id": "18105728777370080",
+      "permalink": "https://www.instagram.com/reel/DgFnFfggsyI/"
     },
     {
       "saat": "19:30",
