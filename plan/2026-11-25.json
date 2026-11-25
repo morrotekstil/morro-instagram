@@ -1,10 +1,10 @@
 {
   "tarih": "2026-11-25",
-  "olusturma": "2026-11-25T16:50+03:00",
+  "olusturma": "2026-11-25T17:08+03:00",
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "kaçırıldı (saati geçti)",
+      "durum": "bekliyor",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Bolero",
@@ -67,7 +67,7 @@
     },
     {
       "saat": "13:00",
-      "durum": "kaçırıldı (saati geçti)",
+      "durum": "bekliyor",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -125,23 +125,23 @@
     },
     {
       "saat": "16:30",
-      "durum": "paylaşıldı",
+      "durum": "bekliyor",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "ALFASA",
-      "urun_id": "ALF24620~Yeşil",
-      "model": "ALF24620",
-      "baslik": "Biye Detaylı Anvelop Etekli Tesettür Mayo - Yeşil -",
+      "urun_id": "ALF25270~Yeşil",
+      "model": "ALF25270",
+      "baslik": "Mona Şapkalı Tesettür Mayo",
       "kategori": "Tesettür Mayo",
-      "fiyat": 1410.2,
-      "liste_fiyat": 2399.9,
-      "stok": 57,
-      "etiket": "%41 İNDİRİM",
-      "aciklama": "Biye Detaylı Anvelop Etekli Tesettür Mayo - Yeşil -\n\nHer gün giymek isteyeceğin bir parça.\n\nRahat kalıbı ve yumuşak dokusuyla gün boyu konfor sağlar.\n\n✨ Ürün özellikleri\n🎨 Renk: Yanık Yeşil\n📏 Beden: 2XL, L, M, 3XL, XL, S\n🧵 Kumaş içeriği: 95% Polyester, 5% Elastan\n📦 Paket içeriği: 5'li\n👔 Yaka Tipi: Bisiklet Yaka\n💪 Kol Boyu: Uzun\n👖 Paça Tipi: Dar Paça\n✅ Ek Özellik: Su Geçirmez\n\n💡 Hediye fikri: Sevdiklerine pratik ve işe yarar bir hediye.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nHangi rengi tercih ederdin? 👇\n\n#içgiyim #evgiyim #rahatgiyim #morroicgiyim #trendyol",
+      "fiyat": 1859.22,
+      "liste_fiyat": 3199.9,
+      "stok": 15,
+      "etiket": "%42 İNDİRİM",
+      "aciklama": "Mona Şapkalı Tesettür Mayo\n\nRahatlık ve kalite bir arada.\n\nRahat kalıbı ve yumuşak dokusuyla gün boyu konfor sağlar.\n\n✨ Ürün özellikleri\n🎨 Renk: Yeşil\n📏 Beden: 2XL, L, M, 3XL, XL, S\n🧵 Kumaş içeriği: %100 Polyester\n👔 Yaka Tipi: Kapüşonlu\n💪 Kol Boyu: Uzun\n👖 Paça Tipi: Boru Paça\n✅ Ek Özellik: Ek Özellik Mevcut Değil\n\n💡 Hediye fikri: Sevdiklerine pratik ve işe yarar bir hediye.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nBu ürünü kime hediye ederdin? Etiketle 👇\n\n#içgiyim #evgiyim #rahatgiyim #morroicgiyim #trendyol",
       "detaylar": [
         [
           "Renk",
-          "Yanık Yeşil"
+          "Yeşil"
         ],
         [
           "Beden",
@@ -149,19 +149,15 @@
         ],
         [
           "Kumaş içeriği",
-          "95% Polyester, 5% Elastan"
+          "%100 Polyester"
         ],
         [
           "Kumaş tipi",
           "Belirtilmemiş"
         ],
         [
-          "Paket içeriği",
-          "5'li"
-        ],
-        [
           "Yaka Tipi",
-          "Bisiklet Yaka"
+          "Kapüşonlu"
         ],
         [
           "Kol Boyu",
@@ -169,11 +165,11 @@
         ],
         [
           "Paça Tipi",
-          "Dar Paça"
+          "Boru Paça"
         ],
         [
           "Ek Özellik",
-          "Su Geçirmez"
+          "Ek Özellik Mevcut Değil"
         ]
       ],
       "gorsel": "media/2026-11-25-7-1.jpg",
@@ -187,12 +183,8 @@
       ],
       "manken_silindi": false,
       "hikaye_url": null,
-      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1807/prod/QC_ENRICHMENT/20251229/18/6e28944d-b9ec-36c8-bf11-bd1db0115ed0/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/alfasa/biye-detayli-anvelop-etekli-tesettu-r-mayo-yes-il-p-816111530?merchantId=1123267&filterOverPriceListings=false",
-      "reels": true,
-      "paylasim_saati": "2026-11-25T16:54+03:00",
-      "media_id": "18430520011158804",
-      "permalink": "https://www.instagram.com/reel/DgKryCiBbkZ/"
+      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1917/prod/QC_PREP/20260609/16/72e8637c-8b04-3ddf-97eb-eca796a3cbc2/1_org_zoom.jpg",
+      "link": "https://www.trendyol.com/alfasa/mona-s-apkali-tesettu-r-mayo-p-902010814?merchantId=1123267&filterOverPriceListings=false"
     },
     {
       "saat": "19:30",
@@ -485,43 +477,35 @@
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Pierre Cardin",
-      "urun_id": "P6112~Lacivert",
-      "model": "P6112",
-      "baslik": "Erkek Uzun Kollu Bisiklet Yaka Üç Iplik Paçası Lastikli Eşofman Takımı-6112",
-      "kategori": "Eşofman Takımı",
-      "fiyat": 2621.44,
-      "liste_fiyat": 3200.0,
-      "stok": 49,
-      "etiket": "%18 İNDİRİM",
-      "aciklama": "Erkek Uzun Kollu Bisiklet Yaka Üç Iplik Paçası Lastikli Eşofman Takımı-6112\n\nRahatlık bir tarzdır.\n\nYıkadıkça tüylenmeyen kaliteli kumaşıyla uzun süre ilk günkü gibi kalır.\n\n✨ Ürün özellikleri\n🎨 Renk: Lacivert\n📏 Beden: L, M, XL, S, 2XL\n🧵 Kumaş içeriği: Pamuklu\n🪡 Kumaş tipi: Dokuma\n📦 Paket içeriği: 2'li\n📐 Bel: Lastikli\n👔 Yaka Tipi: Bisiklet Yaka\n💪 Kol Boyu: Uzun\n👖 Paça Tipi: Dar Paça\n✅ Ek Özellik: Lisanslı\n🔎 Ürün Detayı: Lastikli\n\n💡 Bakım: Ters çevirerek yıkarsan kumaşın yüzeyi daha uzun süre pürüzsüz kalır.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nEşofmanı en çok nerede giyiyorsun? 👇\n\n#eşofman #eşofmantakımı #rahatgiyim #erkekgiyim #morroicgiyim",
+      "urun_id": "H-PC6125~Kırmızı",
+      "model": "H-PC6125",
+      "baslik": "Penye Kısakol Pijama Takım H-PC6125",
+      "kategori": "Pijama Takımı",
+      "fiyat": 1286.99,
+      "liste_fiyat": 1999.0,
+      "stok": 15,
+      "etiket": "%36 İNDİRİM",
+      "aciklama": "Penye Kısakol Pijama Takım H-PC6125\n\nGüzel bir uykunun sırrı doğru pijamada.\n\nYumuşak dokusu ve rahat kalıbıyla hem uyurken hem de evde vakit geçirirken üzerinde olduğunu unutursun.\n\n✨ Ürün özellikleri\n🎨 Renk: Kırmızı\n📏 Beden: XL, 2XL, L, S, M\n🪡 Kumaş tipi: Dokuma\n👕 Kalıp: Regular\n📐 Bel: Normal Bel\n👔 Yaka Tipi: Bisiklet Yaka\n💪 Kol Boyu: Kısa\n👖 Paça Tipi: Düz Paça\n\n💡 Hediye fikri: Sevdiklerine rahatlık hediye etmek istersen pijama takımı her zaman doğru tercih.\n\n🛒 Trendyol'da Morro mağazamızda ve morro.com.tr'de. Link profilde!\n\nPijama seçerken desen mi, düz renk mi tercih edersin? 👇\n\n#pijama #pijamatakımı #evgiyim #morroicgiyim #trendyol",
       "detaylar": [
         [
           "Renk",
-          "Lacivert"
+          "Kırmızı"
         ],
         [
           "Beden",
-          "L, M, XL, S, 2XL"
-        ],
-        [
-          "Kumaş içeriği",
-          "Pamuklu"
+          "XL, 2XL, L, S, M"
         ],
         [
           "Kumaş tipi",
           "Dokuma"
         ],
         [
-          "Paket içeriği",
-          "2'li"
-        ],
-        [
           "Kalıp",
-          "Belirtilmemiş"
+          "Regular"
         ],
         [
           "Bel",
-          "Lastikli"
+          "Normal Bel"
         ],
         [
           "Yaka Tipi",
@@ -529,31 +513,22 @@
         ],
         [
           "Kol Boyu",
-          "Uzun"
+          "Kısa"
         ],
         [
           "Paça Tipi",
-          "Dar Paça"
-        ],
-        [
-          "Ek Özellik",
-          "Lisanslı"
-        ],
-        [
-          "Ürün Detayı",
-          "Lastikli"
+          "Düz Paça"
         ]
       ],
       "gorsel": "media/2026-11-25-9-1.jpg",
       "gorsel_url": "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-25-9-1.jpg",
       "gorsel_urls": [
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-25-9-1.jpg",
-        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-25-9-2.jpg"
+        "https://raw.githubusercontent.com/morrotekstil/morro-instagram/main/media/2026-11-25-9-1.jpg"
       ],
       "manken_silindi": false,
       "hikaye_url": null,
-      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1770/prod/QC_PREP/20251011/11/a9d2ceef-e52e-3382-8e8b-5a03facf13a0/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/pierre-cardin/erkek-uzun-kollu-bisiklet-yaka-u-c-iplik-pac-asi-lastikli-es-ofman-takimi-6112-p-1020387187?merchantId=1123267&filterOverPriceListings=false"
+      "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1825/prod/QC_PREP/20260213/16/119fbc30-0e09-31c0-ac64-b990e38cca8a/1_org_zoom.jpg",
+      "link": "https://www.trendyol.com/pierre-cardin/penye-kisakol-pijama-takim-h-pc6125-p-1104990739?merchantId=1123267&filterOverPriceListings=false"
     }
   ],
   "fiyat_degisiklikleri": [
@@ -868,7 +843,6 @@
   ],
   "stoktaki_urun_sayisi": 385,
   "notlar": [
-    "Instagram token'ı yenilendi",
     "Hikayeler duraklatıldı (2026-11-01 – 2026-11-30), sadece gönderiler paylaşılıyor"
   ]
 }
