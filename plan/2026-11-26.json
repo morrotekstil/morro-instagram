@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "ALFASA",
@@ -63,7 +63,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1917/prod/QC_PREP/20260609/16/72e8637c-8b04-3ddf-97eb-eca796a3cbc2/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/alfasa/mona-s-apkali-tesettu-r-mayo-p-902010814?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/alfasa/mona-s-apkali-tesettu-r-mayo-p-902010814?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-26T10:32+03:00",
+      "media_id": "17945892204383832",
+      "permalink": "https://www.instagram.com/reel/DgMkzYyTsKN/"
     },
     {
       "saat": "13:00",
