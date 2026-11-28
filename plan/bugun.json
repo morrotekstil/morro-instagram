@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "kaçırıldı (saati geçti)",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "ALFASA",
@@ -51,7 +51,7 @@
     },
     {
       "saat": "13:00",
-      "durum": "bekliyor",
+      "durum": "kaçırıldı (saati geçti)",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -90,7 +90,7 @@
     },
     {
       "saat": "16:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "Pierre Cardin",
@@ -145,7 +145,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1825/prod/QC_PREP/20260213/16/119fbc30-0e09-31c0-ac64-b990e38cca8a/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/pierre-cardin/penye-kisakol-pijama-takim-h-pc6125-p-1104990739?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/pierre-cardin/penye-kisakol-pijama-takim-h-pc6125-p-1104990739?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-28T16:32+03:00",
+      "media_id": "18029977904931997",
+      "permalink": "https://www.instagram.com/reel/DgSXkGQh5lb/"
     },
     {
       "saat": "19:30",
