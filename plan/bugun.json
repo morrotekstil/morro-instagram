@@ -212,7 +212,7 @@
     },
     {
       "saat": "21:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "morro",
       "marka": "MORRO",
@@ -263,7 +263,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1987/prod/QC_ENRICHMENT/20261022/18/3c374ba6-9dd3-37e7-a339-58ef8378fb8b/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/morro/erkek-atlet-beyaz-p-933811443?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/morro/erkek-atlet-beyaz-p-933811443?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-28T21:32+03:00",
+      "media_id": "18030222044868420",
+      "permalink": "https://www.instagram.com/reel/DgS588DzNY1/"
     }
   ],
   "yedekler": [
