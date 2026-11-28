@@ -4,7 +4,7 @@
   "paylasimlar": [
     {
       "saat": "10:30",
-      "durum": "bekliyor",
+      "durum": "paylaşıldı",
       "tur": "gonderi",
       "grup": "diger",
       "marka": "ALFASA",
@@ -62,7 +62,11 @@
       "manken_silindi": false,
       "hikaye_url": null,
       "kaynak_gorsel": "https://cdn.dsmcdn.com/ty1930/prod/QC_PREP/20260609/16/45d4e8d7-2fc3-3314-a1c2-1d8427bb2809/1_org_zoom.jpg",
-      "link": "https://www.trendyol.com/alfasa/volta-neon-biye-su-slemeli-tam-kapali-tesettu-r-mayo-24202-26-siyah-p-814762728?merchantId=1123267&filterOverPriceListings=false"
+      "link": "https://www.trendyol.com/alfasa/volta-neon-biye-su-slemeli-tam-kapali-tesettu-r-mayo-24202-26-siyah-p-814762728?merchantId=1123267&filterOverPriceListings=false",
+      "reels": true,
+      "paylasim_saati": "2026-11-28T10:32+03:00",
+      "media_id": "18118947965166983",
+      "permalink": "https://www.instagram.com/reel/DgRuXHOBDeR/"
     },
     {
       "saat": "13:00",
